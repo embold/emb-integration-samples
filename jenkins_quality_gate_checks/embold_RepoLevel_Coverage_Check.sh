@@ -81,11 +81,11 @@ fi
 
 if [ "$percentageCoverage"  -le "$coveragePercentThreashold" ]
 then
-  echo "Coverage % check for repository with repository uid $repositoryUid was below configured threshold level of $coveragePercentThreashold. Failing the build."
+  echo "Coverage % check for repository with repository uid $repositoryUid is $percentageCoverage% which is below configured threshold level of $coveragePercentThreashold. Failing the build."
   
   #Exit -1 from script would fail the jenkins build.
   exit 1       
 fi
-echo "Coverage % check for repository with repository uid $repositoryUid Passed with over $coveragePercentThreashold coverage."
+echo "Coverage % check for repository with repository uid $repositoryUid Passed with $percentageCoverage % coverage."
 
 exit 0;
