@@ -81,11 +81,11 @@ for row in $(echo "${componentCoverageList}" | jq -r '.[] | @base64'); do
   if [ -z $coveragePercentage ]
   then
     echo "Null Covergae %"
-    signature=$(echo $(_jq '.signature'))
+    signature=$(echo $(_jq '.name'))
     
   elif [[ $coveragePercentage < $coveragePercentThreashold ]]
     then
-      signature=$(echo $(_jq '.signature'))
+      signature=$(echo $(_jq '.name'))
   fi
   
    if [ $signature != 0 ]
