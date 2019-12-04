@@ -63,10 +63,10 @@ echo "Previous Snapshot : $previousSnapshot"
 echo "Getting component wise coverage information for the latest scan of Embold for repository with uid $repositoryUid"
 declare -a componentCoverageList=$(curl -s -X GET -H "Authorization: bearer ${eat}" "$emboldUrl/api/v1/repositories/$repositoryUid/coverage/list")
 
-if [[ -z $componentCoverageList  || $componentCoverageList -eq 0 ]]
-then
-	echo "No coverage data found for any component for the latest scan of Embold for repository with uid $repositoryUid"
-fi  
+#if [[ -z $componentCoverageList  || $componentCoverageList -eq 0 ]]
+#then
+#	echo "No coverage data found for any component for the latest scan of Embold for repository with uid $repositoryUid"
+#fi  
 
 declare -a componentsCoverageBelowThreshold
 
@@ -76,18 +76,25 @@ for row in $(echo "${componentCoverageList}" | jq -r '.[] | @base64'); do
   }
   
   coveragePercentage=$(echo $(_jq '.coveragePercentage'))
+  signature=0
   
-  if [ $coveragePercentage < $coveragePercentThreashold ];
-    then
-    componentsCoverageBelowThreshold+=$(echo $(_jq '.signature'))
+  if [ -z $coveragePercentage ]
+  then
+    echo "Null Covergae %"
+    signature=$(echo $(_jq '.signature'))
     
-    #echo "Coverage % check for changed files for repository with repository id $repositoryUid was below configured threshold level of $coveragePercentThreashold. Failing build."
-    #Exit -1 from script would fail the jenkins build.
-    #exit 1
+  elif [[ $coveragePercentage < $coveragePercentThreashold ]]
+    then
+      signature=$(echo $(_jq '.signature'))
   fi
+  
+   if [ $signature != 0 ]
+   then
+     componentsCoverageBelowThreshold+=("$signature")
+   fi
 done
 
-if [[ -z $componentsCoverageBelowThreshold  || $componentsCoverageBelowThreshold -eq 0 ]]
+if [[ -z $componentsCoverageBelowThreshold  || $componentsCoverageBelowThreshold == 0 ]]
 then
 	echo "Coverage % check Passed for all components for repository with repository uid $repositoryUid. Coverage is over $coveragePercentThreashold coverage."
 	
@@ -98,6 +105,5 @@ echo "Coverage % check Failed for following components for repository with repos
 for z in "${componentsCoverageBelowThreshold[@]}"	
 do
 	echo "$z"
-	echo "\n"
 done
-
+exit 1
