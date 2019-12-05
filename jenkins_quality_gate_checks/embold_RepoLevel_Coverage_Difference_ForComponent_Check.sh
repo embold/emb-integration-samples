@@ -2,7 +2,7 @@
 emboldUrl=$1
 repositoryUid=$2
 eat=$3
-coverageDiffPercentThreashold=$4 #The minimum coverage can be 60 (indicating 60% covergae)
+coverageDiffPercentThreshold=$4 #The minimum coverage can be 60 (indicating 60% coverage)
 
 if [ -z $emboldUrl ]
 then
@@ -22,37 +22,36 @@ then
   exit 1
 fi
 
-if [ -z $coverageDiffPercentThreashold ]
+if [ -z $coverageDiffPercentThreshold ]
 then
-  echo "Considering default Coverage difference % Threashold value to be 60 %"
-  coverageDiffPercentThreashold=20;
+  echo "Considering default Coverage difference % Threshold value to be 20 %"
+  coverageDiffPercentThreshold=20;
 fi
 
 # Step 1: Get the latest snapshot
 echo "Getting the latest snapshot for repository with repository uid $repositoryUid"
-allSnapshots=$(curl -s -X GET -H "Authorization: bearer ${eat}" "$emboldUrl/api/v1/repositories/$repositoryUid/snapshots?sortBy=timestamp&orderBy=desc")
-errorCode=$(echo $allSnapshots | jq -r '.error.code')
+HTTP_RESPONSE=$(curl --silent --write-out "HTTPSTATUS:%{http_code}" -X GET -H "Authorization: bearer ${eat}" "$emboldUrl/api/v1/repositories/$repositoryUid/snapshots?sortBy=timestamp&orderBy=desc")
+# extract the body
+HTTP_BODY=$(echo $HTTP_RESPONSE | sed -e 's/HTTPSTATUS\:.*//g')
 
-if [[ $errorCode > 0 ]]
+# extract the status
+HTTP_STATUS=$(echo $HTTP_RESPONSE | tr -d '\n' | sed -e 's/.*HTTPSTATUS://')
+
+#echo "$HTTP_BODY"
+#echo "$HTTP_STATUS"
+
+if [ $HTTP_STATUS != 200 ] && [ $HTTP_STATUS != 204 ]
 then
-  if [[ $errorCode -eq 1001 ]]
-  then
-    echo "Unauthorized Request. Please verify Embold Access Token."    
-  fi
-  
-  if [[ $errorCode -eq 1007 ]]
-  then
-    echo "Forbidden. Please verify repository uid."    
-  fi 
+  echo $HTTP_BODY | jq -r '.error.message'
   exit 1;
 fi
 
-latestSnapshot=$(echo $allSnapshots | jq -r '.[0].id')
-previousSnapshot=$(echo $allSnapshots | jq -r '.[1].id')
+latestSnapshot=$(echo $HTTP_BODY | jq -r '.[0].id')
+previousSnapshot=$(echo $HTTP_BODY | jq -r '.[1].id')
 
 #Step 2: Getting file wise coverage information difference for the provided snapshots for repository
 echo "Getting file wise coverage information difference between Embold scan number $previousSnapshot and  $latestSnapshot for repository with uid $repositoryUid"
-declare -a componentDiffCoverage=$(curl -s -X GET -H "Authorization: bearer ${eat}" "$emboldUrl/api/v1/repositories/$repositoryUid/coverage/difference?snapshot1=$previousSnapshot&snapshot2=$latestSnapshot&orderBy=desc&nodeType=file")
+declare -a componentDiffCoverage=$(curl -s -X GET -H "Authorization: bearer ${eat}" "$emboldUrl/api/v1/repositories/$repositoryUid/coverage/difference?snapshot1=$previousSnapshot&snapshot2=$latestSnapshot&orderBy=asc&nodeType=file")
 
 declare -a componentsCoverageDifferenceBelowThreshold
 
@@ -66,10 +65,10 @@ for row in $(echo "${componentDiffCoverage}" | jq -r '.[] | @base64'); do
   
   if [ -z $coverageDifference ]
   then
-    echo "Null Covergae %"
+    echo "Null coverage %"
     signature=$(echo $(_jq '.name'))
     
-  elif [[ $coverageDifference < $coverageDiffPercentThreashold ]]
+  elif [[ $coverageDifference < $coverageDiffPercentThreshold ]]
     then
       signature=$(echo $(_jq '.name'))
   fi
@@ -82,12 +81,12 @@ done
 
 if [[ -z $componentsCoverageBelowThreshold  || $componentsCoverageBelowThreshold == 0 ]]
 then
-	echo "File wise coverage % difference check between Embold scan number $previousSnapshot and  $latestSnapshot Passed sucessfully. Coverage is over $coverageDiffPercentThreashold coverage."
+	echo "Coverage Quality Gate Passed: Coverage is over $coverageDiffPercentThreshold."
 	
 	exit 0;
 fi
 
-echo "File wise coverage % difference check between Embold scan number $previousSnapshot and  $latestSnapshot Failed for following files : "
+echo "Coverage Quality Gate Failed: Coverage is under $coverageDiffPercentThreshold. Failed for following files : "
 for z in "${componentsCoverageBelowThreshold[@]}"	
 do
 	echo "$z"

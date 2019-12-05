@@ -2,7 +2,7 @@
 emboldUrl=$1
 repositoryUid=$2
 eat=$3
-coveragePercentThreashold=$4 #The minimum coverage can be 60 (indicating 60% covergae)
+coveragePercentThreshold=$4 #The minimum coverage can be 60 (indicating 60% coverage)
 
 if [ -z $emboldUrl ]
 then
@@ -22,38 +22,29 @@ then
   exit 1
 fi
 
-if [ -z $coveragePercentThreashold ]
+if [ -z $coveragePercentThreshold ]
 then
-  echo "Considering default Coverage % Threashold value to be 60 %"
-  coveragePercentThreashold=60;
-fi
-
-
-if ! type "jq" > /dev/null; then
-  echo "jq does not exist"
-  sudo apt install jq
+  echo "Considering default Coverage % Threshold value to be 60 %"
+  coveragePercentThreshold=60;
 fi
 
 # Step 1: Get the latest snapshot
 echo "Getting the latest snapshot for repository with repository uid $repositoryUid"
-allSnapshots=$(curl -s -X GET -H "Authorization: bearer ${eat}" "$emboldUrl/api/v1/repositories/$repositoryUid/snapshots?sortBy=timestamp&orderBy=desc")
-errorCode=$(echo $allSnapshots | jq -r '.error.code')
+HTTP_RESPONSE=$(curl --silent --write-out "HTTPSTATUS:%{http_code}" -X GET -H "Authorization: bearer ${eat}" "$emboldUrl/api/v1/repositories/$repositoryUid/snapshots?sortBy=timestamp&orderBy=desc")
+# extract the body
+HTTP_BODY=$(echo $HTTP_RESPONSE | sed -e 's/HTTPSTATUS\:.*//g')
 
-if [[ $errorCode > 0 ]]
+# extract the status
+HTTP_STATUS=$(echo $HTTP_RESPONSE | tr -d '\n' | sed -e 's/.*HTTPSTATUS://')
+
+#echo "$HTTP_BODY"
+#echo "$HTTP_STATUS"
+
+if [ $HTTP_STATUS != 200 ] && [ $HTTP_STATUS != 204 ]
 then
-  if [[ $errorCode -eq 1001 ]]
-  then
-    echo "Unauthorized Request. Please verify Embold Access Token."    
-  fi
-  
-  if [[ $errorCode -eq 1007 ]]
-  then
-    echo "Forbidden. Please verify repository uid."    
-  fi 
+  echo $HTTP_BODY | jq -r '.error.message'
   exit 1;
 fi
-
-latestSnapshot=$(echo $allSnapshots | jq -r '.[0].id')
 
 #Step 2: Get files diff for current Jenkins build. It should get a list of changed files path.
 CURRENT_COMMIT_ID=$GIT_COMMIT
@@ -71,11 +62,11 @@ then
 fi
 
 #Step 3: Get changed files path.
-declare -a diffFilesPath=$(git diff --diff-filter=AM $LAST_SUCESSFULL_COMMIT...$CURRENT_COMMIT_ID --name-only)
+declare -a diffFilesPath=($(git diff --diff-filter=AM $LAST_SUCESSFULL_COMMIT...$CURRENT_COMMIT_ID --name-only))
 
 if [ ${#diffFilesPath[@]} -eq 0 ]; then
 	echo "Cannot find changed files between previous sucessful commit and current commit. Considering only the current commit changed files for "
-	diffFilesPath=$(git show --name-only {CURRENT_COMMIT_ID})
+	diffFilesPath=($(git show --name-only {CURRENT_COMMIT_ID}))
 fi
 
 #Step 4: From repoid and file path (signature), get the list of NodeIds.
@@ -87,17 +78,17 @@ do
    nodeInfo=$(curl -s -X GET -H "Authorization: bearer ${eat}" "$emboldUrl/api/v1/repositories/$repositoryUid/nodes/details?signature=$i")
    nodeId=$(echo $nodeInfo | jq -r '.nodeid')
    
-   if [-z "$nodeId" ]
+   if [ -z "$nodeId" ]
 	then
 		echo "Node Id is  empty"
 	else
-	changedFilesNodeIds+=("$nodeId")
+		changedFilesNodeIds+=("$nodeId")
 	fi
 done
 
 if [ ${#changedFilesNodeIds[@]} -eq 0 ]; then
-	echo "NodeIds for changed files not not found on the embold instance configured at $emboldUrl for repository uid $repositoryUid. Please verify if the correct repository and/or embold url is configured."
-	exit 1
+	echo "NodeIds for changed files not found on the embold instance configured at $emboldUrl for repository uid $repositoryUid. Please verify if the correct repository and/or embold url is configured."
+	exit 0
 fi
 
 
@@ -136,14 +127,14 @@ done
 #Possibility of failing Jenkins Job based on total coverage %.
 for x in "${actualCoveragePercentValue[@]}"
 do
-  if [ "$x"  -le "$coveragePercentThreashold" ]
+  if [ "$x"  -le "$coveragePercentThreshold" ]
     then
-      echo "Coverage % check for changed files for repository with repository uid $repositoryUid was below configured threshold level of $coveragePercentThreashold. Failing build."
+      echo "Coverage Quality Gate Failed: Coverage % check for changed files for repository with repository uid $repositoryUid was below configured threshold level of $coveragePercentThreshold."
       
       #Exit -1 from script would fail the jenkins build.
 	  exit 1       
   fi
 done
-echo "Coverage % check for changed files for repository with repository id $repositoryUid passes with over $coveragePercentThreashold coverage."
+echo "Coverage Quality Gate Passed: Coverage % check for changed files for repository with repository id $repositoryUid passed with all files having coverage over threshold $coveragePercentThreshold ."
 
 exit 0;
