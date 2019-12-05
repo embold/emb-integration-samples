@@ -51,7 +51,7 @@ previousSnapshot=$(echo $HTTP_BODY | jq -r '.[1].id')
 
 #Step 2: Getting file wise coverage information difference for the provided snapshots for repository
 echo "Getting file wise coverage information difference between Embold scan number $previousSnapshot and  $latestSnapshot for repository with uid $repositoryUid"
-declare -a componentDiffCoverage=$(curl -s -X GET -H "Authorization: bearer ${eat}" "$emboldUrl/api/v1/repositories/$repositoryUid/coverage/difference?snapshot1=$previousSnapshot&snapshot2=$latestSnapshot&orderBy=asc&nodeType=file")
+declare -a componentDiffCoverage=$(curl -s -X GET -H "Authorization: bearer ${eat}" "$emboldUrl/api/v1/repositories/$repositoryUid/coverage/difference?snapshot1=$previousSnapshot&snapshot2=$latestSnapshot&orderBy=desc&nodeType=file")
 
 declare -a componentsCoverageDifferenceBelowThreshold
 
@@ -68,14 +68,16 @@ for row in $(echo "${componentDiffCoverage}" | jq -r '.[] | @base64'); do
     echo "Null coverage %"
     signature=$(echo $(_jq '.name'))
     
-  elif [[ $coverageDifference < $coverageDiffPercentThreshold ]]
+  elif [[ "`echo "${coverageDifference} < ${coverageDiffPercentThreshold}" | bc`" -eq 1 ]]
     then
-      signature=$(echo $(_jq '.name'))
+        signature=$(echo $(_jq '.signature'))
+	      coverageDiff=$(echo $(_jq '.coverageDifference'))
   fi
   
    if [ $signature != 0 ]
    then
-     componentsCoverageBelowThreshold+=("$signature")
+     componentsCoverageBelowThreshold+=("$signature  $coverageDiff%")
+     fileCount=$(expr $fileCount + 1)
    fi
 done
 
@@ -86,10 +88,11 @@ then
 	exit 0;
 fi
 
-echo "Coverage Quality Gate Failed: Coverage is under $coverageDiffPercentThreshold. Failed for following files : "
+echo "Coverage Quality Gate Failed: Coverage is under $coverageDiffPercentThreshold. Failed for following $fileCount files : "
 for z in "${componentsCoverageBelowThreshold[@]}"	
 do
-	echo "$z"
+	index=$(expr $index + 1)
+	echo "$index. $z"
 done
 exit 1;
 
