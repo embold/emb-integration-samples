@@ -74,7 +74,7 @@ for row in $(echo "${componentDiffCoverage}" | jq -r '.[] | @base64'); do
 	      coverageDiff=$(echo $(_jq '.coverageDifference'))
   fi
   
-   if [ $signature != 0 ]
+   if [[ $signature != 0 ]]
    then
      componentsCoverageBelowThreshold+=("$signature  $coverageDiff%")
      fileCount=$(expr $fileCount + 1)
