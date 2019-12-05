@@ -67,14 +67,16 @@ for row in $(echo "${componentCoverageList}" | jq -r '.[] | @base64'); do
     echo "Null coverage %"
     signature=$(echo $(_jq '.name'))
     
-  elif [[ $coveragePercentage < $coveragePercentThreshold ]]
+  elif [[ "`echo "${coveragePercentage} < ${coveragePercentThreshold}" | bc`" -eq 1 ]]
     then
       signature=$(echo $(_jq '.name'))
+	    coveragePercent=$(echo $(_jq '.coveragePercentage'))
   fi
   
    if [ $signature != 0 ]
    then
-     componentsCoverageBelowThreshold+=("$signature")
+     componentsCoverageBelowThreshold+=("$signature  $coveragePercent%")
+     componentCount=$(expr $componentCount + 1)
    fi
 done
 
@@ -85,9 +87,10 @@ then
 	exit 0;
 fi
 
-echo "Coverage Quality Gate Failed: Coverage % check Failed for following components for repository with repository id $repositoryUid : "
+echo "Coverage Quality Gate Failed: Coverage % check Failed for following $componentCount components for repository with repository id $repositoryUid : "
 for z in "${componentsCoverageBelowThreshold[@]}"	
 do
-	echo "$z"
+	index=$(expr $index + 1)
+	echo "$index. $z"
 done
 exit 1
