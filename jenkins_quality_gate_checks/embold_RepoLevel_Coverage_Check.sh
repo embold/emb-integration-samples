@@ -29,7 +29,7 @@ then
 fi
 
 # Step 1: Get the latest snapshot
-echo "Getting the latest snapshot for repository with repository uid $repositoryUid"
+# echo "Getting the latest snapshot for repository with repository uid $repositoryUid"
 HTTP_RESPONSE=$(curl --silent --write-out "HTTPSTATUS:%{http_code}" -X GET -H "Authorization: bearer ${eat}" "$emboldUrl/api/v1/repositories/$repositoryUid/snapshots?sortBy=timestamp&orderBy=desc")
 # extract the body
 HTTP_BODY=$(echo $HTTP_RESPONSE | sed -e 's/HTTPSTATUS\:.*//g')
@@ -70,7 +70,7 @@ else
   percentageCoverage=$(awk "BEGIN { pc=100*${totalLocOfCoveredMethods}/${totalLocOfMethods}; i=int(pc); print (pc-i<0.5)?i:i+1 }")    
 fi
 
-if [ "$percentageCoverage"  -le "$coveragePercentThreshold" ]
+if [ "$percentageCoverage"  -lt "$coveragePercentThreshold" ]
 then
   echo "Coverage Quality Gate Failed: Coverage % check for repository with repository uid $repositoryUid is $percentageCoverage% which is below configured threshold level of $coveragePercentThreshold. Failing the build."
   exit 1       
