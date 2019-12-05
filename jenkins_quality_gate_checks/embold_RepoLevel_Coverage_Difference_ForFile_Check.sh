@@ -66,7 +66,7 @@ for row in $(echo "${componentDiffCoverage}" | jq -r '.[] | @base64'); do
   if [ -z $coverageDifference ]
   then
     echo "Null coverage %"
-    signature=$(echo $(_jq '.name'))
+    signature=$(echo $(_jq '.signature'))
     
   elif [[ "`echo "${coverageDifference} < ${coverageDiffPercentThreshold}" | bc`" -eq 1 ]]
     then
