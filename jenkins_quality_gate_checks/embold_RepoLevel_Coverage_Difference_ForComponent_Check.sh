@@ -28,12 +28,6 @@ then
   coverageDiffPercentThreashold=20;
 fi
 
-
-if ! type "jq" > /dev/null; then
-  echo "jq does not exist"
-  sudo apt install jq
-fi
-
 # Step 1: Get the latest snapshot
 echo "Getting the latest snapshot for repository with repository uid $repositoryUid"
 allSnapshots=$(curl -s -X GET -H "Authorization: bearer ${eat}" "$emboldUrl/api/v1/repositories/$repositoryUid/snapshots?sortBy=timestamp&orderBy=desc")
@@ -58,7 +52,7 @@ previousSnapshot=$(echo $allSnapshots | jq -r '.[1].id')
 
 #Step 2: Getting file wise coverage information difference for the provided snapshots for repository
 echo "Getting file wise coverage information difference between Embold scan number $previousSnapshot and  $latestSnapshot for repository with uid $repositoryUid"
-declare -a componentDiffCoverage=$(curl -s -X GET -H "Authorization: bearer ${eat}" "$emboldUrl/api/v1/repositories/$repositoryUid/coverage/difference?snapshot1=$previousSnapshot&snapshot2=$latestSnapshot&orderBy=asc&nodeType=file")
+declare -a componentDiffCoverage=$(curl -s -X GET -H "Authorization: bearer ${eat}" "$emboldUrl/api/v1/repositories/$repositoryUid/coverage/difference?snapshot1=$previousSnapshot&snapshot2=$latestSnapshot&orderBy=desc&nodeType=file")
 
 declare -a componentsCoverageDifferenceBelowThreshold
 
