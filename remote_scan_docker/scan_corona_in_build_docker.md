@@ -19,6 +19,7 @@ This article assumes you already have a docker image which you use to build your
 The modified image will then be able to run an Embold scan after your usual build, from within the container.
 
 In this example, we will build the curl repository: https://github.com/curl/curl.git
+
 This project uses `cmake` and `make` to build from source, so we make sure those tools are in our docker image
 
 ## Build the custom Docker image (Your build tools + Embold components)
