@@ -62,13 +62,16 @@ RUN apt-get update -y \
 # Additional Embold-specific components
 ########################################
 
-# JRE - if your image already has JRE >= 8 <= 11, you don't need this step
+# Required: JRE - if your image already has JRE >= 8 <= 11, you don't need this step
 RUN apt-get install default-jre -y
 
-# Required for embold trace tool (gamma-trace) to monitor the build process
+# Required: For embold trace tool (gamma-trace) to monitor the build process
 RUN apt-get install strace -y
 
-# This is the embold analyser archive file (a.k.a corona)
+# Optional: If available, Embold also analysis code evolution to calculate risk score for source files
+RUN apt-get install git -y
+
+# Required: This is the embold analyser archive file (a.k.a corona)
 ADD corona-archive.tar.gz /embold
 ```
 
@@ -163,10 +166,12 @@ With our custom image built (build system + Embold components), we can now confi
     docker run --security-opt seccomp:unconfined -v /home/johndoe/docker_build:/docker_build fabrikam/builder:1.0 sh /docker_build/curl_scan/build.sh
 
     # Runs Embold scan in the Embold (corona) container, and consumes the generated compile_commands.json + source code
-    docker run -e CORONA_HOME=/embold/corona -e CORONA_LOG=/docker_build/curl_scan/embold_logs -e ANALYSIS_MODE=remote -v /home/johndoe/docker_build:/docker_build fabrikam/builder:1.0 sh /docker_build/curl_scan/embold-scan.sh
+    docker run -e CORONA_HOME=/embold/corona -e CORONA_LOG=/docker_build/curl_scan/embold_logs -e ANALYSIS_MODE=remote -e ANALYSER_XMX=-Xmx3072m -v /home/johndoe/docker_build:/docker_build fabrikam/builder:1.0 sh /docker_build/curl_scan/embold-scan.sh
     ```
 
     **Note:** The option `--security-opt seccomp:unconfined` is necessary for gamma-trace to work with the build while running `build.sh`
+
+    **Note:** You may need to tweak the `ANALYSER_XMX` value in the Embold scan command to a higher number (e.g. 6072m) if you are scanning more than 1 million LOC, and 8 to 12 Gb for code size > 1 million LOC. And in that case you would also need to increase memory limit of the container (e.g. `docker run -m8GB <rest of the args`)
 
 ### Run the scan
 
