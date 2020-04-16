@@ -65,7 +65,7 @@ RUN apt-get update -y \
 # JRE - if your image already has JRE >= 8 <= 11, you don't need this step
 RUN apt-get install default-jre -y
 
-# Required for embold trace tool (gamm-trace) to monitor the build process
+# Required for embold trace tool (gamma-trace) to monitor the build process
 RUN apt-get install strace -y
 
 # This is the embold analyser archive file (a.k.a corona)
