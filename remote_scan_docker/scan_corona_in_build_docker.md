@@ -94,13 +94,20 @@ With our custom image built (build system + Embold components), we can now confi
 
 1. Prepare a top-level directory (e.g. `/home/johndoe/docker_build/curl_scan`)
 
-2. Now create a **Project** in Embold which will hold the repository we want to scan. More info here: <https://docs.embold.io/projects-repositories/#create-a-project>
+    **Note:** We will map the directory `/home/johndoe/docker_build` to `/docker_build` while running the docker container, with the `-v` option
+
+2. Clone the source somewhere inside this directory, e.g. `/home/johndoe/docker_build/curl_scan/curl`
+
+3. Now create a **Project** in Embold which will hold the repository we want to scan. More info here: <https://docs.embold.io/projects-repositories/#create-a-project>
+
 4. Next, link a new **Remote Repository** to this Project and give it a name, e.g. `curl`. More info here: <https://docs.embold.io/projects-repositories/#link-a-repository>
     
     Make sure the **Repository Type** is **Remote** and the Language is set to **C/C++**
+
 5. Download the repository configuration (`repository-configuration.json`) of this newly-created repository on the host where we will run the scan. In our example, copy it to: `/home/johndoe/docker_build/curl_scan`
 
     **Note:** You can download the JSON by selecting the **"..."** option on the **Remote Repository** we just created, and then the "Download repository configuration" option
+
 6. Modify the following elements of the repository-configuration.json:
     - `gammaAccess/url`: Your Embold Server Url (e.g. `http://<embold_host>:3000`)
     - `gammaAccess/userName`: Your Embold username
@@ -140,7 +147,7 @@ With our custom image built (build system + Embold components), we can now confi
 
     This script launches the Embold scan after the build is done. The Embold scanner will pickup the `compile_commands.json` from the source directory where we created it during the build step with `gamma-trace`
 
-7. Putting it all together
+8. Putting it all together
 
     Now create a wrapper script which you can launch from the host. This script will launch the above 3 scripts in our custom `fabrikam/builder` container:
 
