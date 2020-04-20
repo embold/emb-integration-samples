@@ -28,6 +28,7 @@ This project uses `cmake` and `make` to build from source, so we make sure those
 
 - You have a docker image to build your software with all the necessary tools.
 - You have downloaded the Embold Analyser (corona-archive.tar.gz) from your embold.io account (version 1.7.8.0 or later as of this writing)
+- Your build image is one of: **Ubuntu 16, Ubuntu 18, CentOS/RHEL 7** (You would be running Embold Analyser inside this container, and it supports one of these platforms)
 
 In our example for curl, the Dockerfile looks like this (assuming an Ubuntu 18 image supported by Embold):
 
