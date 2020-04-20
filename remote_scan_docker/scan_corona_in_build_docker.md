@@ -142,7 +142,7 @@ With our custom image built (build system + Embold components), we can now confi
 
     **The next (and important) step** invokes `gamma-trace` followed by the actual build command (`make` in this case). `gamma-trace` monitors the build, and creates the `compile_commands.json` at `/docker_build/curl_scan/curl`
 
-- **Scan script (`scan.sh`)**
+- **Scan script (`embold-scan.sh`)**
 
     ```sh
     /embold/corona/scanboxwrapper/bin/gammascanner -c /docker_build/curl_scan/repository-configuration.json
