@@ -18,10 +18,15 @@ The typical setup for this is as shown below:
 
 
 ### Pre-requisites
-- Access to the **Embold Corona** archive file (corona-archive.tar.gz version 1.7.8.0 or later, as of this writing)
+- Access to the **Embold Corona** archive file (corona-archive.tar.gz version 1.8.1.0 or later, as of this writing)
 - Embold Server is setup in your environment and you have access to create a Project and Repository in Embold
 - Embold Server ports (default 3000 for web and 5432 for data) are accessible from the host where the scan will run
 - JRE 8 or later is installed on the Windows 10 host where we will run the scan
+- For C# scans: .Net Core 3.1 is needed
+    - You can check if its installed with this command:
+    - `dotnet --version`
+    - The above command should return 3.1 or later
+    - If it is not installed, follow steps here to install it: <https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-3.1.201-windows-x64-installer>
 
 ### Setup and Configuration
 In this example, we will scan MSBuild (C#) cloned from here: <https://github.com/microsoft/msbuild.git>
