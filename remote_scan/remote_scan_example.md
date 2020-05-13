@@ -27,6 +27,7 @@ The typical setup for this is as shown below:
     - `dotnet --version`
     - The above command should return 3.1 or later
     - If it is not installed, follow steps here to install it: <https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-3.1.201-windows-x64-installer>
+- It is recommended that the code you want to scan can be built successfully on the host which will run the scan. This ensures all the dependencies are available when the scan runs
 
 ### Setup and Configuration
 In this example, we will scan MSBuild (C#) cloned from here: <https://github.com/microsoft/msbuild.git>
