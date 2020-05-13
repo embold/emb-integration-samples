@@ -21,7 +21,7 @@ The typical setup for this is as shown below:
 - Access to the **Embold Corona** archive file (corona-archive.tar.gz version 1.7.8.0 or later, as of this writing)
 - Embold Server is setup in your environment and you have access to create a Project and Repository in Embold
 - Embold Server ports (default 3000 for web and 5432 for data) are accessible from the host where the scan will run
-- JRE 8 or later is installed on the Windows 10 where we will run the scan
+- JRE 8 or later is installed on the Windows 10 host where we will run the scan
 
 ### Setup and Configuration
 In this example, we will scan MSBuild (C#) cloned from here: <https://github.com/microsoft/msbuild.git>
