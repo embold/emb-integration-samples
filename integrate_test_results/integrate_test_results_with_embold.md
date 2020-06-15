@@ -84,6 +84,8 @@ Note that we selected the "Embold" credentials we just created, and then specifi
 
 **Note:** You can copy the repository UID from the Embold Server by selecting the **"..."** option on the **Remote Repository** we just created, and then the "More information" option
 
+Make sure you use the **Use Analysis configuration from Gamma** option, which works with most default configuration (e.g. it looks for the usual locations where JUnit and Jacoco data is published)
+
 10. Save the Jenkins job configuration and run the build
 If all goes well, you should see the following log towards the end of the build:
 
