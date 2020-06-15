@@ -106,4 +106,4 @@ The coverage info (line / branch coverage) is also overlaid in the component exp
 ![Code Coverage Details](img/embold_cov_details.png)
 
 
-12. For more info: docs.embold.io
+12. For more info: https://docs.embold.io
