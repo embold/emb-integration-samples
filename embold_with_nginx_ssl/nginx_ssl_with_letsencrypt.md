@@ -1,14 +1,16 @@
 # How to configure Nginx with SSL as a reverse proxy for Embold
 
-By default, Embold comes with its own built in web server, which listens on port 3000. This is good to get started. Once you have real production data going to your host, though, it’s a good idea to either configure Nginx as a reverse proxy on top of Embold
-This article explains how to do setup and configure nginx for Embold, and enable SSL powered by Let's Encrypt.
+By default, Embold comes with its own built-in web server, which listens on port 3000. This is good to get started. Once you have real production data going to your host, though, it’s a good idea to configure nginx (or any other proxy) as a reverse proxy on top of Embold and enable SSL.
+
+
+This article explains how to setup and configure nginx for Embold, and enable SSL powered by Let's Encrypt.
 
 ## Pre-requisites
-- This article assumes you have already installed Embold docker instance (version 1.8.3.0 or higher as of this writing) and have a valid and activated license)
+- This article assumes you have already installed Embold server instance (version 1.8.3.0 or higher as of this writing) and have a valid and activated license)
 - If you haven't yet installed Embold already, [Request a trial account](https://embold.io/on-premise-request)
 - You are running the Embold server via docker or natively on an Ubuntu host
+- You have a domain name assigned to the host running Embold (in this example we will use `scantest.emboldci.dev`)
 - This article assumes your Embold server is running on port 3000 (the default port)
-
 
 ## Install and Configure Nginx
 
@@ -18,11 +20,11 @@ Run the following commands to install nginx:
 sudo apt-get update
 sudo apt-get install nginx
 ```
-You should be able to see this page:
+You should now be able to see this page:
 
 <img src="img/nginx.png" width="70%"/>
 
-- Now create a new configuration file at `/etc/nginx/sites-available` for your domain (in my case it is scantest.emboldci.dev).
+- Now create a new configuration file at `/etc/nginx/sites-available` for your domain (in our example it is `scantest.emboldci.dev`).
 - Add the following content to this file (`/etc/nginx/sites-available/scantest.emboldci.dev`):
 
 ```nginx
