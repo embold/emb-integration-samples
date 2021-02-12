@@ -43,7 +43,7 @@ In this example, we will scan Apache Kafka (Java) cloned from here: <https://git
     - `gammaAccess/url`: Your Embold Server Url (e.g. `http://<embold_host>:3000`)
     - `gammaAccess/userName`: Your Embold username
     - `gammaAccess/password`: Your Embold password. If you are using **Embold Access Token**, change the field name `password` to `token` and paste the token instead of password (More info on Embold Access Token here: <https://docs.embold.io/gamma-access-token-gat/#gamma-access-token-gat>)
-    - `repositories/dataDir`:  (/home/johndoe/kafka_scan/data) 
+    - `repositories/dataDir`:  `(/home/johndoe/kafka_scan/data)`
     - `repositories/sources/baseDir`: Set it to the source root where you cloned Kafka sources. (/home/johndoe/kafka_scan/kafka)
 
 7. This script just launches the Embold Local scan and specifies the repository-configuration.json we just created.
