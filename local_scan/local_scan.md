@@ -111,10 +111,10 @@ So our above `embold-scan.sh` will look like the following:
 
     ```sh
     /home/johndoe/corona/cxxparser/bin/embold-trace <my build command> <my build command args>
-    /home/johndoe/corona/scanboxwrapper/bin/gammascanner -la -od ./out.csv -c /home/johndoe/kafka_scan/scripts/repository-configuration.json
+    /home/johndoe/corona/scanboxwrapper/bin/gammascanner -la -od ./out -c /home/johndoe/kafka_scan/scripts/repository-configuration.json
     
     -la           -  local scan
-    -od <file>    -  local path for the output csv.
+    -od <file>    -  local directory path for the output csv.
     
     ```
 
