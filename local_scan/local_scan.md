@@ -23,7 +23,7 @@ This article explains how to do it with a few commands and scripts, with an exam
 This section applies to running a Java scan or for that matter any other supported language other than C/C++ (see the **"Run a C/C++ scan"** section  for more details)
 
 ### Pre-requisites
-- Access to the **Embold Corona** server (v1.8.9.0 or later, as of this writing)
+- Access to the **Embold** server (v1.8.9.0 or later, as of this writing)
 - Embold Server is setup in your environment and you have access to create a Project and Repository in Embold
 - Embold Server port (default 3000 for web) are accessible from the developer's machine.
 - Corona Package
