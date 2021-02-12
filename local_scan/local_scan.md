@@ -96,9 +96,6 @@ At this point, we have successfully run an Embold scan and published results to 
 ## Run a C/C++ scan
 This section adds some specifics if you want to run a C/C++ local scan. We recommend running any C/C++ scan with the following 2 steps:
 1. Monitor your build with the Embold trace tool (`embold-trace`), to produce a compilation database (`compile_commands.json`).This process captures the compilation calls including header paths, switches, pre-processor definitions, etc. (as the compiler sees it), which we then use while running the actual scan
- 
-### Local Scan Advantages
-   Integrating Embold trace tool with the build allows for faster scan times, as the developer would generally modify only a few files within the code-base, in a single commit. Incrementally making changes and building (eg.`make`) will result in incremental compilation, as a result it will create a smaller compilation database and hence faster local analysis, with the output containing issues only from the files that were last modified. However, please note that resetting the build, such as running `make clean` will trigger full analysis on the next scan.
 
 2. Run the Embold scan by using the generated `compile_commands.json` and the source code.
 
@@ -114,8 +111,13 @@ So our above `embold-scan.sh` will look like the following (assuming the codebas
     /home/johndoe/corona/cxxparser/bin/embold-trace -o /home/johndoe/c-project/ <build command> <build command args>
     /home/johndoe/corona/scanboxwrapper/bin/gammascanner -la -od ./out -c /home/johndoe/c-project/scripts/repository-configuration.json
 
+
 ### Run the scan
 Same as the above [Java's Run the scan](https://github.com/embold/emb-integration-samples/blob/local_scan/local_scan/local_scan.md#run-the-scan) section.
+
+
+### Local Scan Advantages
+   Integrating Embold trace tool with the build allows for faster scan times, as the developer would generally modify only a few files within the code-base, in a single commit. Incrementally making changes and building (eg.`make`) will trigger incremental compilation, as a result it will create a smaller compilation database and hence faster local analysis, with the output containing issues only from the files that were last modified. However, please note that resetting the build, such as running `make clean` will trigger full analysis on the next scan.
 
 ### Note
 Embold trace tool should be fed the actual build compilation command (make, ninja, msbuild, gcc, etc) and not the build generators such cmake, meson, autotools. The build generators will have to be run separately first.
