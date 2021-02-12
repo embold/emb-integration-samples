@@ -106,7 +106,7 @@ There are different ways to build your code, on various platforms, build systems
 
 
 ### Setup and Configuration
-The setup and configuration is same as the [above Java scan]<https://github.com/embold/emb-integration-samples/blob/local_scan/local_scan/local_scan.md#setup-and-configuration>, except we will have to add an extra step, just before the scan.
+The setup and configuration is same as the [above Java scan](https://github.com/embold/emb-integration-samples/blob/local_scan/local_scan/local_scan.md#setup-and-configuration), except we will have to add an extra step, just before the scan.
 So our above `embold-scan.sh` will look like the following:
 
     ```sh
@@ -119,7 +119,7 @@ So our above `embold-scan.sh` will look like the following:
     ```
 
 ### Run the scan
-Same as the above [Java's Run the scan]<https://github.com/embold/emb-integration-samples/blob/local_scan/local_scan/local_scan.md#run-the-scan> section.
+Same as the above [Java's Run the scan](https://github.com/embold/emb-integration-samples/blob/local_scan/local_scan/local_scan.md#run-the-scan) section.
 
 ### Note
 Embold trace tool should be fed the actual build compilation command (make, ninja, msbuild, gcc, etc) and not the build generators such cmake, meson, autotools. The build generators will have to be run separately first.
