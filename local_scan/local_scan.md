@@ -20,7 +20,7 @@ This article explains how to do it with a few commands and scripts, with an exam
 
 
 ## Run a Java scan
-This section applies to running a Java scan or for that matter any other supported language other than C/C++ (see the **"Run a C/C++ scan"** section  for more details)
+This section applies to running a Java scan or for that matter any other supported language other than C/C++ (see the [Run a C/C++ scan](https://github.com/embold/emb-integration-samples/blob/local_scan/local_scan/local_scan.md#run-the-scan) section  for more details)
 
 ### Pre-requisites
 - Access to the **Embold** server (v1.8.9.0 or later, as of this writing)
