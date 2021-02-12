@@ -112,8 +112,8 @@ The setup and configuration is same as the [above Java scan](https://github.com/
 So our above `embold-scan.sh` will look like the following (assuming the codebase is `/home/johndoe/c-project/` and we use `make`)
 
 
-    ```sh
-    /home/johndoe/corona/cxxparser/bin/embold-trace -o /home/johndoe/c-project/ make
+    ```
+    /home/johndoe/corona/cxxparser/bin/embold-trace -o /home/johndoe/c-project/ <build command> <build command args>
     /home/johndoe/corona/scanboxwrapper/bin/gammascanner -la -od ./out -c /home/johndoe/c-project/scripts/repository-configuration.json
     ```
 
