@@ -26,7 +26,7 @@ This section applies to running a Java scan or for that matter any other support
 - Access to the **Embold** server (v1.8.9.0 or later, as of this writing)
 - Embold Server is setup in your environment and you have access to create a Project and Repository in Embold
 - Embold Server port (default 3000 for web) are accessible from the developer's machine.
-- Corona Archive (Log into your account at [embold.io](https://embold.io/) and download the package from `Releases/embold_<Version>/Corona`).
+- Corona Archive (Log into your account at [embold.io](https://embold.io/) and download the package from `Releases->embold_<Version>->Corona`).
 
 ### Setup and Configuration
 In this example, we will scan Apache Kafka (Java) cloned from here: <https://github.com/apache/kafka.git>
@@ -117,10 +117,10 @@ Same as the above [Java's Run the scan](https://github.com/embold/emb-integratio
 
 
 ### Local Scan Advantages
-   Integrating Embold trace tool with the build allows for faster scan times, as the developer would generally modify only a few files within the code-base, in a single commit. Incrementally making changes and building (eg.`make`) will trigger incremental compilation, as a result it will create a smaller compilation database and hence faster local analysis, with the output containing issues only from the files that were last modified. However, please note that resetting the build, such as running `make clean` will trigger full analysis on the next scan.
+   Integrating Embold trace tool with the build allows for faster scan times, as the developer would generally modify only a few files within the code-base, in a single task/commit. Incrementally making changes and building (eg.`make`) will trigger incremental compilation, as a result it will create a smaller compilation database and hence faster local analysis. The output csv will contain issues only from the files that were last modified. However, please note that resetting the build, such as running `make clean` will trigger full analysis on the next scan.
 
 ### Note
-Embold trace tool should be fed the actual build compilation command (make, ninja, msbuild, gcc, etc) and not the build generators such cmake, meson, autotools. The build generators will have to be run separately first.
+Embold trace tool should be fed the actual build compilation command (make, ninja, msbuild, gcc, etc) and not the build generators such cmake, meson, autotools. The build generators will have to be run separately first (which is generally a one-time activity).
 
 
 
