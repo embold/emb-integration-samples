@@ -115,11 +115,6 @@ So our above `embold-scan.sh` will look like the following (assuming the codebas
     /home/johndoe/corona/cxxparser/bin/embold-trace -o /home/johndoe/c-project/ <my build command> <my build command args>
     /home/johndoe/corona/scanboxwrapper/bin/gammascanner -la -od ./out -c /home/johndoe/c-project/scripts/repository-configuration.json
     ```
-    
-    ```
-    -la           -  local scan
-    -od <file>    -  local directory path for the output csv.
-    ```
 
 ### Run the scan
 Same as the above [Java's Run the scan](https://github.com/embold/emb-integration-samples/blob/local_scan/local_scan/local_scan.md#run-the-scan) section.
