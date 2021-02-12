@@ -98,7 +98,7 @@ This section adds some specifics if you want to run a C/C++ local scan. We recom
 1. Monitor your build with the Embold trace tool (`embold-trace`), to produce a compilation database (`compile_commands.json`).This process captures the compilation calls including header paths, switches, pre-processor definitions, etc. (as the compiler sees it), which we then use while running the actual scan
  
 ### Local Scan Advantages
-   Integrating Embold trace tool with the build allows for faster scan times, as the developer would generally modify only a few files within the code-base, in a single commit. Incrementally making changes and building (eg.`make`) will result in incremental compilation, as a result it will create a smaller compilation database and hence faster local analysis, with the output containing issues only from the files that were last modified. 
+   Integrating Embold trace tool with the build allows for faster scan times, as the developer would generally modify only a few files within the code-base, in a single commit. Incrementally making changes and building (eg.`make`) will result in incremental compilation, as a result it will create a smaller compilation database and hence faster local analysis, with the output containing issues only from the files that were last modified. However, please note that resetting the build, such as running `make clean` will trigger full analysis on the next scan.
 
 2. Run the Embold scan by using the generated `compile_commands.json` and the source code.
 
@@ -109,7 +109,7 @@ There are different ways to build your code, on various platforms, build systems
 
 ### Setup and Configuration
 The setup and configuration is same as the [above Java scan](https://github.com/embold/emb-integration-samples/blob/local_scan/local_scan/local_scan.md#setup-and-configuration), except we will have to add an extra step in the beginning, which is to generate the compilation database at in the `baseDir`.
-So our above `embold-scan.sh` will look like the following (assuming the codebase (`baseDir`) is `/home/johndoe/c-project/`)
+So our above `embold-scan.sh` will look like the following (assuming the codebase — `baseDir` is `/home/johndoe/c-project/`)
 
     /home/johndoe/corona/cxxparser/bin/embold-trace -o /home/johndoe/c-project/ <build command> <build command args>
     /home/johndoe/corona/scanboxwrapper/bin/gammascanner -la -od ./out -c /home/johndoe/c-project/scripts/repository-configuration.json
