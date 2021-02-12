@@ -44,7 +44,7 @@ In this example, we will scan Apache Kafka (Java) cloned from here: <https://git
     - `gammaAccess/userName`: Your Embold username
     - `gammaAccess/password`: Your Embold password. If you are using **Embold Access Token**, change the field name `password` to `token` and paste the token instead of password (More info on Embold Access Token here: <https://docs.embold.io/gamma-access-token-gat/#gamma-access-token-gat>)
     - `repositories/dataDir`:  `(/home/johndoe/kafka_scan/data)`
-    - `repositories/sources/baseDir`: Set it to the source root where you cloned Kafka sources. (/home/johndoe/kafka_scan/kafka)
+    - `repositories/sources/baseDir`: Set it to the source root where you cloned Kafka sources. (`/home/johndoe/kafka_scan/kafka`)
 
 7. This script just launches the Embold Local scan and specifies the repository-configuration.json we just created.
 
@@ -94,7 +94,7 @@ At this point, we have successfully run an Embold scan and published results to 
 
 ## Run a C/C++ scan
 This section adds some specifics if you want to run a C/C++ local scan. We recommend running any C/C++ scan with the following 2 steps:
-1. Monitor your build with the Embold trace tool (`gamma-trace`), to produce a compilation database (`compile_commands.json`).
+1. Monitor your build with the Embold trace tool (`embold-trace`), to produce a compilation database (`compile_commands.json`).
  
     This process captures the compilation calls including header paths, switches, pre-processor definitions, etc. (as the compiler sees it), which we then use while running the actual scan. Integrating Embold trace tool with the build allows for faster scan times, as the developer would generally modify only a few files within the code-base, in a single commit. This results in a much smaller compilation database and hence faster local analysis.
 
