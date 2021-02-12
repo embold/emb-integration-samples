@@ -1,5 +1,5 @@
 # Embold Local Scan
-Embold Local Scan allows the developer to locally scan the code and get immediate feedback, before committing to the remote. It does not require any network connectivity during or after the scan (except for the initial authentication with the embold server). The results are published locally to a csv.
+Embold Local Scan allows the developer to locally scan the code and get immediate feedback, before committing to the remote. The results are published locally to a csv.
 
 This article explains how to do it with a few commands and scripts, with an example Java scan.
 
@@ -26,7 +26,7 @@ This section applies to running a Java scan or for that matter any other support
 - Access to the **Embold** server (v1.8.9.0 or later, as of this writing)
 - Embold Server is setup in your environment and you have access to create a Project and Repository in Embold
 - Embold Server port (default 3000 for web) are accessible from the developer's machine.
-- Corona Package
+- Corona Archive (Log into your account at [embold.io](https://embold.io/) and download the package from `Releases/embold_<Version>/Corona`).
 
 ### Setup and Configuration
 In this example, we will scan Apache Kafka (Java) cloned from here: <https://github.com/apache/kafka.git>
@@ -34,34 +34,35 @@ In this example, we will scan Apache Kafka (Java) cloned from here: <https://git
 1. Prepare a top-level directory for holding the source to be scanned and the scan scripts (e.g. `/home/johndoe/kafka_scan`)
 2. Clone the source somewhere inside this directory, e.g. `/home/johndoe/kafka_scan/kafka`
 3. Now create a **Project** in Embold which will hold the repository we want to scan. More info here: <https://docs.embold.io/projects-repositories/#create-a-project>
-4. Next, link a new **Remote Repository** to this Project and give it a name, e.g. `Kafka`. More info here: <https://docs.embold.io/projects-repositories/#link-a-repository>
-    Make sure the **Repository Type** is **Remote** and the Language is set to **Java**
+4. Next, link a new **Remote Repository** to this Project and give it a name, e.g. `Kafka`. More info here: <https://docs.embold.io/projects-repositories/#link-a-repository>https://embold.io/
+ and downloadArchive Make sure the **Repository Type** is **Remote** and the Language is set to **Java**
 5. Download the repository configuration (`repository-configuration.json`) of this newly-created repository on the host where we will run the scan. In our example, copy it to: `/home/johndoe/kafka_scan/scripts`
 
     **Note:** You can download the JSON by selecting the **"..."** option on the **Remote Repository** we just created, and then the "Download repository configuration" option
+    
 6. Modify the following elements of the repository-configuration.json:
     - `gammaAccess/url`: Your Embold Server Url (e.g. `http://<embold_host>:3000`)
-    - `gammaAccess/userName`: Your Embold username
-    - `gammaAccess/password`: Your Embold password. If you are using **Embold Access Token**, change the field name `password` to `token` and paste the token instead of password (More info on Embold Access Token here: <https://docs.embold.io/gamma-access-token-gat/#gamma-access-token-gat>)
+    - `Replace the fields `userName` and `password` with `token` and paste the token (More info on Embold Access Token here: <https://docs.embold.io/gamma-access-token-gat/#gamma-access-token-gat>)
     - `repositories/dataDir`:  `(/home/johndoe/kafka_scan/data)`
     - `repositories/sources/baseDir`: Set it to the source root where you cloned Kafka sources. (`/home/johndoe/kafka_scan/kafka`)
-
+    
+      **Note:** You will notice, we still need to configure/modify a few details pertaining to remote scan (as stated in the above steps).This is set to be removed in our upcoming releases.
+      
 7. This script just launches the Embold Local scan and specifies the repository-configuration.json we just created.
 
     Create a file `embold-scan.sh` under `/home/johndoe/kafka_scan/scripts` and add this line:
 
     ```sh
     /home/johndoe/corona/scanboxwrapper/bin/gammascanner -la -od ./out.csv -c /home/johndoe/kafka_scan/scripts/repository-configuration.json
-    
+    ```
+    ```
     -la           -  local scan
     -od <file>    -  local path for the output csv.
-    
     ```
 8. The issues will be published to the local output csv.
 
 ### Run the scan
 
-With the setup done, we can now launch the Embold Corona container from host
 - Add some necessary environment variables, and execute Embold scan command:
 
     ```sh
@@ -94,9 +95,10 @@ At this point, we have successfully run an Embold scan and published results to 
 
 ## Run a C/C++ scan
 This section adds some specifics if you want to run a C/C++ local scan. We recommend running any C/C++ scan with the following 2 steps:
-1. Monitor your build with the Embold trace tool (`embold-trace`), to produce a compilation database (`compile_commands.json`).
+1. Monitor your build with the Embold trace tool (`embold-trace`), to produce a compilation database (`compile_commands.json`).This process captures the compilation calls including header paths, switches, pre-processor definitions, etc. (as the compiler sees it), which we then use while running the actual scan
  
-    This process captures the compilation calls including header paths, switches, pre-processor definitions, etc. (as the compiler sees it), which we then use while running the actual scan. Integrating Embold trace tool with the build allows for faster scan times, as the developer would generally modify only a few files within the code-base, in a single commit. This results in a much smaller compilation database and hence faster local analysis.
+### Local Scan Advantages
+    . Integrating Embold trace tool with the build allows for faster scan times, as the developer would generally modify only a few files within the code-base, in a single commit. Incrementally making changes and building (eg.`make`) will result in incremental compilation, as a result it will create a smaller compilation database and hence faster local analysis, with the output containing issues only from the files that were last modified. 
 
 2. Run the Embold scan by using the generated `compile_commands.json` and the source code.
 
@@ -110,12 +112,13 @@ The setup and configuration is same as the [above Java scan](https://github.com/
 So our above `embold-scan.sh` will look like the following (assuming the codebase is `/home/johndoe/c-project/`)
 
     ```sh
-    /home/johndoe/corona/cxxparser/bin/embold-trace <my build command> <my build command args>
+    /home/johndoe/corona/cxxparser/bin/embold-trace -o /home/johndoe/c-project/ <my build command> <my build command args>
     /home/johndoe/corona/scanboxwrapper/bin/gammascanner -la -od ./out -c /home/johndoe/c-project/scripts/repository-configuration.json
+    ```
     
+    ```
     -la           -  local scan
     -od <file>    -  local directory path for the output csv.
-    
     ```
 
 ### Run the scan
