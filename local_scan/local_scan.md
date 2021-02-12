@@ -42,7 +42,7 @@ In this example, we will scan Apache Kafka (Java) cloned from here: <https://git
     
 6. Modify the following elements of the repository-configuration.json:
     - `gammaAccess/url`: Your Embold Server Url (e.g. `http://<embold_host>:3000`)
-    - `Replace the fields `userName` and `password` with `token` and paste the token (More info on Embold Access Token here: <https://docs.embold.io/gamma-access-token-gat/#gamma-access-token-gat>)
+    -  Replace the fields `userName` and `password` with `token` and paste the token (More info on Embold Access Token here: <https://docs.embold.io/gamma-access-token-gat/#gamma-access-token-gat>)
     - `repositories/dataDir`:  `(/home/johndoe/kafka_scan/data)`
     - `repositories/sources/baseDir`: Set it to the source root where you cloned Kafka sources. (`/home/johndoe/kafka_scan/kafka`)
     
