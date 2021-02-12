@@ -1,7 +1,7 @@
 # Embold Local Scan
 Embold Local Scan allows the developer to locally scan the code and get immediate feedback, before committing to the remote. It does not require any network connectivity during or after the scan (except for the initial authentication with the embold server). The results are published locally to a csv.
 
-This article explains how to do it with a few commands and scripts, with an example C/C++ scan.
+This article explains how to do it with a few commands and scripts, with an example Java scan.
 
 
 ```console
