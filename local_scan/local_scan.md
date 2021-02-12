@@ -62,7 +62,7 @@ In this example, we will scan Apache Kafka (Java) cloned from here: <https://git
 ### Run the scan
 
 With the setup done, we can now launch the Embold Corona container from host
-- Add some necessary environment variables, and execute Embold scan with the docker run command:
+- Add some necessary environment variables, and execute Embold scan command:
 
     ```sh
     CORONA_HOME=/home/johndoe/corona CORONA_LOG=/home/johndoe/corona/log  /home/johndoe/kafka_scan/scripts/embold-scan.sh
@@ -121,7 +121,8 @@ So our above `embold-scan.sh` will look like the following:
 ### Run the scan
 Same as the above Java "Run the scan" section.
 
-
+### Note
+Embold trace tool should be fed the actual build compilation command (make, ninja, msbuild, gcc, etc) and not the build generators such cmake, meson, autotools. The build generators will have to be run separately first.
 
 
 
