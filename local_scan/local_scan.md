@@ -108,8 +108,8 @@ There are different ways to build your code, on various platforms, build systems
 
 
 ### Setup and Configuration
-The setup and configuration is same as the [above Java scan](https://github.com/embold/emb-integration-samples/blob/local_scan/local_scan/local_scan.md#setup-and-configuration), except we will have to add an extra step, just before the scan.
-So our above `embold-scan.sh` will look like the following (assuming the codebase is `/home/johndoe/c-project/` and we use `make`)
+The setup and configuration is same as the [above Java scan](https://github.com/embold/emb-integration-samples/blob/local_scan/local_scan/local_scan.md#setup-and-configuration), except we will have to add an extra step in the beginning, which is to generate the compilation database at in the `baseDir`.
+So our above `embold-scan.sh` will look like the following (assuming the codebase (`baseDir`) is `/home/johndoe/c-project/`)
 
     /home/johndoe/corona/cxxparser/bin/embold-trace -o /home/johndoe/c-project/ <build command> <build command args>
     /home/johndoe/corona/scanboxwrapper/bin/gammascanner -la -od ./out -c /home/johndoe/c-project/scripts/repository-configuration.json
