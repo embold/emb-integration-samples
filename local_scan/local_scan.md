@@ -98,7 +98,7 @@ This section adds some specifics if you want to run a C/C++ local scan. We recom
 1. Monitor your build with the Embold trace tool (`embold-trace`), to produce a compilation database (`compile_commands.json`).This process captures the compilation calls including header paths, switches, pre-processor definitions, etc. (as the compiler sees it), which we then use while running the actual scan
  
 ### Local Scan Advantages
-    . Integrating Embold trace tool with the build allows for faster scan times, as the developer would generally modify only a few files within the code-base, in a single commit. Incrementally making changes and building (eg.`make`) will result in incremental compilation, as a result it will create a smaller compilation database and hence faster local analysis, with the output containing issues only from the files that were last modified. 
+   Integrating Embold trace tool with the build allows for faster scan times, as the developer would generally modify only a few files within the code-base, in a single commit. Incrementally making changes and building (eg.`make`) will result in incremental compilation, as a result it will create a smaller compilation database and hence faster local analysis, with the output containing issues only from the files that were last modified. 
 
 2. Run the Embold scan by using the generated `compile_commands.json` and the source code.
 
