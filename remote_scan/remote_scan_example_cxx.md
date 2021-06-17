@@ -56,7 +56,7 @@ In this example, we will scan OpenCV (C++) cloned from here: <https://github.com
     - `repositories/dataDir`: In this example, set it to: `/home/user/embold_data`
     - `repositories/sources/baseDir`: Set it to the source root where you cloned OpenCV sources. In our example, set it to: `/home/user/opencv`
     
-    - `repositories/settings/additionalOptions`: Set the path to the directory where the `compile_commands.json` was generated from the build step above:
+    - `repositories/settings/additionalOptions`: Set the path to the directory where the `compile_commands.json` will be generated with `embold-trace` (we will do this in the build step, further in this article):
     
     ```json
     "settings": {
@@ -106,7 +106,9 @@ In this example, we will scan OpenCV (C++) cloned from here: <https://github.com
 
 ### Run the scan
 
-With the build done, we can now launch the Embold scan:
+With the build done, we can now launch the Embold scan.
+
+Review the `repository-configuration.json` once again to check all the values we modified and run the scan:
 
 ```sh
 user@host:~/opencv/build# /home/user/embold/corona/scanboxwrapper/bin/gammascanner -c /home/user/opencv/repository-configuration.json
@@ -135,4 +137,8 @@ user@host:~/opencv/build# /home/user/embold/corona/scanboxwrapper/bin/gammascann
 
 At this point, we have successfully run an Embold scan on a remote machine and published results to the Embold Server!
 
-Check our more examples on how to run remote scans in other scenarios at: <https://github.com/embold/emb-integration-samples/tree/master/remote_scan_docker>
+Check our more examples on how to run remote scans in other scenarios at:
+ - <https://github.com/embold/emb-integration-samples/tree/master/remote_scan_docker>
+ - https://github.com/embold/emb-integration-samples/tree/master/remote_scan
+
+More info on C/C++ strict mode scan here: <https://docs.embold.io/installation-and-backup-guide/#c-strict-mode>
