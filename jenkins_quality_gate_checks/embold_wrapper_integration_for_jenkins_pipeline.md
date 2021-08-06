@@ -13,7 +13,7 @@ This integration will do the following,
 2. Set following Global environment variable in Jenkins
 - CORONA_HOME : It should be the path of extracted corona folder
 - CORONA_LOG : It should be any path where Embold logs get created
-3. Download CI/CD wrapper package from Embold release section
+3. Download CI/CD wrapper package from Embold release section (CI_CD_Wrapper -> embold_ci_cd_wrapper-1.0-SNAPSHOT-archive.tar.gz)
 4. Extract the wrapper package in Jenkins machine where Job will execute
 
 ### Setup in pipeline script
