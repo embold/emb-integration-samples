@@ -11,8 +11,8 @@ This integration will do the following,
 
 1. Download standalone corona from Embold release section
 2. Set following Global environment variable in Jenkins
-a. CORONA_HOME : It should be the path of extracted corona folder
-b. CORONA_LOG : It should be any path where Embold logs get created
+- CORONA_HOME : It should be the path of extracted corona folder
+- CORONA_LOG : It should be any path where Embold logs get created
 3. Download CI/CD wrapper package from Embold release section
 4. Extract the wrapper package in Jenkins machine where Job will execute
 
@@ -25,3 +25,5 @@ First, we need to find the changed files from GIT_PREVIOUS_SUCCESSFUL_COMMIT to 
 
 Run embold-ci-cd-wrapper with following options
 > sh '../../../embold_ci_cd_wrapper-1.0-SNAPSHOT/bin/embold-ci-cd-wrapper -c repository-configuration.json -lf result.txt'
+
+You can download the repository-configuration.json from Embold UI and put it into the base directory of your source code.
