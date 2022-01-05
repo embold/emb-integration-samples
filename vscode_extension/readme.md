@@ -26,6 +26,8 @@ Embold VSCode extension uncovers potential code issues, vulnerabilities, metrics
 
  ![image info](https://github.com/embold/emb-integration-samples/blob/master/vscode_extension/images/DI.png?raw=true)
  
+ ![image info](https://github.com/embold/emb-integration-samples/blob/master/vscode_extension/images/DIWebView.png?raw=true)
+ 
 •	For Code Issue – It will redirect to documentation page (https://rules.embold.io/).
 
  ![image info](https://github.com/embold/emb-integration-samples/blob/master/vscode_extension/images/CI.png?raw=true)
