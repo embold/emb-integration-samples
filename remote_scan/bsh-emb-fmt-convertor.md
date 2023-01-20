@@ -21,7 +21,7 @@ NOTE: This tool is currently in a prototype mode, meant to show the proof-of-con
 1. For .csv/.xml reports - 
    1. -i : input file path to .csv/.xml file
    2. -o : output file path to output .csv file
-   3. -t : tool name QA-C / Bauhaus / Compiler warnings
+   3. -t : Optional - tool name QA-C / Bauhaus / Compiler warnings
    4. -g : Optional - Tag, MultiTag (seperated by ; ) ,By default tag will be tool name (-t)
 
        ```bat
