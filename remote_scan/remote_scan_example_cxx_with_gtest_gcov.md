@@ -1,4 +1,4 @@
-# Embold Scan in remote mode
+# Gcov results integration with Embold
 Embold's Analyser component can be run on a separate machine than the Embold Server in order to support use-cases such as CI workflows, scanning with build, etc.
 In this case, the scan happens on a machine such as the build machine, and the scan results are published to the Embold Server.
 In this article, we will look at how to do this with a sample C# project on a Windows 10 host and publish results to the Embold Server.
