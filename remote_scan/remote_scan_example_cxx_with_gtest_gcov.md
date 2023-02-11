@@ -53,7 +53,7 @@ In this example, we will scan C++ Test Project cloned from here: <https://github
     ```json
     
     ```
-6. Generate unit test result for source directory.
+6. Generate unit test and coverage results for source directory.
 
    1. create executable for test file.
        - g++ `<FilePath>` -lgtest --coverage -lpthread -o `<executableName>`
