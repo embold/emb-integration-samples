@@ -23,6 +23,7 @@ The typical setup for this is as shown below:
 - Embold Server ports (default 3000) are accessible from the host where the scan will run
 - JRE 8 or later is installed on the Ubuntu host where we will run the scan
 - You are able to build your C/C++ project on the Ubuntu host (which means you have all the necessary compilers, headers, libs available)
+- gcovr version 5.0 to 5.2
 
 ### Setup and Configuration
 In this example, we will scan C++ Test Project cloned from here: <https://github.com/NileshVirkar/GtestGcovExample.git>
@@ -64,7 +65,7 @@ In this example, we will scan C++ Test Project cloned from here: <https://github
        - gcovr --exclude='gtest.*' -x -o `<path-to-xml>`
        - (e.g. gcovr --exclude='gtest.*' -x -o  /home/user/github/Demo/resultDir/result.xml)
       
-7. Add the generated result.xml parent directory path in gcov section in repository-configuration.json:
+7. Add the generated result.xml's parent directory path in gcov section in repository-configuration.json:
     - ```json
         "coverage": [
                     {
