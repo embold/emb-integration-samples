@@ -3,7 +3,7 @@ name: Build and Test with gtest and gcov
 on:
   push:
     branches:
-      - main
+      - github_action
   pull_request:
 
 jobs:
@@ -21,6 +21,7 @@ jobs:
 
     - name: Configure with CMake
       run: |
+        cd sample_source_code/CPP/googletest
         mkdir build
         cd build
         cmake .. \
