@@ -17,7 +17,7 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y cmake g++ gcov lcov
+        sudo apt-get install -y cmake g++ gcc lcov
 
     - name: Configure with CMake
       run: |
