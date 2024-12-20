@@ -1,0 +1,47 @@
+name: Build and Test with gtest and gcov
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y cmake g++ gcov lcov
+
+    - name: Configure with CMake
+      run: |
+        mkdir build
+        cd build
+        cmake .. \
+          -DCMAKE_CXX_FLAGS="-g -O0 -fprofile-arcs -ftest-coverage" \
+          -DCMAKE_BUILD_TYPE=Debug \
+          -Dgtest_build_samples=ON \
+          -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+
+    - name: Build with Make
+      run: |
+        cd build
+        make
+
+    - name: Run gtest
+      run: |
+        mkdir -p output/gtest
+        cd build
+        ./googletest/sample1_unittest --gtest_output=xml:../output/gtest/gtest1.xml
+
+    - name: Generate coverage report
+      run: |
+        rm -rf ./output/gcov
+        mkdir -p ./output/gcov
+        gcovr -r . --xml -o ./output/gcov/gcov1.xml
