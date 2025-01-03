@@ -3,10 +3,10 @@ name: Build and Test
 on:
   push:
     branches:
-      - github_action
+      - github_action_java
   pull_request:
     branches:
-      - github_action
+      - github_action_java
 
 jobs:
   build:
