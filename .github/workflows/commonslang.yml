@@ -36,8 +36,6 @@ jobs:
 
       # Step 4: Run Maven build
       - name: Build with Maven
-        run: mvn clean install --batch-mode
-
-      # Step 5: Run tests
-      - name: Run Tests
-        run: mvn test --batch-mode
+        run: |
+              cd sample_source_code/JAVA/commons-lang
+              mvn clean install --batch-mode
