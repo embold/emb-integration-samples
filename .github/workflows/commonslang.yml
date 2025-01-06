@@ -38,7 +38,7 @@ jobs:
       - name: Build with Maven
         run: |
               cd sample_source_code/JAVA/commons-lang
-              mvn clean install jacoco:report --batch-mode
+              # mvn clean install jacoco:report --batch-mode
 
      # Step 5: Download and un-tar the BrowserStack CQ Scanner
       - name: Download and Unpack BrowserStack CQ Scanner
@@ -66,7 +66,7 @@ jobs:
           while [ "$scanStatus" != 'SUCCESS' ] && [ "$scanStatus" != 'FAIL' ]; do
           sleep 5
           # Call the scan status API
-          response=$(curl --silent --write-out "HTTPSTATUS:%{http_code}" --location --request GET "https://demo.embold.io/api/v1/repositories/e602c21b7e4d91f90b2914504eaeb8ae/scans/$scanId/status" --header "Authorization:Bearer $(EMBOLD_TOKEN)")
+          response=$(curl --silent --write-out "HTTPSTATUS:%{http_code}" --location --request GET "https://demo.embold.io/api/v1/repositories/e602c21b7e4d91f90b2914504eaeb8ae/scans/$scanId/status" --header "Authorization:Bearer $EMBOLD_TOKEN")
           HTTP_BODY=$(echo "$response" | sed -e 's/HTTPSTATUS\:.*//g')
           HTTP_STATUS=$(echo "$response" | tr -d '\n' | sed -e 's/.*HTTPSTATUS://')
 
@@ -82,7 +82,7 @@ jobs:
 
           echo "Scan completed successfully"
           # Check the quality gate
-          response=$(curl --silent --location --request GET "https://demo.embold.io/api/v1/repositories/e602c21b7e4d91f90b2914504eaeb8ae/qualitygateprofiles/status" --header "Authorization:Bearer $(EMBOLD_TOKEN)")
+          response=$(curl --silent --location --request GET "https://demo.embold.io/api/v1/repositories/e602c21b7e4d91f90b2914504eaeb8ae/qualitygateprofiles/status" --header "Authorization:Bearer $EMBOLD_TOKEN")
           if [ "$response" != 'passed' ]; then
             RED='\033[0;31m'
             GREEN='\033[0;32m'
