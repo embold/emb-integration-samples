@@ -49,7 +49,7 @@ jobs:
      # Step 7: Run the BrowserStack CQ Scanner
       - name: Run Static Code Analysis
         env:
-          EMBOLD_TOKEN: ${{ secrets.EMBOLD_TOKEN_IDE_INST }}
+          EMBOLD_TOKEN: ${{ secrets.EMBOLD_TOKEN_DEMO_INST }}
         run: |
           ./browserstack-codequality-scanner/bin/embold-scanner analyse \
           -u https://demo.embold.io \
