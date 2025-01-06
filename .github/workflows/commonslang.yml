@@ -54,19 +54,19 @@ jobs:
      # Step 6: Run the BrowserStack CQ Scanner
       - name: Run Static Code Analysis
         env:
-          EMBOLD_TOKEN: ${{ secrets.EMBOLD_TOKEN_DEMO_INST }}
+          EMBOLD_TOKEN: ${{ secrets.EMBOLD_TOKEN_IDE_INST }}
         run: |
           ./browserstack-codequality-scanner/bin/embold-scanner analyse \
           -u https://demo.embold.io \
           -t $EMBOLD_TOKEN \
-          -r e602c21b7e4d91f90b2914504eaeb8ae \
+          -r a42b8343cd0a77237f3880808027a25a \
           -c sample_source_code/JAVA/commons-lang/repository-configuration.json
 
       # Step 7: Fetch Scan Details
       - name: Fetch Scan Details
         id: fetch-scans
         run: |
-          response=$(curl -s -X GET "https://demo.embold.io/api/v1/repositories/e602c21b7e4d91f90b2914504eaeb8ae/scans" -H "Authorization: Bearer ${{ secrets.EMBOLD_TOKEN_DEMO_INST }}")
+          response=$(curl -s -X GET "https://packages.embold.io/api/v1/repositories/a42b8343cd0a77237f3880808027a25a/scans" -H "Authorization: Bearer ${{ secrets.EMBOLD_TOKEN_IDE_INST }}")
           echo "response=$response" >> $GITHUB_ENV
           
       # Step 8: Find Latest Scan End Time
@@ -75,6 +75,8 @@ jobs:
         run: |
           latest_scan=$(echo $response | jq -c '[.[] | select(.scanStatus == "SUCCESS" and .isCompleted == true)] | max_by(.endTime)')
           end_time=$(echo $latest_scan | jq -r '.endTime')
+          echo "*************" + $end_time
+          echo "*************" + steps.latest-scan.outputs.end_time > env.current_time
           echo "end_time=$end_time" >> $GITHUB_ENV
           
       # Step 9: Compare End Time with Current Time
@@ -82,7 +84,7 @@ jobs:
         if: steps.latest-scan.outputs.end_time > env.current_time
         run: |
           echo "Latest scan is completed. Fetching quality gate status..."
-          curl -X GET "https://demo.embold.io/api/v1/repositories/e602c21b7e4d91f90b2914504eaeb8ae/qualitygateprofiles/status" -H "Authorization: Bearer ${{ secrets.EMBOLD_TOKEN_DEMO_INST }}"
+          curl -X GET "https://packages.embold.io/api/v1/repositories/a42b8343cd0a77237f3880808027a25a/qualitygateprofiles/status" -H "Authorization: Bearer ${{ secrets.EMBOLD_TOKEN_IDE_INST }}"
 
       - name: Wait and Retry
         if: steps.latest-scan.outputs.end_time <= env.current_time
@@ -93,8 +95,8 @@ jobs:
       # - name: Fetch Latest Scan Details
       #   id: fetch-scan-details
       #   run: |
-      #     REPO_UID="e602c21b7e4d91f90b2914504eaeb8ae"
-      #     API_URL="https://https://demo.embold.io/api/v1/repositories/e602c21b7e4d91f90b2914504eaeb8ae/scans"
+      #     REPO_UID="a42b8343cd0a77237f3880808027a25a"
+      #     API_URL="https://https://packages.embold.io/api/v1/repositories/a42b8343cd0a77237f3880808027a25a/scans"
           
       #     until [[ "$(curl -s -H "Authorization: Bearer ${{ secrets.EMBOLD_TOKEN_DEMO_INST }}" $API_URL | jq -r '.[] | select(.isCompleted == true and .scanStatus == "success") | .endTime')" > "$CURRENT_TIME" ]]; do
       #       echo "Waiting for latest scan to complete..."
@@ -104,7 +106,7 @@ jobs:
 
           # echo "Scan completed successfully"
           # # Check the quality gate
-          # response=$(curl --silent --location --request GET "https://demo.embold.io/api/v1/repositories/e602c21b7e4d91f90b2914504eaeb8ae/qualitygateprofiles/status" --header "Authorization:Bearer $EMBOLD_TOKEN")
+          # response=$(curl --silent --location --request GET "https://packages.embold.io/api/v1/repositories/a42b8343cd0a77237f3880808027a25a/qualitygateprofiles/status" --header "Authorization:Bearer $EMBOLD_TOKEN")
           # if [ "$response" != 'passed' ]; then
           #   RED='\033[0;31m'
           #   GREEN='\033[0;32m'
