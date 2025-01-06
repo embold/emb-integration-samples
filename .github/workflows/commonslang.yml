@@ -58,6 +58,8 @@ jobs:
       #     -c sample_source_code/JAVA/commons-lang/repository-configuration.json
 
       - name: Check quality gate status
+        env:
+          EMBOLD_TOKEN: ${{ secrets.EMBOLD_TOKEN_DEMO_INST }}
         run: |
           # Wait for scan end or error in a loop
           scanStatus='PROCESSING'
