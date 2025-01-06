@@ -38,7 +38,7 @@ jobs:
       - name: Build with Maven
         run: |
               cd sample_source_code/JAVA/commons-lang
-              mvn clean install --batch-mode
+              mvn clean install jacoco:report --batch-mode
 
      # Step 5: Download and un-tar the BrowserStack CQ Scanner
       - name: Download and Unpack BrowserStack CQ Scanner
@@ -46,7 +46,7 @@ jobs:
           curl https://v1.embold.io/nfs/CLI/browserstack-codequality-scanner.tar.gz -o browserstack-codequality-scanner-archive.tar.gz
           tar xvf browserstack-codequality-scanner-archive.tar.gz
 
-     # Step 7: Run the BrowserStack CQ Scanner
+     # Step 6: Run the BrowserStack CQ Scanner
       - name: Run Static Code Analysis
         env:
           EMBOLD_TOKEN: ${{ secrets.EMBOLD_TOKEN_DEMO_INST }}
