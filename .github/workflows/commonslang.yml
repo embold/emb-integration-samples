@@ -47,12 +47,45 @@ jobs:
           tar xvf browserstack-codequality-scanner-archive.tar.gz
 
      # Step 6: Run the BrowserStack CQ Scanner
-      - name: Run Static Code Analysis
-        env:
-          EMBOLD_TOKEN: ${{ secrets.EMBOLD_TOKEN_DEMO_INST }}
+      # - name: Run Static Code Analysis
+      #   env:
+      #     EMBOLD_TOKEN: ${{ secrets.EMBOLD_TOKEN_DEMO_INST }}
+      #   run: |
+      #     ./browserstack-codequality-scanner/bin/embold-scanner analyse \
+      #     -u https://demo.embold.io \
+      #     -t $EMBOLD_TOKEN \
+      #     -r e602c21b7e4d91f90b2914504eaeb8ae \
+      #     -c sample_source_code/JAVA/commons-lang/repository-configuration.json
+
+      - name: Check quality gate status
         run: |
-          ./browserstack-codequality-scanner/bin/embold-scanner analyse \
-          -u https://demo.embold.io \
-          -t $EMBOLD_TOKEN \
-          -r e602c21b7e4d91f90b2914504eaeb8ae \
-          -c sample_source_code/JAVA/commons-lang/repository-configuration.json
+          # Wait for scan end or error in a loop
+          scanStatus='PROCESSING'
+          while [ "$scanStatus" != 'SUCCESS' ] && [ "$scanStatus" != 'FAIL' ]; do
+          sleep 5
+          # Call the scan status API
+          response=$(curl --silent --write-out "HTTPSTATUS:%{http_code}" --location --request GET "https://demo.embold.io/api/v1/repositories/e602c21b7e4d91f90b2914504eaeb8ae/scans/$scanId/status" --header "Authorization:Bearer $(EMBOLD_TOKEN)")
+          HTTP_BODY=$(echo "$response" | sed -e 's/HTTPSTATUS\:.*//g')
+          HTTP_STATUS=$(echo "$response" | tr -d '\n' | sed -e 's/.*HTTPSTATUS://')
+
+          if [ "$HTTP_STATUS" != 200 ] && [ "$HTTP_STATUS" != 204 ]; then
+            echo 'Error while running scan'
+            echo "$HTTP_BODY" | jq -r '.error.message'
+          exit 1
+          fi
+            scanStatus=$(echo "$HTTP_BODY" | jq -r '.scanStatus')
+            currentStep=$(echo "$HTTP_BODY" | jq -r '.currentStep')
+            echo "Current status: ""$scanStatus" : "$currentStep"
+          done
+
+          echo "Scan completed successfully"
+          # Check the quality gate
+          response=$(curl --silent --location --request GET "https://demo.embold.io/api/v1/repositories/e602c21b7e4d91f90b2914504eaeb8ae/qualitygateprofiles/status" --header "Authorization:Bearer $(EMBOLD_TOKEN)")
+          if [ "$response" != 'passed' ]; then
+            RED='\033[0;31m'
+            GREEN='\033[0;32m'
+            NC='\033[0m' # No Color
+            printf "Embold Quality gate ${RED}FAILED${NC}\n"
+            exit 1
+          fi
+            printf "Embold Quality gate ${GREEN}PASSED${NC}\n"
