@@ -45,11 +45,6 @@ jobs:
         run: |
           curl https://v1.embold.io/nfs/CLI/browserstack-codequality-scanner.tar.gz -o browserstack-codequality-scanner-archive.tar.gz
           tar xvf browserstack-codequality-scanner-archive.tar.gz
-
-      # Step 7: Get the current time
-      - name: Get Current Time
-        id: get-time
-        run: echo "current_time=$(date --utc +%Y-%m-%dT%H:%M:%SZ)" >> $GITHUB_ENV
         
      # Step 6: Run the BrowserStack CQ Scanner
       - name: Run Static Code Analysis
