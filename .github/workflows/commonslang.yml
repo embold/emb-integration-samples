@@ -56,6 +56,6 @@ jobs:
           -u https://packages.embold.io/ \
           -t $EMBOLD_TOKEN \
           -r a42b8343cd0a77237f3880808027a25a \
-          -c sample_source_code/JAVA/commons-lang/repository-configuration.json \ 
+          -c sample_source_code/JAVA/commons-lang/repository-configuration.json \
           -qg
           
