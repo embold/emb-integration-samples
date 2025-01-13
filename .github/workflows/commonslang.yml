@@ -58,4 +58,20 @@ jobs:
           -r a42b8343cd0a77237f3880808027a25a \
           -c sample_source_code/JAVA/commons-lang/repository-configuration.json \
           -qg
-          
+
+      # Step 7: Call the Quality Gate Status API. This fetches the quality gate status for the latest published snapshot.
+      # We can also pass a 'snapshot label' to get the status for a specific snapshot. However, since we provided the "-qg" option in the previous step,
+      # "Step 6" will wait until the result is published on the UI. In this step, we will retrieve the latest result.
+      - name: Call Quality Gate Status API
+        id: call-api
+        run: |
+          response=$(curl -s -X GET "https://packages.embold.io/repositories/a42b8343cd0a77237f3880808027a25a/qualitygateprofiles/status" \
+          -H "Authorization: Bearer $EMBOLD_TOKEN")
+          echo "response=$response" >> $GITHUB_ENV
+
+      - name: Print Quality Gate Status
+        run: |
+          status=$(echo "${{ env.response }}" | jq -r '.status')
+          echo "Quality Gate Status: $status"
+        env:
+          response: ${{ env.response }}
