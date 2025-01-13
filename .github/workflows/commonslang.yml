@@ -65,7 +65,7 @@ jobs:
       - name: Call Quality Gate Status API
         id: call-api
         run: |
-          response=$(curl -s -X GET "https://packages.embold.io/api/v1/repositories/a42b8343cd0a77237f3880808027a25a/qualitygateprofiles/status" \
+          response=$(curl -v -X GET "https://packages.embold.io/api/v1/repositories/a42b8343cd0a77237f3880808027a25a/qualitygateprofiles/status" \
           -H "Authorization: Bearer ${{ secrets.EMBOLD_TOKEN_IDE_INST }}")
           echo "response=$response" >> $GITHUB_ENV
 
