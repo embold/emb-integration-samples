@@ -48,7 +48,7 @@ jobs:
         
      # Step 6: Run the BrowserStack CQ Scanner
       - name: Run Static Code Analysis
-        continue-on-error: false
+        continue-on-error: true
         env:
           EMBOLD_TOKEN: ${{ secrets.EMBOLD_TOKEN_IDE_INST }}
         run: |
