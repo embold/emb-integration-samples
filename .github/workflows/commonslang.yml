@@ -73,14 +73,11 @@ jobs:
         run: |
           echo "Raw response: ${{ env.response }}"
           
-          # Preprocess the response to add quotes around keys and string values
-          formatted_response=$(echo "${{ env.response }}" | 
-            sed -e 's/{/{" /g' -e 's/:/":"/g' -e 's/,/","/g' -e 's/}/"}/g' -e 's/\[/"[ "/g' -e 's/\]/" ]/g' |
-            sed -e 's/"[ "/[/g' -e 's/" ]/]/g' |
-            sed -e 's/","/","/g' -e 's/":"/": /g' -e 's/,"/,"/g')
-      
-          # Correct numeric values (remove quotes)
-          formatted_response=$(echo "$formatted_response" | sed -E 's/"([0-9]+(\.[0-9]+)?)"/\1/g')
+          # Preprocess the response to convert it into valid JSON format
+          formatted_response=$(echo "${{ env.response }}" | \
+            sed -e 's/{/{" /g' -e 's/:/": "/g' -e 's/,/","/g' -e 's/}/"}/g' -e 's/\[/"[ "/g' -e 's/\]/" ]/g' \
+                -e 's/"[ "/[/g' -e 's/" ]/]/g' -e 's/","/","/g' -e 's/": "/": /g' -e 's/,"/,"/g' | \
+            sed -E 's/"([0-9]+(\.[0-9]+)?)"/\1/g')
       
           echo "Formatted response: $formatted_response"
       
