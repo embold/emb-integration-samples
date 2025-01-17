@@ -66,16 +66,6 @@ jobs:
         id: call-api
         run: |
           response=$(curl -v --http1.1 --cacert remote_scan/file.pem -X GET "https://packages.embold.io/api/v1/repositories/a42b8343cd0a77237f3880808027a25a/qualitygateprofiles/status" \
-          -H "Authorization: Bearer ${{ secrets.EMBOLD_TOKEN_IDE_INST }}")
+          -H "Authorization: Bearer ${{ secrets.EMBOLD_TOKEN_IDE_INST }}" | jq '.status')
+          echo $response
           echo "response=$response" >> $GITHUB_ENV
-
-      - name: Print Quality Gate Status
-        run: |
-          echo "Raw response: ${{ env.response }}"
-          
-          # Directly parse the JSON response with jq
-          status=$(echo "${{ env.response }}" | jq -r '.status')
-          
-          echo "Quality Gate Status: $status"
-        env:
-          response: ${{ env.response }}
