@@ -71,6 +71,7 @@ jobs:
 
       - name: Print Quality Gate Status
         run: |
+          echo "Raw response: ${{ env.response }}"
           status=$(echo "${{ env.response }}" | jq -r '.status')
           echo "Quality Gate Status: $status"
         env:
