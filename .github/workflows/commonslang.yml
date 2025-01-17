@@ -69,10 +69,23 @@ jobs:
           -H "Authorization: Bearer ${{ secrets.EMBOLD_TOKEN_IDE_INST }}")
           echo "response=$response" >> $GITHUB_ENV
 
-      - name: Print Quality Gate Status
+      - name: Format and Print Quality Gate Status
         run: |
           echo "Raw response: ${{ env.response }}"
-          status=$(echo "${{ env.response }}" | jq -r '.status')
+          
+          # Preprocess the response to add quotes around keys and string values
+          formatted_response=$(echo "${{ env.response }}" | 
+            sed -e 's/{/{" /g' -e 's/:/":"/g' -e 's/,/","/g' -e 's/}/"}/g' -e 's/\[/"[ "/g' -e 's/\]/" ]/g' |
+            sed -e 's/"[ "/[/g' -e 's/" ]/]/g' |
+            sed -e 's/","/","/g' -e 's/":"/": /g' -e 's/,"/,"/g')
+      
+          # Correct numeric values (remove quotes)
+          formatted_response=$(echo "$formatted_response" | sed -E 's/"([0-9]+(\.[0-9]+)?)"/\1/g')
+      
+          echo "Formatted response: $formatted_response"
+      
+          # Parse the formatted response with jq
+          status=$(echo "$formatted_response" | jq -r '.status')
           echo "Quality Gate Status: $status"
         env:
           response: ${{ env.response }}
