@@ -34,7 +34,7 @@ jobs:
       - name: Run GoogleTest and Generate XML Report
         run: |
           mkdir -p output/gtest
-          ./build/sample_source_code/CPP/googletest/sample1_unittest \
+          sample_source_code/CPP/googletest/sample1_unittest \
               --gtest_output=xml:./output/gtest/gtest1.xml
 
       - name: Generate Code Coverage Report (gcovr)
