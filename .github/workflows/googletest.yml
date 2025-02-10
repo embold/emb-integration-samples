@@ -45,7 +45,7 @@ jobs:
           cd sample_source_code/CPP/googletest
           rm -rf ./output/gcov
           mkdir -p ./output/gcov
-          gcovr -r sample_source_code/CPP/googletest --xml -o ./output/gcov/gcov1.xml
+          gcovr -r . --xml -o ./output/gcov/gcov1.xml
 
       - name: Upload Test and Coverage Reports
         uses: actions/upload-artifact@v4
