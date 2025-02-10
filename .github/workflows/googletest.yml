@@ -1,0 +1,64 @@
+name: Build and Test
+
+on:
+  push:
+    branches:
+      - github_action_cpp
+  pull_request:
+    branches:
+      - github_action_cpp
+
+jobs:
+  build:
+    name: Build and Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        run: sudo apt-get update && sudo apt-get install -y cmake g++ ninja-build
+
+      - name: Configure CMake
+        run: |
+          cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build Project
+        run: cmake --build build
+
+      - name: Run Google Tests and Generate XML Report
+        run: |
+          mkdir -p test-reports
+          ./build/tests/MyTestExecutable --gtest_output=xml:test-reports/gtest_results.xml
+
+
+     # Step 5: Download and un-tar the BrowserStack CQ Scanner
+      - name: Download and Unpack BrowserStack CQ Scanner
+        run: |
+          curl https://v1.embold.io/nfs/CLI/browserstack-codequality-scanner.tar.gz -o browserstack-codequality-scanner-archive.tar.gz
+          tar xvf browserstack-codequality-scanner-archive.tar.gz
+        
+     # Step 6: Run the BrowserStack CQ Scanner
+      # - name: Run Static Code Analysis
+      #   continue-on-error: true
+      #   env:
+      #     EMBOLD_TOKEN: ${{ secrets.EMBOLD_TOKEN_IDE_INST }}
+      #   run: |
+      #     ./browserstack-codequality-scanner/bin/embold-scanner analyse \
+      #     -u https://packages.embold.io/ \
+      #     -t $EMBOLD_TOKEN \
+      #     -r a42b8343cd0a77237f3880808027a25a \
+      #     -c sample_source_code/JAVA/commons-lang/repository-configuration.json \
+      #     -qg
+
+      # # Step 7: Call the Quality Gate Status API. This fetches the quality gate status for the latest published snapshot.
+      # # We can also pass a 'snapshot label' to get the status for a specific snapshot. However, since we provided the "-qg" option in the previous step,
+      # # "Step 6" will wait until the result is published on the UI. In this step, we will retrieve the latest result.
+      # - name: Call Quality Gate Status API
+      #   id: call-api
+      #   run: |
+      #     response=$(curl -v --http1.1 --cacert remote_scan/file.pem -X GET "https://packages.embold.io/api/v1/repositories/a42b8343cd0a77237f3880808027a25a/qualitygateprofiles/status" \
+      #     -H "Authorization: Bearer ${{ secrets.EMBOLD_TOKEN_IDE_INST }}" | jq '.status')
+      #     echo $response
+      #     echo "response=$response" >> $GITHUB_ENV
