@@ -22,23 +22,27 @@ jobs:
 
       - name: Configure CMake
         run: |
-          cmake -S sample_source_code/CPP/googletest -B build \
-                -DCMAKE_CXX_FLAGS="-g -O0 -fprofile-arcs -ftest-coverage" \
+          cd sample_source_code/CPP/googletest
+          cmake . -DCMAKE_CXX_FLAGS="-g -O0 -fprofile-arcs -ftest-coverage" \
                 -DCMAKE_BUILD_TYPE=Debug \
                 -Dgtest_build_samples=ON \
                 -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
 
       - name: Build with Make
-        run: make -C build -j$(nproc)
+        run: |
+          cd sample_source_code/CPP/googletest
+          make
 
       - name: Run GoogleTest and Generate XML Report
         run: |
+          cd sample_source_code/CPP/googletest
           mkdir -p output/gtest
-          sample_source_code/CPP/googletest/build/googletest/sample1_unittest \
+          ./googletest/sample1_unittest \
               --gtest_output=xml:./output/gtest/gtest1.xml
 
       - name: Generate Code Coverage Report (gcovr)
         run: |
+          cd sample_source_code/CPP/googletest
           rm -rf ./output/gcov
           mkdir -p ./output/gcov
           gcovr -r sample_source_code/CPP/googletest --xml -o ./output/gcov/gcov1.xml
