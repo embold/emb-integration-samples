@@ -12,53 +12,39 @@ jobs:
   build:
     name: Build and Test
     runs-on: ubuntu-latest
-
+    
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Install Dependencies
-        run: sudo apt-get update && sudo apt-get install -y cmake g++ ninja-build
+        run: sudo apt-get update && sudo apt-get install -y cmake g++ gcovr lcov
 
       - name: Configure CMake
         run: |
-          cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+          cmake -S sample_source_code/CPP/googletest -B build \
+                -DCMAKE_CXX_FLAGS="-g -O0 -fprofile-arcs -ftest-coverage" \
+                -DCMAKE_BUILD_TYPE=Debug \
+                -Dgtest_build_samples=ON \
+                -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
 
-      - name: Build Project
-        run: cmake --build build
+      - name: Build with Make
+        run: make -C build -j$(nproc)
 
-      - name: Run Google Tests and Generate XML Report
+      - name: Run GoogleTest and Generate XML Report
         run: |
-          mkdir -p test-reports
-          ./build/tests/MyTestExecutable --gtest_output=xml:test-reports/gtest_results.xml
+          mkdir -p output/gtest
+          ./build/sample_source_code/CPP/googletest/sample1_unittest \
+              --gtest_output=xml:./output/gtest/gtest1.xml
 
-
-     # Step 5: Download and un-tar the BrowserStack CQ Scanner
-      - name: Download and Unpack BrowserStack CQ Scanner
+      - name: Generate Code Coverage Report (gcovr)
         run: |
-          curl https://v1.embold.io/nfs/CLI/browserstack-codequality-scanner.tar.gz -o browserstack-codequality-scanner-archive.tar.gz
-          tar xvf browserstack-codequality-scanner-archive.tar.gz
-        
-     # Step 6: Run the BrowserStack CQ Scanner
-      # - name: Run Static Code Analysis
-      #   continue-on-error: true
-      #   env:
-      #     EMBOLD_TOKEN: ${{ secrets.EMBOLD_TOKEN_IDE_INST }}
-      #   run: |
-      #     ./browserstack-codequality-scanner/bin/embold-scanner analyse \
-      #     -u https://packages.embold.io/ \
-      #     -t $EMBOLD_TOKEN \
-      #     -r a42b8343cd0a77237f3880808027a25a \
-      #     -c sample_source_code/JAVA/commons-lang/repository-configuration.json \
-      #     -qg
+          rm -rf ./output/gcov
+          mkdir -p ./output/gcov
+          gcovr -r sample_source_code/CPP/googletest --xml -o ./output/gcov/gcov1.xml
 
-      # # Step 7: Call the Quality Gate Status API. This fetches the quality gate status for the latest published snapshot.
-      # # We can also pass a 'snapshot label' to get the status for a specific snapshot. However, since we provided the "-qg" option in the previous step,
-      # # "Step 6" will wait until the result is published on the UI. In this step, we will retrieve the latest result.
-      # - name: Call Quality Gate Status API
-      #   id: call-api
-      #   run: |
-      #     response=$(curl -v --http1.1 --cacert remote_scan/file.pem -X GET "https://packages.embold.io/api/v1/repositories/a42b8343cd0a77237f3880808027a25a/qualitygateprofiles/status" \
-      #     -H "Authorization: Bearer ${{ secrets.EMBOLD_TOKEN_IDE_INST }}" | jq '.status')
-      #     echo $response
-      #     echo "response=$response" >> $GITHUB_ENV
+      - name: Upload Test and Coverage Reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-coverage-results
+          path: output/
