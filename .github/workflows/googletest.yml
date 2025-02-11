@@ -54,8 +54,19 @@ jobs:
           mkdir -p ./output/gcov
           gcovr -r . --xml -o ./output/gcov/gcov1.xml
 
-      - name: Upload Test and Coverage Reports
-        uses: actions/upload-artifact@v4
-        with:
-          name: test-coverage-results
-          path: output/
+      - name: Download and Unpack BrowserStack CQ Scanner
+        run: |
+          curl https://v1.embold.io/nfs/CLI/browserstack-codequality-scanner.tar.gz -o browserstack-codequality-scanner-archive.tar.gz
+          tar xvf browserstack-codequality-scanner-archive.tar.gz
+        
+      - name: Run Static Code Analysis
+        continue-on-error: true
+        env:
+          EMBOLD_TOKEN: ${{ secrets.EMBOLD_TOKEN_DEMO_INST }}
+        run: |
+          ./browserstack-codequality-scanner/bin/embold-scanner analyse \
+          -u https://demo.embold.io/ \
+          -t $EMBOLD_TOKEN \
+          -r f3ff1a57484e656e27b2475bcf9f5d9b \
+          -c sample_source_code/JAVA/commons-lang/repository-configuration.json \
+          -qg
