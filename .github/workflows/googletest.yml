@@ -71,4 +71,5 @@ jobs:
           -c sample_source_code/CPP/googletest/repository-configuration.json \
           -d ./temp
           -sh ./corona
+          -b ./sample_source_code/CPP/googletest
           -qg
