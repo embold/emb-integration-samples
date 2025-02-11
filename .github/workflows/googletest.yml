@@ -26,6 +26,9 @@ jobs:
       - name: Configure CMake
         run: |
           cd sample_source_code/CPP/googletest
+          g++ --version
+          gcov --version
+          gcovr --version
           cmake . -DCMAKE_CXX_FLAGS="-g -O0 -fprofile-arcs -ftest-coverage" \
                 -DCMAKE_BUILD_TYPE=Debug \
                 -Dgtest_build_samples=ON \
