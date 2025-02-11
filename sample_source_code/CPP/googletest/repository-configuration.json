@@ -21,7 +21,6 @@
                         "external",
                         "generated",
                         "mock",
-                        "test",
                         "build"
                     ]
                 }
