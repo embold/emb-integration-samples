@@ -1,20 +1,29 @@
 {
     "gammaAccess": {
-        "url": "http://192.168.1.27:3000/",
-        "token": "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTYzNTUwNjg5ODk4MywiaWF0IjoxNjM1NTA2ODk4fQ.Vl2CANcE9E56GIfG5nUNjMZQIswSq-q3Qb7ASxLBSnoWSMfN52b0ScUAfjNVhTQmrmQ062MU0xLy6hFxA649lQ"
+        "url": "",
+        "token": ""
     },
     "repositories": [
         {
-            "dataDir": "%WORKSPACE%/temp",
+            "dataDir": "",
             "repository": {
-                "uid": "829a899139e3d0f0734de848befacc8f",
-                "projectName": "googletestmock",
+                "uid": "f3ff1a57484e656e27b2475bcf9f5d9b",
+                "projectName": "GoogleTest",
                 "languages": [
                     "CPP"
                 ],
                 "sources": {
-                    "baseDir": "%WORKSPACE%",
-                    "exclusions": []
+                    "baseDir": "",
+                    "exclusions": [
+                        "thirdparty",
+                        "third-party",
+                        "3rd-party",
+                        "external",
+                        "generated",
+                        "mock",
+                        "test",
+                        "build"
+                    ]
                 }
             },
             "settings": {
@@ -24,17 +33,58 @@
             "modules": {
                 "codeissues": [
                     {
+                        "name": "cppcheck",
+                        "enabled": true,
+                        "config": {
+                            "rules": [],
+                            "options": [
+                                {
+                                    "name": "CodingStyle",
+                                    "type": "multiselect",
+                                    "value": [
+                                        "style",
+                                        "performance",
+                                        "portability"
+                                    ],
+                                    "choices": [
+                                        "style",
+                                        "performance",
+                                        "portability",
+                                        "warning",
+                                        "information",
+                                        "unusedFunction",
+                                        "missingInclude"
+                                    ],
+                                    "required": false
+                                }
+                            ]
+                        }
+                    },
+                    {
                         "name": "gamma_cxx",
                         "enabled": true,
                         "config": {
                             "rules": [],
                             "options": []
                         }
-                    }
-                ],
-                "unittest": [
+                    },
                     {
-                        "name": "gtest",
+                        "name": "gamma_generic",
+                        "enabled": false,
+                        "config": {
+                            "rules": [],
+                            "options": [
+                                {
+                                    "name": "reportDir",
+                                    "type": "upload",
+                                    "value": "",
+                                    "required": true
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "embold_aux",
                         "enabled": true,
                         "config": {
                             "rules": [],
@@ -42,10 +92,35 @@
                                 {
                                     "name": "reportDir",
                                     "type": "upload",
-                                    "value": "%WORKSPACE%/output",
+                                    "value": "",
                                     "required": true
                                 }
                             ]
+                        }
+                    },
+                    {
+                        "name": "sca",
+                        "enabled": false,
+                        "config": {
+                            "rules": [],
+                            "options": [
+                                {
+                                    "name": "reportDir",
+                                    "type": "upload",
+                                    "value": "",
+                                    "required": true
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "relevance": [
+                    {
+                        "name": "relevance",
+                        "enabled": true,
+                        "config": {
+                            "rules": [],
+                            "options": []
                         }
                     }
                 ],
@@ -59,17 +134,49 @@
                                 {
                                     "name": "reportDir",
                                     "type": "upload",
-                                    "value": "%WORKSPACE%/output/gcov",
+                                    "value": "",
                                     "required": true
                                 }
                             ]
                         }
                     }
                 ],
-                "relevance": [
+                "unittest": [
                     {
-                        "name": "relevance",
+                        "name": "gtest",
                         "enabled": true,
+                        "config": {
+                            "rules": [],
+                            "options": [
+                                {
+                                    "name": "reportDir",
+                                    "type": "upload",
+                                    "value": "",
+                                    "required": true
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "ctest",
+                        "enabled": true,
+                        "config": {
+                            "rules": [],
+                            "options": [
+                                {
+                                    "name": "reportDir",
+                                    "type": "upload",
+                                    "value": "",
+                                    "required": true
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "report_processor": [
+                    {
+                        "name": "ext_report_processor",
+                        "enabled": false,
                         "config": {
                             "rules": [],
                             "options": []
