@@ -72,7 +72,6 @@ jobs:
           -t $EMBOLD_TOKEN \
           -r f3ff1a57484e656e27b2475bcf9f5d9b \
           -c sample_source_code/CPP/googletest/repository-configuration.json \
-          -d ./temp
-          -sh ./corona
-          -b ./sample_source_code/CPP/googletest
+          -d ./temp \
+          -b ./sample_source_code/CPP/googletest \
           -v
