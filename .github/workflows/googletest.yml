@@ -42,17 +42,19 @@ jobs:
       - name: Run GoogleTest and Generate XML Report
         run: |
           cd sample_source_code/CPP/googletest
-          mkdir -p output/gtest
-          ./googletest/sample1_unittest \
-              --gtest_output=xml:./output/gtest/gtest1.xml
-          cat ./output/gtest/gtest1.xml
+          # Loop through all `sample*_unittest` files and run them
+          for test in ./googletest/sample*_unittest; do
+              test_name=$(basename "$test")  # Extracts the file name
+              output_file="./output/gtest/${test_name}.xml"  
+              "$test" --gtest_output=xml:"$output_file"
+          done
 
       - name: Generate Code Coverage Report (gcovr)
         run: |
           cd sample_source_code/CPP/googletest
           rm -rf ./output/gcov
           mkdir -p ./output/gcov
-          gcovr -r . --xml -o ./output/gcov/gcov1.xml
+          gcovr -r . --xml -o ./output/gcov/gcov_report.xml
 
       - name: Download and Unpack BrowserStack CQ Scanner
         run: |
