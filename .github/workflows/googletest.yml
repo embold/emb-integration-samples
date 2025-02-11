@@ -45,7 +45,8 @@ jobs:
           # Loop through all `sample*_unittest` files and run them
           for test in ./googletest/sample*_unittest; do
               test_name=$(basename "$test")  # Extracts the file name
-              output_file="./output/gtest/${test_name}.xml"  
+              output_file="./output/gtest/${test_name}.xml"
+              echo "Running $test and saving output to $output_file"
               "$test" --gtest_output=xml:"$output_file"
           done
 
@@ -74,4 +75,4 @@ jobs:
           -d ./temp
           -sh ./corona
           -b ./sample_source_code/CPP/googletest
-          -qg
+          -v
