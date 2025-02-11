@@ -42,6 +42,7 @@ jobs:
           mkdir -p output/gtest
           ./googletest/sample1_unittest \
               --gtest_output=xml:./output/gtest/gtest1.xml
+          cat ./output/gtest/gtest1.xml
 
       - name: Generate Code Coverage Report (gcovr)
         run: |
