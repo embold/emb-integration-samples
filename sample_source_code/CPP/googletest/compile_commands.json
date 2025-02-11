@@ -1,92 +1,92 @@
 [
 {
-  "directory": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googlemock",
-  "command": "/usr/bin/c++   -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googlemock/include -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googlemock -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/include -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /var/lib/jenkins/workspace/Googletest-gcov-gtest/googlemock/src/gmock_main.cc",
-  "file": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googlemock/src/gmock_main.cc"
+  "directory": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googlemock",
+  "command": "/usr/bin/c++   -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googlemock/include -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googlemock -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/include -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googlemock/src/gmock_main.cc",
+  "file": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googlemock/src/gmock_main.cc"
 },
 {
-  "directory": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googlemock",
-  "command": "/usr/bin/c++   -I/var/lib/jenkins/workspace/Googletest-gcov-gtest/googlemock/include -I/var/lib/jenkins/workspace/Googletest-gcov-gtest/googlemock -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/include -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /var/lib/jenkins/workspace/Googletest-gcov-gtest/googlemock/src/gmock-all.cc",
-  "file": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googlemock/src/gmock-all.cc"
+  "directory": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googlemock",
+  "command": "/usr/bin/c++   -I/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googlemock/include -I/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googlemock -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/include -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googlemock/src/gmock-all.cc",
+  "file": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googlemock/src/gmock-all.cc"
 },
 {
-  "directory": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest",
-  "command": "/usr/bin/c++   -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/include -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/src/gtest_main.cc",
-  "file": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/src/gtest_main.cc"
+  "directory": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest",
+  "command": "/usr/bin/c++   -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/include -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/src/gtest_main.cc",
+  "file": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/src/gtest_main.cc"
 },
 {
-  "directory": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest",
-  "command": "/usr/bin/c++   -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/include -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -o CMakeFiles/sample1_unittest.dir/samples/sample1_unittest.cc.o -c /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample1_unittest.cc",
-  "file": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample1_unittest.cc"
+  "directory": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest",
+  "command": "/usr/bin/c++   -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/include -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -o CMakeFiles/sample1_unittest.dir/samples/sample1_unittest.cc.o -c /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample1_unittest.cc",
+  "file": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample1_unittest.cc"
 },
 {
-  "directory": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest",
-  "command": "/usr/bin/c++   -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/include -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -o CMakeFiles/sample1_unittest.dir/samples/sample1.cc.o -c /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample1.cc",
-  "file": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample1.cc"
+  "directory": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest",
+  "command": "/usr/bin/c++   -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/include -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -o CMakeFiles/sample1_unittest.dir/samples/sample1.cc.o -c /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample1.cc",
+  "file": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample1.cc"
 },
 {
-  "directory": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest",
-  "command": "/usr/bin/c++   -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/include -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -o CMakeFiles/sample7_unittest.dir/samples/sample7_unittest.cc.o -c /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample7_unittest.cc",
-  "file": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample7_unittest.cc"
+  "directory": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest",
+  "command": "/usr/bin/c++   -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/include -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -o CMakeFiles/sample7_unittest.dir/samples/sample7_unittest.cc.o -c /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample7_unittest.cc",
+  "file": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample7_unittest.cc"
 },
 {
-  "directory": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest",
-  "command": "/usr/bin/c++   -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/include -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -o CMakeFiles/sample2_unittest.dir/samples/sample2_unittest.cc.o -c /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample2_unittest.cc",
-  "file": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample2_unittest.cc"
+  "directory": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest",
+  "command": "/usr/bin/c++   -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/include -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -o CMakeFiles/sample2_unittest.dir/samples/sample2_unittest.cc.o -c /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample2_unittest.cc",
+  "file": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample2_unittest.cc"
 },
 {
-  "directory": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest",
-  "command": "/usr/bin/c++   -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/include -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -o CMakeFiles/sample2_unittest.dir/samples/sample2.cc.o -c /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample2.cc",
-  "file": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample2.cc"
+  "directory": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest",
+  "command": "/usr/bin/c++   -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/include -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -o CMakeFiles/sample2_unittest.dir/samples/sample2.cc.o -c /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample2.cc",
+  "file": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample2.cc"
 },
 {
-  "directory": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest",
-  "command": "/usr/bin/c++   -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/include -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -o CMakeFiles/sample6_unittest.dir/samples/sample6_unittest.cc.o -c /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample6_unittest.cc",
-  "file": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample6_unittest.cc"
+  "directory": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest",
+  "command": "/usr/bin/c++   -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/include -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -o CMakeFiles/sample6_unittest.dir/samples/sample6_unittest.cc.o -c /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample6_unittest.cc",
+  "file": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample6_unittest.cc"
 },
 {
-  "directory": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest",
-  "command": "/usr/bin/c++   -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/include -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -o CMakeFiles/sample10_unittest.dir/samples/sample10_unittest.cc.o -c /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample10_unittest.cc",
-  "file": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample10_unittest.cc"
+  "directory": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest",
+  "command": "/usr/bin/c++   -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/include -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -o CMakeFiles/sample10_unittest.dir/samples/sample10_unittest.cc.o -c /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample10_unittest.cc",
+  "file": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample10_unittest.cc"
 },
 {
-  "directory": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest",
-  "command": "/usr/bin/c++   -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/include -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -o CMakeFiles/sample5_unittest.dir/samples/sample5_unittest.cc.o -c /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample5_unittest.cc",
-  "file": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample5_unittest.cc"
+  "directory": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest",
+  "command": "/usr/bin/c++   -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/include -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -o CMakeFiles/sample5_unittest.dir/samples/sample5_unittest.cc.o -c /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample5_unittest.cc",
+  "file": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample5_unittest.cc"
 },
 {
-  "directory": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest",
-  "command": "/usr/bin/c++   -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/include -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -o CMakeFiles/sample5_unittest.dir/samples/sample1.cc.o -c /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample1.cc",
-  "file": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample1.cc"
+  "directory": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest",
+  "command": "/usr/bin/c++   -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/include -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -o CMakeFiles/sample5_unittest.dir/samples/sample1.cc.o -c /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample1.cc",
+  "file": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample1.cc"
 },
 {
-  "directory": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest",
-  "command": "/usr/bin/c++   -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/include -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -o CMakeFiles/sample8_unittest.dir/samples/sample8_unittest.cc.o -c /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample8_unittest.cc",
-  "file": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample8_unittest.cc"
+  "directory": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest",
+  "command": "/usr/bin/c++   -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/include -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -o CMakeFiles/sample8_unittest.dir/samples/sample8_unittest.cc.o -c /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample8_unittest.cc",
+  "file": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample8_unittest.cc"
 },
 {
-  "directory": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest",
-  "command": "/usr/bin/c++   -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/include -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -o CMakeFiles/sample3_unittest.dir/samples/sample3_unittest.cc.o -c /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample3_unittest.cc",
-  "file": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample3_unittest.cc"
+  "directory": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest",
+  "command": "/usr/bin/c++   -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/include -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -o CMakeFiles/sample3_unittest.dir/samples/sample3_unittest.cc.o -c /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample3_unittest.cc",
+  "file": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample3_unittest.cc"
 },
 {
-  "directory": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest",
-  "command": "/usr/bin/c++   -I/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/include -I/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/src/gtest-all.cc",
-  "file": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/src/gtest-all.cc"
+  "directory": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest",
+  "command": "/usr/bin/c++   -I/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/include -I/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/src/gtest-all.cc",
+  "file": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/src/gtest-all.cc"
 },
 {
-  "directory": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest",
-  "command": "/usr/bin/c++   -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/include -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -o CMakeFiles/sample4_unittest.dir/samples/sample4_unittest.cc.o -c /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample4_unittest.cc",
-  "file": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample4_unittest.cc"
+  "directory": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest",
+  "command": "/usr/bin/c++   -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/include -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -o CMakeFiles/sample4_unittest.dir/samples/sample4_unittest.cc.o -c /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample4_unittest.cc",
+  "file": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample4_unittest.cc"
 },
 {
-  "directory": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest",
-  "command": "/usr/bin/c++   -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/include -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -o CMakeFiles/sample4_unittest.dir/samples/sample4.cc.o -c /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample4.cc",
-  "file": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample4.cc"
+  "directory": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest",
+  "command": "/usr/bin/c++   -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/include -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -o CMakeFiles/sample4_unittest.dir/samples/sample4.cc.o -c /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample4.cc",
+  "file": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample4.cc"
 },
 {
-  "directory": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest",
-  "command": "/usr/bin/c++   -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/include -isystem /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -o CMakeFiles/sample9_unittest.dir/samples/sample9_unittest.cc.o -c /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample9_unittest.cc",
-  "file": "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample9_unittest.cc"
+  "directory": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest",
+  "command": "/usr/bin/c++   -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/include -isystem /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest  -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -o CMakeFiles/sample9_unittest.dir/samples/sample9_unittest.cc.o -c /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample9_unittest.cc",
+  "file": "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample9_unittest.cc"
 }
 ]

@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample1.cc" "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/CMakeFiles/sample5_unittest.dir/samples/sample1.cc.o"
-  "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample5_unittest.cc" "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/CMakeFiles/sample5_unittest.dir/samples/sample5_unittest.cc.o"
+  "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample1.cc" "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/CMakeFiles/sample5_unittest.dir/samples/sample1.cc.o"
+  "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample5_unittest.cc" "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/CMakeFiles/sample5_unittest.dir/samples/sample5_unittest.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,8 +17,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
-  "/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
+  "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

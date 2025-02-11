@@ -6,19 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample1.cc
+/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample1.cc
 sample1.h
-/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample1.h
+/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample1.h
 
-/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample1.h
+/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample1.h
 
-/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample1_unittest.cc
+/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample1_unittest.cc
 limits.h
 -
 sample1.h
-/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample1.h
+/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample1.h
 gtest/gtest.h
-/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/gtest/gtest.h
+/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/gtest/gtest.h
 
 googletest/include/gtest/gtest-death-test.h
 gtest/internal/gtest-death-test-internal.h

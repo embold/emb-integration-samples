@@ -1,4 +1,4 @@
-# Install script for directory: /var/lib/jenkins/workspace/Googletest-gcov-gtest
+# Install script for directory: /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/var/lib/jenkins/workspace/Googletest-gcov-gtest/googlemock/cmake_install.cmake")
+  include("/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googlemock/cmake_install.cmake")
 
 endif()
 
@@ -51,5 +51,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/var/lib/jenkins/workspace/Googletest-gcov-gtest/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

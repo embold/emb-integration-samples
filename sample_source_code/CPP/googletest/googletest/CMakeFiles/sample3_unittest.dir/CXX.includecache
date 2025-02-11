@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample3-inl.h
+/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample3-inl.h
 stddef.h
 -
 
-/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample3_unittest.cc
+/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample3_unittest.cc
 sample3-inl.h
-/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample3-inl.h
+/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample3-inl.h
 gtest/gtest.h
-/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/gtest/gtest.h
+/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/gtest/gtest.h
 
 googletest/include/gtest/gtest-death-test.h
 gtest/internal/gtest-death-test-internal.h

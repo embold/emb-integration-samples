@@ -44,10 +44,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /var/lib/jenkins/workspace/Googletest-gcov-gtest
+CMAKE_SOURCE_DIR = /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /var/lib/jenkins/workspace/Googletest-gcov-gtest
+CMAKE_BINARY_DIR = /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -133,18 +133,18 @@ googletest/clean: googletest/CMakeFiles/sample9_unittest.dir/clean
 # Target rules for target googlemock/CMakeFiles/gmock_main.dir
 
 # All Build rule for target.
-googlemock/CMakeFiles/gmock_main.dir/all: googlemock/CMakeFiles/gmock.dir/all
 googlemock/CMakeFiles/gmock_main.dir/all: googletest/CMakeFiles/gtest.dir/all
+googlemock/CMakeFiles/gmock_main.dir/all: googlemock/CMakeFiles/gmock.dir/all
 	$(MAKE) -f googlemock/CMakeFiles/gmock_main.dir/build.make googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f googlemock/CMakeFiles/gmock_main.dir/build.make googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles --progress-num=3,4 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles --progress-num=3,4 "Built target gmock_main"
 .PHONY : googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
 googlemock/CMakeFiles/gmock_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 googlemock/CMakeFiles/gmock_main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 0
 .PHONY : googlemock/CMakeFiles/gmock_main.dir/rule
 
 # Convenience name for target.
@@ -164,14 +164,14 @@ googlemock/CMakeFiles/gmock_main.dir/clean:
 googlemock/CMakeFiles/gmock.dir/all: googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f googlemock/CMakeFiles/gmock.dir/build.make googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) -f googlemock/CMakeFiles/gmock.dir/build.make googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles --progress-num=1,2 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles --progress-num=1,2 "Built target gmock"
 .PHONY : googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
 googlemock/CMakeFiles/gmock.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 googlemock/CMakeFiles/gmock.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 0
 .PHONY : googlemock/CMakeFiles/gmock.dir/rule
 
 # Convenience name for target.
@@ -191,14 +191,14 @@ googlemock/CMakeFiles/gmock.dir/clean:
 googletest/CMakeFiles/gtest_main.dir/all: googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f googletest/CMakeFiles/gtest_main.dir/build.make googletest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f googletest/CMakeFiles/gtest_main.dir/build.make googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles --progress-num=7,8 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles --progress-num=7,8 "Built target gtest_main"
 .PHONY : googletest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
 googletest/CMakeFiles/gtest_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/gtest_main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 0
 .PHONY : googletest/CMakeFiles/gtest_main.dir/rule
 
 # Convenience name for target.
@@ -215,18 +215,18 @@ googletest/CMakeFiles/gtest_main.dir/clean:
 # Target rules for target googletest/CMakeFiles/sample1_unittest.dir
 
 # All Build rule for target.
-googletest/CMakeFiles/sample1_unittest.dir/all: googletest/CMakeFiles/gtest_main.dir/all
 googletest/CMakeFiles/sample1_unittest.dir/all: googletest/CMakeFiles/gtest.dir/all
+googletest/CMakeFiles/sample1_unittest.dir/all: googletest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) -f googletest/CMakeFiles/sample1_unittest.dir/build.make googletest/CMakeFiles/sample1_unittest.dir/depend
 	$(MAKE) -f googletest/CMakeFiles/sample1_unittest.dir/build.make googletest/CMakeFiles/sample1_unittest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles --progress-num=11,12,13 "Built target sample1_unittest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles --progress-num=11,12,13 "Built target sample1_unittest"
 .PHONY : googletest/CMakeFiles/sample1_unittest.dir/all
 
 # Build rule for subdir invocation for target.
 googletest/CMakeFiles/sample1_unittest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/sample1_unittest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 0
 .PHONY : googletest/CMakeFiles/sample1_unittest.dir/rule
 
 # Convenience name for target.
@@ -243,18 +243,18 @@ googletest/CMakeFiles/sample1_unittest.dir/clean:
 # Target rules for target googletest/CMakeFiles/sample7_unittest.dir
 
 # All Build rule for target.
-googletest/CMakeFiles/sample7_unittest.dir/all: googletest/CMakeFiles/gtest_main.dir/all
 googletest/CMakeFiles/sample7_unittest.dir/all: googletest/CMakeFiles/gtest.dir/all
+googletest/CMakeFiles/sample7_unittest.dir/all: googletest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) -f googletest/CMakeFiles/sample7_unittest.dir/build.make googletest/CMakeFiles/sample7_unittest.dir/depend
 	$(MAKE) -f googletest/CMakeFiles/sample7_unittest.dir/build.make googletest/CMakeFiles/sample7_unittest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles --progress-num=27,28 "Built target sample7_unittest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles --progress-num=27,28 "Built target sample7_unittest"
 .PHONY : googletest/CMakeFiles/sample7_unittest.dir/all
 
 # Build rule for subdir invocation for target.
 googletest/CMakeFiles/sample7_unittest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/sample7_unittest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 0
 .PHONY : googletest/CMakeFiles/sample7_unittest.dir/rule
 
 # Convenience name for target.
@@ -271,18 +271,18 @@ googletest/CMakeFiles/sample7_unittest.dir/clean:
 # Target rules for target googletest/CMakeFiles/sample2_unittest.dir
 
 # All Build rule for target.
-googletest/CMakeFiles/sample2_unittest.dir/all: googletest/CMakeFiles/gtest_main.dir/all
 googletest/CMakeFiles/sample2_unittest.dir/all: googletest/CMakeFiles/gtest.dir/all
+googletest/CMakeFiles/sample2_unittest.dir/all: googletest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) -f googletest/CMakeFiles/sample2_unittest.dir/build.make googletest/CMakeFiles/sample2_unittest.dir/depend
 	$(MAKE) -f googletest/CMakeFiles/sample2_unittest.dir/build.make googletest/CMakeFiles/sample2_unittest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles --progress-num=14,15,16 "Built target sample2_unittest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles --progress-num=14,15,16 "Built target sample2_unittest"
 .PHONY : googletest/CMakeFiles/sample2_unittest.dir/all
 
 # Build rule for subdir invocation for target.
 googletest/CMakeFiles/sample2_unittest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/sample2_unittest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 0
 .PHONY : googletest/CMakeFiles/sample2_unittest.dir/rule
 
 # Convenience name for target.
@@ -299,18 +299,18 @@ googletest/CMakeFiles/sample2_unittest.dir/clean:
 # Target rules for target googletest/CMakeFiles/sample6_unittest.dir
 
 # All Build rule for target.
-googletest/CMakeFiles/sample6_unittest.dir/all: googletest/CMakeFiles/gtest_main.dir/all
 googletest/CMakeFiles/sample6_unittest.dir/all: googletest/CMakeFiles/gtest.dir/all
+googletest/CMakeFiles/sample6_unittest.dir/all: googletest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) -f googletest/CMakeFiles/sample6_unittest.dir/build.make googletest/CMakeFiles/sample6_unittest.dir/depend
 	$(MAKE) -f googletest/CMakeFiles/sample6_unittest.dir/build.make googletest/CMakeFiles/sample6_unittest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles --progress-num=25,26 "Built target sample6_unittest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles --progress-num=25,26 "Built target sample6_unittest"
 .PHONY : googletest/CMakeFiles/sample6_unittest.dir/all
 
 # Build rule for subdir invocation for target.
 googletest/CMakeFiles/sample6_unittest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/sample6_unittest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 0
 .PHONY : googletest/CMakeFiles/sample6_unittest.dir/rule
 
 # Convenience name for target.
@@ -330,14 +330,14 @@ googletest/CMakeFiles/sample6_unittest.dir/clean:
 googletest/CMakeFiles/sample10_unittest.dir/all: googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f googletest/CMakeFiles/sample10_unittest.dir/build.make googletest/CMakeFiles/sample10_unittest.dir/depend
 	$(MAKE) -f googletest/CMakeFiles/sample10_unittest.dir/build.make googletest/CMakeFiles/sample10_unittest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles --progress-num=9,10 "Built target sample10_unittest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles --progress-num=9,10 "Built target sample10_unittest"
 .PHONY : googletest/CMakeFiles/sample10_unittest.dir/all
 
 # Build rule for subdir invocation for target.
 googletest/CMakeFiles/sample10_unittest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/sample10_unittest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 0
 .PHONY : googletest/CMakeFiles/sample10_unittest.dir/rule
 
 # Convenience name for target.
@@ -354,18 +354,18 @@ googletest/CMakeFiles/sample10_unittest.dir/clean:
 # Target rules for target googletest/CMakeFiles/sample5_unittest.dir
 
 # All Build rule for target.
-googletest/CMakeFiles/sample5_unittest.dir/all: googletest/CMakeFiles/gtest_main.dir/all
 googletest/CMakeFiles/sample5_unittest.dir/all: googletest/CMakeFiles/gtest.dir/all
+googletest/CMakeFiles/sample5_unittest.dir/all: googletest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) -f googletest/CMakeFiles/sample5_unittest.dir/build.make googletest/CMakeFiles/sample5_unittest.dir/depend
 	$(MAKE) -f googletest/CMakeFiles/sample5_unittest.dir/build.make googletest/CMakeFiles/sample5_unittest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles --progress-num=22,23,24 "Built target sample5_unittest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles --progress-num=22,23,24 "Built target sample5_unittest"
 .PHONY : googletest/CMakeFiles/sample5_unittest.dir/all
 
 # Build rule for subdir invocation for target.
 googletest/CMakeFiles/sample5_unittest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/sample5_unittest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 0
 .PHONY : googletest/CMakeFiles/sample5_unittest.dir/rule
 
 # Convenience name for target.
@@ -382,18 +382,18 @@ googletest/CMakeFiles/sample5_unittest.dir/clean:
 # Target rules for target googletest/CMakeFiles/sample8_unittest.dir
 
 # All Build rule for target.
-googletest/CMakeFiles/sample8_unittest.dir/all: googletest/CMakeFiles/gtest_main.dir/all
 googletest/CMakeFiles/sample8_unittest.dir/all: googletest/CMakeFiles/gtest.dir/all
+googletest/CMakeFiles/sample8_unittest.dir/all: googletest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) -f googletest/CMakeFiles/sample8_unittest.dir/build.make googletest/CMakeFiles/sample8_unittest.dir/depend
 	$(MAKE) -f googletest/CMakeFiles/sample8_unittest.dir/build.make googletest/CMakeFiles/sample8_unittest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles --progress-num=29,30 "Built target sample8_unittest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles --progress-num=29,30 "Built target sample8_unittest"
 .PHONY : googletest/CMakeFiles/sample8_unittest.dir/all
 
 # Build rule for subdir invocation for target.
 googletest/CMakeFiles/sample8_unittest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/sample8_unittest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 0
 .PHONY : googletest/CMakeFiles/sample8_unittest.dir/rule
 
 # Convenience name for target.
@@ -410,18 +410,18 @@ googletest/CMakeFiles/sample8_unittest.dir/clean:
 # Target rules for target googletest/CMakeFiles/sample3_unittest.dir
 
 # All Build rule for target.
-googletest/CMakeFiles/sample3_unittest.dir/all: googletest/CMakeFiles/gtest_main.dir/all
 googletest/CMakeFiles/sample3_unittest.dir/all: googletest/CMakeFiles/gtest.dir/all
+googletest/CMakeFiles/sample3_unittest.dir/all: googletest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) -f googletest/CMakeFiles/sample3_unittest.dir/build.make googletest/CMakeFiles/sample3_unittest.dir/depend
 	$(MAKE) -f googletest/CMakeFiles/sample3_unittest.dir/build.make googletest/CMakeFiles/sample3_unittest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles --progress-num=17,18 "Built target sample3_unittest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles --progress-num=17,18 "Built target sample3_unittest"
 .PHONY : googletest/CMakeFiles/sample3_unittest.dir/all
 
 # Build rule for subdir invocation for target.
 googletest/CMakeFiles/sample3_unittest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/sample3_unittest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 0
 .PHONY : googletest/CMakeFiles/sample3_unittest.dir/rule
 
 # Convenience name for target.
@@ -441,14 +441,14 @@ googletest/CMakeFiles/sample3_unittest.dir/clean:
 googletest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f googletest/CMakeFiles/gtest.dir/build.make googletest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f googletest/CMakeFiles/gtest.dir/build.make googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles --progress-num=5,6 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles --progress-num=5,6 "Built target gtest"
 .PHONY : googletest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
 googletest/CMakeFiles/gtest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/gtest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 0
 .PHONY : googletest/CMakeFiles/gtest.dir/rule
 
 # Convenience name for target.
@@ -465,18 +465,18 @@ googletest/CMakeFiles/gtest.dir/clean:
 # Target rules for target googletest/CMakeFiles/sample4_unittest.dir
 
 # All Build rule for target.
-googletest/CMakeFiles/sample4_unittest.dir/all: googletest/CMakeFiles/gtest_main.dir/all
 googletest/CMakeFiles/sample4_unittest.dir/all: googletest/CMakeFiles/gtest.dir/all
+googletest/CMakeFiles/sample4_unittest.dir/all: googletest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) -f googletest/CMakeFiles/sample4_unittest.dir/build.make googletest/CMakeFiles/sample4_unittest.dir/depend
 	$(MAKE) -f googletest/CMakeFiles/sample4_unittest.dir/build.make googletest/CMakeFiles/sample4_unittest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles --progress-num=19,20,21 "Built target sample4_unittest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles --progress-num=19,20,21 "Built target sample4_unittest"
 .PHONY : googletest/CMakeFiles/sample4_unittest.dir/all
 
 # Build rule for subdir invocation for target.
 googletest/CMakeFiles/sample4_unittest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/sample4_unittest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 0
 .PHONY : googletest/CMakeFiles/sample4_unittest.dir/rule
 
 # Convenience name for target.
@@ -496,14 +496,14 @@ googletest/CMakeFiles/sample4_unittest.dir/clean:
 googletest/CMakeFiles/sample9_unittest.dir/all: googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f googletest/CMakeFiles/sample9_unittest.dir/build.make googletest/CMakeFiles/sample9_unittest.dir/depend
 	$(MAKE) -f googletest/CMakeFiles/sample9_unittest.dir/build.make googletest/CMakeFiles/sample9_unittest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles --progress-num=31,32 "Built target sample9_unittest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles --progress-num=31,32 "Built target sample9_unittest"
 .PHONY : googletest/CMakeFiles/sample9_unittest.dir/all
 
 # Build rule for subdir invocation for target.
 googletest/CMakeFiles/sample9_unittest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/sample9_unittest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 0
 .PHONY : googletest/CMakeFiles/sample9_unittest.dir/rule
 
 # Convenience name for target.

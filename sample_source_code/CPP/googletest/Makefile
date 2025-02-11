@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /var/lib/jenkins/workspace/Googletest-gcov-gtest
+CMAKE_SOURCE_DIR = /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /var/lib/jenkins/workspace/Googletest-gcov-gtest
+CMAKE_BINARY_DIR = /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,9 +137,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

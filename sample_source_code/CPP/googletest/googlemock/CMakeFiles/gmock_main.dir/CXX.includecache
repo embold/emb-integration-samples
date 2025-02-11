@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/var/lib/jenkins/workspace/Googletest-gcov-gtest/googlemock/src/gmock_main.cc
+/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googlemock/src/gmock_main.cc
 iostream
 -
 gmock/gmock.h
-/var/lib/jenkins/workspace/Googletest-gcov-gtest/googlemock/src/gmock/gmock.h
+/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googlemock/src/gmock/gmock.h
 gtest/gtest.h
-/var/lib/jenkins/workspace/Googletest-gcov-gtest/googlemock/src/gtest/gtest.h
+/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googlemock/src/gtest/gtest.h
 tchar.h
 -
 

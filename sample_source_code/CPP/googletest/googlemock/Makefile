@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /var/lib/jenkins/workspace/Googletest-gcov-gtest
+CMAKE_SOURCE_DIR = /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /var/lib/jenkins/workspace/Googletest-gcov-gtest
+CMAKE_BINARY_DIR = /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,14 +137,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles /var/lib/jenkins/workspace/Googletest-gcov-gtest/googlemock/CMakeFiles/progress.marks
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f CMakeFiles/Makefile2 googlemock/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 0
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googlemock/CMakeFiles/progress.marks
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f CMakeFiles/Makefile2 googlemock/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f CMakeFiles/Makefile2 googlemock/clean
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f CMakeFiles/Makefile2 googlemock/clean
 .PHONY : clean
 
 # The main clean target
@@ -154,22 +154,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f CMakeFiles/Makefile2 googlemock/preinstall
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f CMakeFiles/Makefile2 googlemock/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f CMakeFiles/Makefile2 googlemock/preinstall
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f CMakeFiles/Makefile2 googlemock/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 googlemock/CMakeFiles/gmock_main.dir/rule:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f CMakeFiles/Makefile2 googlemock/CMakeFiles/gmock_main.dir/rule
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f CMakeFiles/Makefile2 googlemock/CMakeFiles/gmock_main.dir/rule
 .PHONY : googlemock/CMakeFiles/gmock_main.dir/rule
 
 # Convenience name for target.
@@ -179,12 +179,12 @@ gmock_main: googlemock/CMakeFiles/gmock_main.dir/rule
 
 # fast build rule for target.
 gmock_main/fast:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googlemock/CMakeFiles/gmock_main.dir/build.make googlemock/CMakeFiles/gmock_main.dir/build
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googlemock/CMakeFiles/gmock_main.dir/build.make googlemock/CMakeFiles/gmock_main.dir/build
 .PHONY : gmock_main/fast
 
 # Convenience name for target.
 googlemock/CMakeFiles/gmock.dir/rule:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f CMakeFiles/Makefile2 googlemock/CMakeFiles/gmock.dir/rule
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f CMakeFiles/Makefile2 googlemock/CMakeFiles/gmock.dir/rule
 .PHONY : googlemock/CMakeFiles/gmock.dir/rule
 
 # Convenience name for target.
@@ -194,7 +194,7 @@ gmock: googlemock/CMakeFiles/gmock.dir/rule
 
 # fast build rule for target.
 gmock/fast:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googlemock/CMakeFiles/gmock.dir/build.make googlemock/CMakeFiles/gmock.dir/build
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googlemock/CMakeFiles/gmock.dir/build.make googlemock/CMakeFiles/gmock.dir/build
 .PHONY : gmock/fast
 
 src/gmock-all.o: src/gmock-all.cc.o
@@ -203,7 +203,7 @@ src/gmock-all.o: src/gmock-all.cc.o
 
 # target to build an object file
 src/gmock-all.cc.o:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googlemock/CMakeFiles/gmock.dir/build.make googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googlemock/CMakeFiles/gmock.dir/build.make googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
 .PHONY : src/gmock-all.cc.o
 
 src/gmock-all.i: src/gmock-all.cc.i
@@ -212,7 +212,7 @@ src/gmock-all.i: src/gmock-all.cc.i
 
 # target to preprocess a source file
 src/gmock-all.cc.i:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googlemock/CMakeFiles/gmock.dir/build.make googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.i
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googlemock/CMakeFiles/gmock.dir/build.make googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.i
 .PHONY : src/gmock-all.cc.i
 
 src/gmock-all.s: src/gmock-all.cc.s
@@ -221,7 +221,7 @@ src/gmock-all.s: src/gmock-all.cc.s
 
 # target to generate assembly for a file
 src/gmock-all.cc.s:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googlemock/CMakeFiles/gmock.dir/build.make googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.s
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googlemock/CMakeFiles/gmock.dir/build.make googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.s
 .PHONY : src/gmock-all.cc.s
 
 src/gmock_main.o: src/gmock_main.cc.o
@@ -230,7 +230,7 @@ src/gmock_main.o: src/gmock_main.cc.o
 
 # target to build an object file
 src/gmock_main.cc.o:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googlemock/CMakeFiles/gmock_main.dir/build.make googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googlemock/CMakeFiles/gmock_main.dir/build.make googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
 .PHONY : src/gmock_main.cc.o
 
 src/gmock_main.i: src/gmock_main.cc.i
@@ -239,7 +239,7 @@ src/gmock_main.i: src/gmock_main.cc.i
 
 # target to preprocess a source file
 src/gmock_main.cc.i:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googlemock/CMakeFiles/gmock_main.dir/build.make googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.i
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googlemock/CMakeFiles/gmock_main.dir/build.make googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.i
 .PHONY : src/gmock_main.cc.i
 
 src/gmock_main.s: src/gmock_main.cc.s
@@ -248,7 +248,7 @@ src/gmock_main.s: src/gmock_main.cc.s
 
 # target to generate assembly for a file
 src/gmock_main.cc.s:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googlemock/CMakeFiles/gmock_main.dir/build.make googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.s
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googlemock/CMakeFiles/gmock_main.dir/build.make googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.s
 .PHONY : src/gmock_main.cc.s
 
 # Help Target
@@ -283,6 +283,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

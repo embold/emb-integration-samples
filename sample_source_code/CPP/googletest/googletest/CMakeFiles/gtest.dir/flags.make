@@ -6,5 +6,5 @@ CXX_FLAGS = -g -O0 -fprofile-arcs -ftest-coverage -g   -Wall -Wshadow -Wno-error
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/include -I/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest 
+CXX_INCLUDES = -I/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/include -I/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest 
 

@@ -6,19 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/var/lib/jenkins/workspace/Googletest-gcov-gtest/googlemock/src/gmock-all.cc
+/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googlemock/src/gmock-all.cc
 gmock/gmock.h
-/var/lib/jenkins/workspace/Googletest-gcov-gtest/googlemock/src/gmock/gmock.h
+/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googlemock/src/gmock/gmock.h
 src/gmock-cardinalities.cc
-/var/lib/jenkins/workspace/Googletest-gcov-gtest/googlemock/src/src/gmock-cardinalities.cc
+/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googlemock/src/src/gmock-cardinalities.cc
 src/gmock-internal-utils.cc
-/var/lib/jenkins/workspace/Googletest-gcov-gtest/googlemock/src/src/gmock-internal-utils.cc
+/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googlemock/src/src/gmock-internal-utils.cc
 src/gmock-matchers.cc
-/var/lib/jenkins/workspace/Googletest-gcov-gtest/googlemock/src/src/gmock-matchers.cc
+/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googlemock/src/src/gmock-matchers.cc
 src/gmock-spec-builders.cc
-/var/lib/jenkins/workspace/Googletest-gcov-gtest/googlemock/src/src/gmock-spec-builders.cc
+/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googlemock/src/src/gmock-spec-builders.cc
 src/gmock.cc
-/var/lib/jenkins/workspace/Googletest-gcov-gtest/googlemock/src/src/gmock.cc
+/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googlemock/src/src/gmock.cc
 
 googlemock/include/gmock/gmock-actions.h
 errno.h

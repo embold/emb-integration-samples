@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/src/gtest_main.cc
+/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/src/gtest_main.cc
 cstdio
 -
 gtest/gtest.h
-/var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/src/gtest/gtest.h
+/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/src/gtest/gtest.h
 
 googletest/include/gtest/gtest-death-test.h
 gtest/internal/gtest-death-test-internal.h

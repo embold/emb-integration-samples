@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /var/lib/jenkins/workspace/Googletest-gcov-gtest
+CMAKE_SOURCE_DIR = /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /var/lib/jenkins/workspace/Googletest-gcov-gtest
+CMAKE_BINARY_DIR = /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest
 
 # Include any dependencies generated for this target.
 include googletest/CMakeFiles/sample5_unittest.dir/depend.make
@@ -59,29 +59,29 @@ include googletest/CMakeFiles/sample5_unittest.dir/flags.make
 
 googletest/CMakeFiles/sample5_unittest.dir/samples/sample5_unittest.cc.o: googletest/CMakeFiles/sample5_unittest.dir/flags.make
 googletest/CMakeFiles/sample5_unittest.dir/samples/sample5_unittest.cc.o: googletest/samples/sample5_unittest.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object googletest/CMakeFiles/sample5_unittest.dir/samples/sample5_unittest.cc.o"
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sample5_unittest.dir/samples/sample5_unittest.cc.o -c /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample5_unittest.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object googletest/CMakeFiles/sample5_unittest.dir/samples/sample5_unittest.cc.o"
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sample5_unittest.dir/samples/sample5_unittest.cc.o -c /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample5_unittest.cc
 
 googletest/CMakeFiles/sample5_unittest.dir/samples/sample5_unittest.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sample5_unittest.dir/samples/sample5_unittest.cc.i"
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample5_unittest.cc > CMakeFiles/sample5_unittest.dir/samples/sample5_unittest.cc.i
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample5_unittest.cc > CMakeFiles/sample5_unittest.dir/samples/sample5_unittest.cc.i
 
 googletest/CMakeFiles/sample5_unittest.dir/samples/sample5_unittest.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sample5_unittest.dir/samples/sample5_unittest.cc.s"
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample5_unittest.cc -o CMakeFiles/sample5_unittest.dir/samples/sample5_unittest.cc.s
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample5_unittest.cc -o CMakeFiles/sample5_unittest.dir/samples/sample5_unittest.cc.s
 
 googletest/CMakeFiles/sample5_unittest.dir/samples/sample1.cc.o: googletest/CMakeFiles/sample5_unittest.dir/flags.make
 googletest/CMakeFiles/sample5_unittest.dir/samples/sample1.cc.o: googletest/samples/sample1.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object googletest/CMakeFiles/sample5_unittest.dir/samples/sample1.cc.o"
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sample5_unittest.dir/samples/sample1.cc.o -c /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample1.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object googletest/CMakeFiles/sample5_unittest.dir/samples/sample1.cc.o"
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sample5_unittest.dir/samples/sample1.cc.o -c /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample1.cc
 
 googletest/CMakeFiles/sample5_unittest.dir/samples/sample1.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sample5_unittest.dir/samples/sample1.cc.i"
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample1.cc > CMakeFiles/sample5_unittest.dir/samples/sample1.cc.i
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample1.cc > CMakeFiles/sample5_unittest.dir/samples/sample1.cc.i
 
 googletest/CMakeFiles/sample5_unittest.dir/samples/sample1.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sample5_unittest.dir/samples/sample1.cc.s"
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/samples/sample1.cc -o CMakeFiles/sample5_unittest.dir/samples/sample1.cc.s
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/samples/sample1.cc -o CMakeFiles/sample5_unittest.dir/samples/sample1.cc.s
 
 # Object files for target sample5_unittest
 sample5_unittest_OBJECTS = \
@@ -97,8 +97,8 @@ googletest/sample5_unittest: googletest/CMakeFiles/sample5_unittest.dir/build.ma
 googletest/sample5_unittest: lib/libgtest_maind.a
 googletest/sample5_unittest: lib/libgtestd.a
 googletest/sample5_unittest: googletest/CMakeFiles/sample5_unittest.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable sample5_unittest"
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sample5_unittest.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable sample5_unittest"
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sample5_unittest.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 googletest/CMakeFiles/sample5_unittest.dir/build: googletest/sample5_unittest
@@ -106,10 +106,10 @@ googletest/CMakeFiles/sample5_unittest.dir/build: googletest/sample5_unittest
 .PHONY : googletest/CMakeFiles/sample5_unittest.dir/build
 
 googletest/CMakeFiles/sample5_unittest.dir/clean:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest && $(CMAKE_COMMAND) -P CMakeFiles/sample5_unittest.dir/cmake_clean.cmake
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest && $(CMAKE_COMMAND) -P CMakeFiles/sample5_unittest.dir/cmake_clean.cmake
 .PHONY : googletest/CMakeFiles/sample5_unittest.dir/clean
 
 googletest/CMakeFiles/sample5_unittest.dir/depend:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /var/lib/jenkins/workspace/Googletest-gcov-gtest /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest /var/lib/jenkins/workspace/Googletest-gcov-gtest /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/CMakeFiles/sample5_unittest.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/CMakeFiles/sample5_unittest.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : googletest/CMakeFiles/sample5_unittest.dir/depend
 

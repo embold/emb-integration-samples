@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /var/lib/jenkins/workspace/Googletest-gcov-gtest
+CMAKE_SOURCE_DIR = /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /var/lib/jenkins/workspace/Googletest-gcov-gtest
+CMAKE_BINARY_DIR = /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,14 +137,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles /var/lib/jenkins/workspace/Googletest-gcov-gtest/googletest/CMakeFiles/progress.marks
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f CMakeFiles/Makefile2 googletest/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /var/lib/jenkins/workspace/Googletest-gcov-gtest/CMakeFiles 0
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/googletest/CMakeFiles/progress.marks
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f CMakeFiles/Makefile2 googletest/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f CMakeFiles/Makefile2 googletest/clean
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f CMakeFiles/Makefile2 googletest/clean
 .PHONY : clean
 
 # The main clean target
@@ -154,22 +154,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f CMakeFiles/Makefile2 googletest/preinstall
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f CMakeFiles/Makefile2 googletest/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f CMakeFiles/Makefile2 googletest/preinstall
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f CMakeFiles/Makefile2 googletest/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 googletest/CMakeFiles/gtest_main.dir/rule:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/gtest_main.dir/rule
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/gtest_main.dir/rule
 .PHONY : googletest/CMakeFiles/gtest_main.dir/rule
 
 # Convenience name for target.
@@ -179,12 +179,12 @@ gtest_main: googletest/CMakeFiles/gtest_main.dir/rule
 
 # fast build rule for target.
 gtest_main/fast:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/gtest_main.dir/build.make googletest/CMakeFiles/gtest_main.dir/build
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/gtest_main.dir/build.make googletest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
 # Convenience name for target.
 googletest/CMakeFiles/sample1_unittest.dir/rule:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/sample1_unittest.dir/rule
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/sample1_unittest.dir/rule
 .PHONY : googletest/CMakeFiles/sample1_unittest.dir/rule
 
 # Convenience name for target.
@@ -194,12 +194,12 @@ sample1_unittest: googletest/CMakeFiles/sample1_unittest.dir/rule
 
 # fast build rule for target.
 sample1_unittest/fast:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample1_unittest.dir/build.make googletest/CMakeFiles/sample1_unittest.dir/build
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample1_unittest.dir/build.make googletest/CMakeFiles/sample1_unittest.dir/build
 .PHONY : sample1_unittest/fast
 
 # Convenience name for target.
 googletest/CMakeFiles/sample7_unittest.dir/rule:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/sample7_unittest.dir/rule
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/sample7_unittest.dir/rule
 .PHONY : googletest/CMakeFiles/sample7_unittest.dir/rule
 
 # Convenience name for target.
@@ -209,12 +209,12 @@ sample7_unittest: googletest/CMakeFiles/sample7_unittest.dir/rule
 
 # fast build rule for target.
 sample7_unittest/fast:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample7_unittest.dir/build.make googletest/CMakeFiles/sample7_unittest.dir/build
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample7_unittest.dir/build.make googletest/CMakeFiles/sample7_unittest.dir/build
 .PHONY : sample7_unittest/fast
 
 # Convenience name for target.
 googletest/CMakeFiles/sample2_unittest.dir/rule:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/sample2_unittest.dir/rule
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/sample2_unittest.dir/rule
 .PHONY : googletest/CMakeFiles/sample2_unittest.dir/rule
 
 # Convenience name for target.
@@ -224,12 +224,12 @@ sample2_unittest: googletest/CMakeFiles/sample2_unittest.dir/rule
 
 # fast build rule for target.
 sample2_unittest/fast:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample2_unittest.dir/build.make googletest/CMakeFiles/sample2_unittest.dir/build
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample2_unittest.dir/build.make googletest/CMakeFiles/sample2_unittest.dir/build
 .PHONY : sample2_unittest/fast
 
 # Convenience name for target.
 googletest/CMakeFiles/sample6_unittest.dir/rule:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/sample6_unittest.dir/rule
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/sample6_unittest.dir/rule
 .PHONY : googletest/CMakeFiles/sample6_unittest.dir/rule
 
 # Convenience name for target.
@@ -239,12 +239,12 @@ sample6_unittest: googletest/CMakeFiles/sample6_unittest.dir/rule
 
 # fast build rule for target.
 sample6_unittest/fast:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample6_unittest.dir/build.make googletest/CMakeFiles/sample6_unittest.dir/build
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample6_unittest.dir/build.make googletest/CMakeFiles/sample6_unittest.dir/build
 .PHONY : sample6_unittest/fast
 
 # Convenience name for target.
 googletest/CMakeFiles/sample10_unittest.dir/rule:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/sample10_unittest.dir/rule
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/sample10_unittest.dir/rule
 .PHONY : googletest/CMakeFiles/sample10_unittest.dir/rule
 
 # Convenience name for target.
@@ -254,12 +254,12 @@ sample10_unittest: googletest/CMakeFiles/sample10_unittest.dir/rule
 
 # fast build rule for target.
 sample10_unittest/fast:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample10_unittest.dir/build.make googletest/CMakeFiles/sample10_unittest.dir/build
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample10_unittest.dir/build.make googletest/CMakeFiles/sample10_unittest.dir/build
 .PHONY : sample10_unittest/fast
 
 # Convenience name for target.
 googletest/CMakeFiles/sample5_unittest.dir/rule:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/sample5_unittest.dir/rule
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/sample5_unittest.dir/rule
 .PHONY : googletest/CMakeFiles/sample5_unittest.dir/rule
 
 # Convenience name for target.
@@ -269,12 +269,12 @@ sample5_unittest: googletest/CMakeFiles/sample5_unittest.dir/rule
 
 # fast build rule for target.
 sample5_unittest/fast:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample5_unittest.dir/build.make googletest/CMakeFiles/sample5_unittest.dir/build
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample5_unittest.dir/build.make googletest/CMakeFiles/sample5_unittest.dir/build
 .PHONY : sample5_unittest/fast
 
 # Convenience name for target.
 googletest/CMakeFiles/sample8_unittest.dir/rule:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/sample8_unittest.dir/rule
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/sample8_unittest.dir/rule
 .PHONY : googletest/CMakeFiles/sample8_unittest.dir/rule
 
 # Convenience name for target.
@@ -284,12 +284,12 @@ sample8_unittest: googletest/CMakeFiles/sample8_unittest.dir/rule
 
 # fast build rule for target.
 sample8_unittest/fast:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample8_unittest.dir/build.make googletest/CMakeFiles/sample8_unittest.dir/build
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample8_unittest.dir/build.make googletest/CMakeFiles/sample8_unittest.dir/build
 .PHONY : sample8_unittest/fast
 
 # Convenience name for target.
 googletest/CMakeFiles/sample3_unittest.dir/rule:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/sample3_unittest.dir/rule
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/sample3_unittest.dir/rule
 .PHONY : googletest/CMakeFiles/sample3_unittest.dir/rule
 
 # Convenience name for target.
@@ -299,12 +299,12 @@ sample3_unittest: googletest/CMakeFiles/sample3_unittest.dir/rule
 
 # fast build rule for target.
 sample3_unittest/fast:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample3_unittest.dir/build.make googletest/CMakeFiles/sample3_unittest.dir/build
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample3_unittest.dir/build.make googletest/CMakeFiles/sample3_unittest.dir/build
 .PHONY : sample3_unittest/fast
 
 # Convenience name for target.
 googletest/CMakeFiles/gtest.dir/rule:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/gtest.dir/rule
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/gtest.dir/rule
 .PHONY : googletest/CMakeFiles/gtest.dir/rule
 
 # Convenience name for target.
@@ -314,12 +314,12 @@ gtest: googletest/CMakeFiles/gtest.dir/rule
 
 # fast build rule for target.
 gtest/fast:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/gtest.dir/build.make googletest/CMakeFiles/gtest.dir/build
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/gtest.dir/build.make googletest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
 # Convenience name for target.
 googletest/CMakeFiles/sample4_unittest.dir/rule:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/sample4_unittest.dir/rule
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/sample4_unittest.dir/rule
 .PHONY : googletest/CMakeFiles/sample4_unittest.dir/rule
 
 # Convenience name for target.
@@ -329,12 +329,12 @@ sample4_unittest: googletest/CMakeFiles/sample4_unittest.dir/rule
 
 # fast build rule for target.
 sample4_unittest/fast:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample4_unittest.dir/build.make googletest/CMakeFiles/sample4_unittest.dir/build
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample4_unittest.dir/build.make googletest/CMakeFiles/sample4_unittest.dir/build
 .PHONY : sample4_unittest/fast
 
 # Convenience name for target.
 googletest/CMakeFiles/sample9_unittest.dir/rule:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/sample9_unittest.dir/rule
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f CMakeFiles/Makefile2 googletest/CMakeFiles/sample9_unittest.dir/rule
 .PHONY : googletest/CMakeFiles/sample9_unittest.dir/rule
 
 # Convenience name for target.
@@ -344,7 +344,7 @@ sample9_unittest: googletest/CMakeFiles/sample9_unittest.dir/rule
 
 # fast build rule for target.
 sample9_unittest/fast:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample9_unittest.dir/build.make googletest/CMakeFiles/sample9_unittest.dir/build
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample9_unittest.dir/build.make googletest/CMakeFiles/sample9_unittest.dir/build
 .PHONY : sample9_unittest/fast
 
 samples/sample1.o: samples/sample1.cc.o
@@ -353,8 +353,8 @@ samples/sample1.o: samples/sample1.cc.o
 
 # target to build an object file
 samples/sample1.cc.o:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample1_unittest.dir/build.make googletest/CMakeFiles/sample1_unittest.dir/samples/sample1.cc.o
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample5_unittest.dir/build.make googletest/CMakeFiles/sample5_unittest.dir/samples/sample1.cc.o
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample1_unittest.dir/build.make googletest/CMakeFiles/sample1_unittest.dir/samples/sample1.cc.o
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample5_unittest.dir/build.make googletest/CMakeFiles/sample5_unittest.dir/samples/sample1.cc.o
 .PHONY : samples/sample1.cc.o
 
 samples/sample1.i: samples/sample1.cc.i
@@ -363,8 +363,8 @@ samples/sample1.i: samples/sample1.cc.i
 
 # target to preprocess a source file
 samples/sample1.cc.i:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample1_unittest.dir/build.make googletest/CMakeFiles/sample1_unittest.dir/samples/sample1.cc.i
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample5_unittest.dir/build.make googletest/CMakeFiles/sample5_unittest.dir/samples/sample1.cc.i
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample1_unittest.dir/build.make googletest/CMakeFiles/sample1_unittest.dir/samples/sample1.cc.i
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample5_unittest.dir/build.make googletest/CMakeFiles/sample5_unittest.dir/samples/sample1.cc.i
 .PHONY : samples/sample1.cc.i
 
 samples/sample1.s: samples/sample1.cc.s
@@ -373,8 +373,8 @@ samples/sample1.s: samples/sample1.cc.s
 
 # target to generate assembly for a file
 samples/sample1.cc.s:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample1_unittest.dir/build.make googletest/CMakeFiles/sample1_unittest.dir/samples/sample1.cc.s
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample5_unittest.dir/build.make googletest/CMakeFiles/sample5_unittest.dir/samples/sample1.cc.s
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample1_unittest.dir/build.make googletest/CMakeFiles/sample1_unittest.dir/samples/sample1.cc.s
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample5_unittest.dir/build.make googletest/CMakeFiles/sample5_unittest.dir/samples/sample1.cc.s
 .PHONY : samples/sample1.cc.s
 
 samples/sample10_unittest.o: samples/sample10_unittest.cc.o
@@ -383,7 +383,7 @@ samples/sample10_unittest.o: samples/sample10_unittest.cc.o
 
 # target to build an object file
 samples/sample10_unittest.cc.o:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample10_unittest.dir/build.make googletest/CMakeFiles/sample10_unittest.dir/samples/sample10_unittest.cc.o
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample10_unittest.dir/build.make googletest/CMakeFiles/sample10_unittest.dir/samples/sample10_unittest.cc.o
 .PHONY : samples/sample10_unittest.cc.o
 
 samples/sample10_unittest.i: samples/sample10_unittest.cc.i
@@ -392,7 +392,7 @@ samples/sample10_unittest.i: samples/sample10_unittest.cc.i
 
 # target to preprocess a source file
 samples/sample10_unittest.cc.i:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample10_unittest.dir/build.make googletest/CMakeFiles/sample10_unittest.dir/samples/sample10_unittest.cc.i
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample10_unittest.dir/build.make googletest/CMakeFiles/sample10_unittest.dir/samples/sample10_unittest.cc.i
 .PHONY : samples/sample10_unittest.cc.i
 
 samples/sample10_unittest.s: samples/sample10_unittest.cc.s
@@ -401,7 +401,7 @@ samples/sample10_unittest.s: samples/sample10_unittest.cc.s
 
 # target to generate assembly for a file
 samples/sample10_unittest.cc.s:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample10_unittest.dir/build.make googletest/CMakeFiles/sample10_unittest.dir/samples/sample10_unittest.cc.s
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample10_unittest.dir/build.make googletest/CMakeFiles/sample10_unittest.dir/samples/sample10_unittest.cc.s
 .PHONY : samples/sample10_unittest.cc.s
 
 samples/sample1_unittest.o: samples/sample1_unittest.cc.o
@@ -410,7 +410,7 @@ samples/sample1_unittest.o: samples/sample1_unittest.cc.o
 
 # target to build an object file
 samples/sample1_unittest.cc.o:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample1_unittest.dir/build.make googletest/CMakeFiles/sample1_unittest.dir/samples/sample1_unittest.cc.o
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample1_unittest.dir/build.make googletest/CMakeFiles/sample1_unittest.dir/samples/sample1_unittest.cc.o
 .PHONY : samples/sample1_unittest.cc.o
 
 samples/sample1_unittest.i: samples/sample1_unittest.cc.i
@@ -419,7 +419,7 @@ samples/sample1_unittest.i: samples/sample1_unittest.cc.i
 
 # target to preprocess a source file
 samples/sample1_unittest.cc.i:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample1_unittest.dir/build.make googletest/CMakeFiles/sample1_unittest.dir/samples/sample1_unittest.cc.i
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample1_unittest.dir/build.make googletest/CMakeFiles/sample1_unittest.dir/samples/sample1_unittest.cc.i
 .PHONY : samples/sample1_unittest.cc.i
 
 samples/sample1_unittest.s: samples/sample1_unittest.cc.s
@@ -428,7 +428,7 @@ samples/sample1_unittest.s: samples/sample1_unittest.cc.s
 
 # target to generate assembly for a file
 samples/sample1_unittest.cc.s:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample1_unittest.dir/build.make googletest/CMakeFiles/sample1_unittest.dir/samples/sample1_unittest.cc.s
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample1_unittest.dir/build.make googletest/CMakeFiles/sample1_unittest.dir/samples/sample1_unittest.cc.s
 .PHONY : samples/sample1_unittest.cc.s
 
 samples/sample2.o: samples/sample2.cc.o
@@ -437,7 +437,7 @@ samples/sample2.o: samples/sample2.cc.o
 
 # target to build an object file
 samples/sample2.cc.o:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample2_unittest.dir/build.make googletest/CMakeFiles/sample2_unittest.dir/samples/sample2.cc.o
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample2_unittest.dir/build.make googletest/CMakeFiles/sample2_unittest.dir/samples/sample2.cc.o
 .PHONY : samples/sample2.cc.o
 
 samples/sample2.i: samples/sample2.cc.i
@@ -446,7 +446,7 @@ samples/sample2.i: samples/sample2.cc.i
 
 # target to preprocess a source file
 samples/sample2.cc.i:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample2_unittest.dir/build.make googletest/CMakeFiles/sample2_unittest.dir/samples/sample2.cc.i
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample2_unittest.dir/build.make googletest/CMakeFiles/sample2_unittest.dir/samples/sample2.cc.i
 .PHONY : samples/sample2.cc.i
 
 samples/sample2.s: samples/sample2.cc.s
@@ -455,7 +455,7 @@ samples/sample2.s: samples/sample2.cc.s
 
 # target to generate assembly for a file
 samples/sample2.cc.s:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample2_unittest.dir/build.make googletest/CMakeFiles/sample2_unittest.dir/samples/sample2.cc.s
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample2_unittest.dir/build.make googletest/CMakeFiles/sample2_unittest.dir/samples/sample2.cc.s
 .PHONY : samples/sample2.cc.s
 
 samples/sample2_unittest.o: samples/sample2_unittest.cc.o
@@ -464,7 +464,7 @@ samples/sample2_unittest.o: samples/sample2_unittest.cc.o
 
 # target to build an object file
 samples/sample2_unittest.cc.o:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample2_unittest.dir/build.make googletest/CMakeFiles/sample2_unittest.dir/samples/sample2_unittest.cc.o
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample2_unittest.dir/build.make googletest/CMakeFiles/sample2_unittest.dir/samples/sample2_unittest.cc.o
 .PHONY : samples/sample2_unittest.cc.o
 
 samples/sample2_unittest.i: samples/sample2_unittest.cc.i
@@ -473,7 +473,7 @@ samples/sample2_unittest.i: samples/sample2_unittest.cc.i
 
 # target to preprocess a source file
 samples/sample2_unittest.cc.i:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample2_unittest.dir/build.make googletest/CMakeFiles/sample2_unittest.dir/samples/sample2_unittest.cc.i
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample2_unittest.dir/build.make googletest/CMakeFiles/sample2_unittest.dir/samples/sample2_unittest.cc.i
 .PHONY : samples/sample2_unittest.cc.i
 
 samples/sample2_unittest.s: samples/sample2_unittest.cc.s
@@ -482,7 +482,7 @@ samples/sample2_unittest.s: samples/sample2_unittest.cc.s
 
 # target to generate assembly for a file
 samples/sample2_unittest.cc.s:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample2_unittest.dir/build.make googletest/CMakeFiles/sample2_unittest.dir/samples/sample2_unittest.cc.s
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample2_unittest.dir/build.make googletest/CMakeFiles/sample2_unittest.dir/samples/sample2_unittest.cc.s
 .PHONY : samples/sample2_unittest.cc.s
 
 samples/sample3_unittest.o: samples/sample3_unittest.cc.o
@@ -491,7 +491,7 @@ samples/sample3_unittest.o: samples/sample3_unittest.cc.o
 
 # target to build an object file
 samples/sample3_unittest.cc.o:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample3_unittest.dir/build.make googletest/CMakeFiles/sample3_unittest.dir/samples/sample3_unittest.cc.o
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample3_unittest.dir/build.make googletest/CMakeFiles/sample3_unittest.dir/samples/sample3_unittest.cc.o
 .PHONY : samples/sample3_unittest.cc.o
 
 samples/sample3_unittest.i: samples/sample3_unittest.cc.i
@@ -500,7 +500,7 @@ samples/sample3_unittest.i: samples/sample3_unittest.cc.i
 
 # target to preprocess a source file
 samples/sample3_unittest.cc.i:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample3_unittest.dir/build.make googletest/CMakeFiles/sample3_unittest.dir/samples/sample3_unittest.cc.i
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample3_unittest.dir/build.make googletest/CMakeFiles/sample3_unittest.dir/samples/sample3_unittest.cc.i
 .PHONY : samples/sample3_unittest.cc.i
 
 samples/sample3_unittest.s: samples/sample3_unittest.cc.s
@@ -509,7 +509,7 @@ samples/sample3_unittest.s: samples/sample3_unittest.cc.s
 
 # target to generate assembly for a file
 samples/sample3_unittest.cc.s:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample3_unittest.dir/build.make googletest/CMakeFiles/sample3_unittest.dir/samples/sample3_unittest.cc.s
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample3_unittest.dir/build.make googletest/CMakeFiles/sample3_unittest.dir/samples/sample3_unittest.cc.s
 .PHONY : samples/sample3_unittest.cc.s
 
 samples/sample4.o: samples/sample4.cc.o
@@ -518,7 +518,7 @@ samples/sample4.o: samples/sample4.cc.o
 
 # target to build an object file
 samples/sample4.cc.o:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample4_unittest.dir/build.make googletest/CMakeFiles/sample4_unittest.dir/samples/sample4.cc.o
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample4_unittest.dir/build.make googletest/CMakeFiles/sample4_unittest.dir/samples/sample4.cc.o
 .PHONY : samples/sample4.cc.o
 
 samples/sample4.i: samples/sample4.cc.i
@@ -527,7 +527,7 @@ samples/sample4.i: samples/sample4.cc.i
 
 # target to preprocess a source file
 samples/sample4.cc.i:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample4_unittest.dir/build.make googletest/CMakeFiles/sample4_unittest.dir/samples/sample4.cc.i
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample4_unittest.dir/build.make googletest/CMakeFiles/sample4_unittest.dir/samples/sample4.cc.i
 .PHONY : samples/sample4.cc.i
 
 samples/sample4.s: samples/sample4.cc.s
@@ -536,7 +536,7 @@ samples/sample4.s: samples/sample4.cc.s
 
 # target to generate assembly for a file
 samples/sample4.cc.s:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample4_unittest.dir/build.make googletest/CMakeFiles/sample4_unittest.dir/samples/sample4.cc.s
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample4_unittest.dir/build.make googletest/CMakeFiles/sample4_unittest.dir/samples/sample4.cc.s
 .PHONY : samples/sample4.cc.s
 
 samples/sample4_unittest.o: samples/sample4_unittest.cc.o
@@ -545,7 +545,7 @@ samples/sample4_unittest.o: samples/sample4_unittest.cc.o
 
 # target to build an object file
 samples/sample4_unittest.cc.o:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample4_unittest.dir/build.make googletest/CMakeFiles/sample4_unittest.dir/samples/sample4_unittest.cc.o
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample4_unittest.dir/build.make googletest/CMakeFiles/sample4_unittest.dir/samples/sample4_unittest.cc.o
 .PHONY : samples/sample4_unittest.cc.o
 
 samples/sample4_unittest.i: samples/sample4_unittest.cc.i
@@ -554,7 +554,7 @@ samples/sample4_unittest.i: samples/sample4_unittest.cc.i
 
 # target to preprocess a source file
 samples/sample4_unittest.cc.i:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample4_unittest.dir/build.make googletest/CMakeFiles/sample4_unittest.dir/samples/sample4_unittest.cc.i
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample4_unittest.dir/build.make googletest/CMakeFiles/sample4_unittest.dir/samples/sample4_unittest.cc.i
 .PHONY : samples/sample4_unittest.cc.i
 
 samples/sample4_unittest.s: samples/sample4_unittest.cc.s
@@ -563,7 +563,7 @@ samples/sample4_unittest.s: samples/sample4_unittest.cc.s
 
 # target to generate assembly for a file
 samples/sample4_unittest.cc.s:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample4_unittest.dir/build.make googletest/CMakeFiles/sample4_unittest.dir/samples/sample4_unittest.cc.s
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample4_unittest.dir/build.make googletest/CMakeFiles/sample4_unittest.dir/samples/sample4_unittest.cc.s
 .PHONY : samples/sample4_unittest.cc.s
 
 samples/sample5_unittest.o: samples/sample5_unittest.cc.o
@@ -572,7 +572,7 @@ samples/sample5_unittest.o: samples/sample5_unittest.cc.o
 
 # target to build an object file
 samples/sample5_unittest.cc.o:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample5_unittest.dir/build.make googletest/CMakeFiles/sample5_unittest.dir/samples/sample5_unittest.cc.o
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample5_unittest.dir/build.make googletest/CMakeFiles/sample5_unittest.dir/samples/sample5_unittest.cc.o
 .PHONY : samples/sample5_unittest.cc.o
 
 samples/sample5_unittest.i: samples/sample5_unittest.cc.i
@@ -581,7 +581,7 @@ samples/sample5_unittest.i: samples/sample5_unittest.cc.i
 
 # target to preprocess a source file
 samples/sample5_unittest.cc.i:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample5_unittest.dir/build.make googletest/CMakeFiles/sample5_unittest.dir/samples/sample5_unittest.cc.i
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample5_unittest.dir/build.make googletest/CMakeFiles/sample5_unittest.dir/samples/sample5_unittest.cc.i
 .PHONY : samples/sample5_unittest.cc.i
 
 samples/sample5_unittest.s: samples/sample5_unittest.cc.s
@@ -590,7 +590,7 @@ samples/sample5_unittest.s: samples/sample5_unittest.cc.s
 
 # target to generate assembly for a file
 samples/sample5_unittest.cc.s:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample5_unittest.dir/build.make googletest/CMakeFiles/sample5_unittest.dir/samples/sample5_unittest.cc.s
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample5_unittest.dir/build.make googletest/CMakeFiles/sample5_unittest.dir/samples/sample5_unittest.cc.s
 .PHONY : samples/sample5_unittest.cc.s
 
 samples/sample6_unittest.o: samples/sample6_unittest.cc.o
@@ -599,7 +599,7 @@ samples/sample6_unittest.o: samples/sample6_unittest.cc.o
 
 # target to build an object file
 samples/sample6_unittest.cc.o:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample6_unittest.dir/build.make googletest/CMakeFiles/sample6_unittest.dir/samples/sample6_unittest.cc.o
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample6_unittest.dir/build.make googletest/CMakeFiles/sample6_unittest.dir/samples/sample6_unittest.cc.o
 .PHONY : samples/sample6_unittest.cc.o
 
 samples/sample6_unittest.i: samples/sample6_unittest.cc.i
@@ -608,7 +608,7 @@ samples/sample6_unittest.i: samples/sample6_unittest.cc.i
 
 # target to preprocess a source file
 samples/sample6_unittest.cc.i:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample6_unittest.dir/build.make googletest/CMakeFiles/sample6_unittest.dir/samples/sample6_unittest.cc.i
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample6_unittest.dir/build.make googletest/CMakeFiles/sample6_unittest.dir/samples/sample6_unittest.cc.i
 .PHONY : samples/sample6_unittest.cc.i
 
 samples/sample6_unittest.s: samples/sample6_unittest.cc.s
@@ -617,7 +617,7 @@ samples/sample6_unittest.s: samples/sample6_unittest.cc.s
 
 # target to generate assembly for a file
 samples/sample6_unittest.cc.s:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample6_unittest.dir/build.make googletest/CMakeFiles/sample6_unittest.dir/samples/sample6_unittest.cc.s
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample6_unittest.dir/build.make googletest/CMakeFiles/sample6_unittest.dir/samples/sample6_unittest.cc.s
 .PHONY : samples/sample6_unittest.cc.s
 
 samples/sample7_unittest.o: samples/sample7_unittest.cc.o
@@ -626,7 +626,7 @@ samples/sample7_unittest.o: samples/sample7_unittest.cc.o
 
 # target to build an object file
 samples/sample7_unittest.cc.o:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample7_unittest.dir/build.make googletest/CMakeFiles/sample7_unittest.dir/samples/sample7_unittest.cc.o
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample7_unittest.dir/build.make googletest/CMakeFiles/sample7_unittest.dir/samples/sample7_unittest.cc.o
 .PHONY : samples/sample7_unittest.cc.o
 
 samples/sample7_unittest.i: samples/sample7_unittest.cc.i
@@ -635,7 +635,7 @@ samples/sample7_unittest.i: samples/sample7_unittest.cc.i
 
 # target to preprocess a source file
 samples/sample7_unittest.cc.i:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample7_unittest.dir/build.make googletest/CMakeFiles/sample7_unittest.dir/samples/sample7_unittest.cc.i
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample7_unittest.dir/build.make googletest/CMakeFiles/sample7_unittest.dir/samples/sample7_unittest.cc.i
 .PHONY : samples/sample7_unittest.cc.i
 
 samples/sample7_unittest.s: samples/sample7_unittest.cc.s
@@ -644,7 +644,7 @@ samples/sample7_unittest.s: samples/sample7_unittest.cc.s
 
 # target to generate assembly for a file
 samples/sample7_unittest.cc.s:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample7_unittest.dir/build.make googletest/CMakeFiles/sample7_unittest.dir/samples/sample7_unittest.cc.s
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample7_unittest.dir/build.make googletest/CMakeFiles/sample7_unittest.dir/samples/sample7_unittest.cc.s
 .PHONY : samples/sample7_unittest.cc.s
 
 samples/sample8_unittest.o: samples/sample8_unittest.cc.o
@@ -653,7 +653,7 @@ samples/sample8_unittest.o: samples/sample8_unittest.cc.o
 
 # target to build an object file
 samples/sample8_unittest.cc.o:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample8_unittest.dir/build.make googletest/CMakeFiles/sample8_unittest.dir/samples/sample8_unittest.cc.o
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample8_unittest.dir/build.make googletest/CMakeFiles/sample8_unittest.dir/samples/sample8_unittest.cc.o
 .PHONY : samples/sample8_unittest.cc.o
 
 samples/sample8_unittest.i: samples/sample8_unittest.cc.i
@@ -662,7 +662,7 @@ samples/sample8_unittest.i: samples/sample8_unittest.cc.i
 
 # target to preprocess a source file
 samples/sample8_unittest.cc.i:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample8_unittest.dir/build.make googletest/CMakeFiles/sample8_unittest.dir/samples/sample8_unittest.cc.i
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample8_unittest.dir/build.make googletest/CMakeFiles/sample8_unittest.dir/samples/sample8_unittest.cc.i
 .PHONY : samples/sample8_unittest.cc.i
 
 samples/sample8_unittest.s: samples/sample8_unittest.cc.s
@@ -671,7 +671,7 @@ samples/sample8_unittest.s: samples/sample8_unittest.cc.s
 
 # target to generate assembly for a file
 samples/sample8_unittest.cc.s:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample8_unittest.dir/build.make googletest/CMakeFiles/sample8_unittest.dir/samples/sample8_unittest.cc.s
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample8_unittest.dir/build.make googletest/CMakeFiles/sample8_unittest.dir/samples/sample8_unittest.cc.s
 .PHONY : samples/sample8_unittest.cc.s
 
 samples/sample9_unittest.o: samples/sample9_unittest.cc.o
@@ -680,7 +680,7 @@ samples/sample9_unittest.o: samples/sample9_unittest.cc.o
 
 # target to build an object file
 samples/sample9_unittest.cc.o:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample9_unittest.dir/build.make googletest/CMakeFiles/sample9_unittest.dir/samples/sample9_unittest.cc.o
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample9_unittest.dir/build.make googletest/CMakeFiles/sample9_unittest.dir/samples/sample9_unittest.cc.o
 .PHONY : samples/sample9_unittest.cc.o
 
 samples/sample9_unittest.i: samples/sample9_unittest.cc.i
@@ -689,7 +689,7 @@ samples/sample9_unittest.i: samples/sample9_unittest.cc.i
 
 # target to preprocess a source file
 samples/sample9_unittest.cc.i:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample9_unittest.dir/build.make googletest/CMakeFiles/sample9_unittest.dir/samples/sample9_unittest.cc.i
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample9_unittest.dir/build.make googletest/CMakeFiles/sample9_unittest.dir/samples/sample9_unittest.cc.i
 .PHONY : samples/sample9_unittest.cc.i
 
 samples/sample9_unittest.s: samples/sample9_unittest.cc.s
@@ -698,7 +698,7 @@ samples/sample9_unittest.s: samples/sample9_unittest.cc.s
 
 # target to generate assembly for a file
 samples/sample9_unittest.cc.s:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/sample9_unittest.dir/build.make googletest/CMakeFiles/sample9_unittest.dir/samples/sample9_unittest.cc.s
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/sample9_unittest.dir/build.make googletest/CMakeFiles/sample9_unittest.dir/samples/sample9_unittest.cc.s
 .PHONY : samples/sample9_unittest.cc.s
 
 src/gtest-all.o: src/gtest-all.cc.o
@@ -707,7 +707,7 @@ src/gtest-all.o: src/gtest-all.cc.o
 
 # target to build an object file
 src/gtest-all.cc.o:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/gtest.dir/build.make googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/gtest.dir/build.make googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
 .PHONY : src/gtest-all.cc.o
 
 src/gtest-all.i: src/gtest-all.cc.i
@@ -716,7 +716,7 @@ src/gtest-all.i: src/gtest-all.cc.i
 
 # target to preprocess a source file
 src/gtest-all.cc.i:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/gtest.dir/build.make googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.i
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/gtest.dir/build.make googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.i
 .PHONY : src/gtest-all.cc.i
 
 src/gtest-all.s: src/gtest-all.cc.s
@@ -725,7 +725,7 @@ src/gtest-all.s: src/gtest-all.cc.s
 
 # target to generate assembly for a file
 src/gtest-all.cc.s:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/gtest.dir/build.make googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.s
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/gtest.dir/build.make googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.s
 .PHONY : src/gtest-all.cc.s
 
 src/gtest_main.o: src/gtest_main.cc.o
@@ -734,7 +734,7 @@ src/gtest_main.o: src/gtest_main.cc.o
 
 # target to build an object file
 src/gtest_main.cc.o:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/gtest_main.dir/build.make googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/gtest_main.dir/build.make googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
 .PHONY : src/gtest_main.cc.o
 
 src/gtest_main.i: src/gtest_main.cc.i
@@ -743,7 +743,7 @@ src/gtest_main.i: src/gtest_main.cc.i
 
 # target to preprocess a source file
 src/gtest_main.cc.i:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/gtest_main.dir/build.make googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.i
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/gtest_main.dir/build.make googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.i
 .PHONY : src/gtest_main.cc.i
 
 src/gtest_main.s: src/gtest_main.cc.s
@@ -752,7 +752,7 @@ src/gtest_main.s: src/gtest_main.cc.s
 
 # target to generate assembly for a file
 src/gtest_main.cc.s:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(MAKE) -f googletest/CMakeFiles/gtest_main.dir/build.make googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.s
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(MAKE) -f googletest/CMakeFiles/gtest_main.dir/build.make googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.s
 .PHONY : src/gtest_main.cc.s
 
 # Help Target
@@ -836,6 +836,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /var/lib/jenkins/workspace/Googletest-gcov-gtest && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ubuntu/googletest/emb-integration-samples/sample_source_code/CPP/googletest && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
