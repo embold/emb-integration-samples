@@ -65,12 +65,12 @@ jobs:
       - name: Run Static Code Analysis
         continue-on-error: true
         env:
-          EMBOLD_TOKEN: ${{ secrets.EMBOLD_TOKEN_DEMO_INST }}
+          EMBOLD_TOKEN: ${{ secrets.EMBOLD_TOKEN_IDE_INST }}
         run: |
           ./browserstack-codequality-scanner/bin/embold-scanner analyse \
-          -u https://demo.embold.io/ \
+          -u https://packages.embold.io/ \
           -t $EMBOLD_TOKEN \
-          -r f3ff1a57484e656e27b2475bcf9f5d9b \
+          -r 7205368b7f51aa0dde425b5a9065166f \
           -c sample_source_code/CPP/googletest/repository-configuration.json \
           -d ./temp \
           -b ./sample_source_code/CPP/googletest \
