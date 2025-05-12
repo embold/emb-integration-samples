@@ -62,10 +62,10 @@ jobs:
       # Step 7: Call the Quality Gate Status API. This fetches the quality gate status for the latest published snapshot.
       # We can also pass a 'snapshot label' to get the status for a specific snapshot. However, since we provided the "-qg" option in the previous step,
       # "Step 6" will wait until the result is published on the UI. In this step, we will retrieve the latest result.
-      - name: Call Quality Gate Status API
-        id: call-api
-        run: |
-          response=$(curl -v --http1.1 --cacert remote_scan/file.pem -X GET "https://packages.embold.io/api/v1/repositories/a42b8343cd0a77237f3880808027a25a/qualitygateprofiles/status" \
-          -H "Authorization: Bearer ${{ secrets.EMBOLD_TOKEN_IDE_INST }}" | jq '.status')
-          echo $response
-          echo "response=$response" >> $GITHUB_ENV
+      # - name: Call Quality Gate Status API
+      #   id: call-api
+      #   run: |
+      #     response=$(curl -v --http1.1 --cacert remote_scan/file.pem -X GET "https://packages.embold.io/api/v1/repositories/a42b8343cd0a77237f3880808027a25a/qualitygateprofiles/status" \
+      #     -H "Authorization: Bearer ${{ secrets.EMBOLD_TOKEN_IDE_INST }}" | jq '.status')
+      #     echo $response
+      #     echo "response=$response" >> $GITHUB_ENV
