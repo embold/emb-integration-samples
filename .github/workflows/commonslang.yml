@@ -50,15 +50,14 @@ jobs:
       - name: Run Static Code Analysis
         continue-on-error: true
         env:
-          EMBOLD_TOKEN: ${{ secrets.EMBOLD_TOKEN_IDE_INST }}
+          EMBOLD_TOKEN: ${{ secrets.EMBOLD_TOKEN_DEMO_INST }}
         run: |
           ./browserstack-codequality-scanner/bin/embold-scanner analyse \
-          -u https://packages.embold.io/ \
+          -u https://demo.embold.io/ \
           -t $EMBOLD_TOKEN \
-          -r a42b8343cd0a77237f3880808027a25a \
+          -r 81aba9b3940bbf35aac36dd3e4a45562 \
           -c sample_source_code/JAVA/commons-lang/repository-configuration.json \
-          -qg \
-          -v
+          -qg
 
       # Step 7: Call the Quality Gate Status API. This fetches the quality gate status for the latest published snapshot.
       # We can also pass a 'snapshot label' to get the status for a specific snapshot. However, since we provided the "-qg" option in the previous step,
