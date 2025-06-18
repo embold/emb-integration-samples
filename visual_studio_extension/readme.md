@@ -20,17 +20,17 @@ Follow these simple steps to analyze your C# project:
 
 2.  **Initiate Code Analysis:**
     From the "Tools" dropdown menu, click on **"Analyse Project using BrowserStack Code Quality"**. The analysis process will begin.
-    ![Tools Menu - Analyse Project using BrowserStack Code Quality](Images/tools_view.png "Select 'Analyse Project using BrowserStack Code Quality' from the Tools menu.")
+    ![Tools Menu - Analyse Project using BrowserStack Code Quality](https://github.com/embold/emb-integration-samples/blob/master/visual_studio_extension/Images/tools_view.png?raw=true)
 
 3.  **Review Analysis Results:**
     Once the analysis is complete, the results will automatically populate the **Error List** window within Visual Studio. Here, you can review all identified code quality issues, warnings, and messages.
-    ![Error List Window - Analysis Results](Images/issue_view.png)
+    ![Error List Window - Analysis Results](https://github.com/embold/emb-integration-samples/blob/master/visual_studio_extension/Images/Issue_view.png?raw=true)
 
     To check more info on code issues, right click on issue from errorlist and select "Show Error Help".
-    ![Error Help](Images/show_Error_help.png)
+    ![Error Help](https://github.com/embold/emb-integration-samples/blob/master/visual_studio_extension/Images/show_Error_help.png?raw=true)
 
     It will open issues page for more information.
-    ![Embold rule page](Images/issues_page.png)
+    ![Embold rule page](https://github.com/embold/emb-integration-samples/blob/master/visual_studio_extension/Images/issues_page.png?raw=true)
 ## License
 
 This plugin is governed by the BrowserStack Code Quality End User License Agreement (EULA). Please review the full terms and conditions at the following link:
