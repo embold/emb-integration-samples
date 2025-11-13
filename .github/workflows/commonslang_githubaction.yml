@@ -15,7 +15,8 @@ jobs:
       - name: Test Embold Action
         uses: embold/embold-github-action@v1_master
         with:
-          emboldUrl: https://packages.embold.io/
-          emboldToken: ${{ secrets.EMBOLD_TOKEN }}
-          emboldRepoUid: ${{ secrets.EMBOLD_REPO_UID }}
+          emboldUrl: https://demo.embold.io/
+          emboldToken: ${{ secrets.EMBOLD_TOKEN_DEMO_INST }}
+          emboldRepoUid: 81aba9b3940bbf35aac36dd3e4a45562
           repositoryConfigPath: repository-configuration.json
+          downloadConfig: 'true'
