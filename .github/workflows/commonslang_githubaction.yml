@@ -1,0 +1,21 @@
+name: Test Embold Action
+
+on:
+  push:
+    branches: [ github_action_java ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Test Embold Action
+        uses: ./  # Uses the action from current repo
+        with:
+          emboldUrl: https://packages.embold.io/
+          emboldToken: ${{ secrets.EMBOLD_TOKEN }}
+          emboldRepoUid: ${{ secrets.EMBOLD_REPO_UID }}
+          repositoryConfigPath: repository-configuration.json
