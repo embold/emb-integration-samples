@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
       
       - name: Test Embold Action
-        uses: ./  # Uses the action from current repo
+        uses: embold/embold-github-action@v1_master
         with:
           emboldUrl: https://packages.embold.io/
           emboldToken: ${{ secrets.EMBOLD_TOKEN }}
