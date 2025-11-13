@@ -20,3 +20,10 @@ jobs:
           emboldRepoUid: 81aba9b3940bbf35aac36dd3e4a45562
           repositoryConfigPath: repository-configuration.json
           downloadConfig: 'true'
+          qualityGate: 'true'
+
+      - name: Check Quality Gate Result
+        if: steps.embold-scan.outputs.qualityGateStatus == 'FAILED'
+        run: |
+          echo "Quality gate failed!"
+          exit 1
