@@ -21,7 +21,7 @@ jobs:
           repositoryConfigPath: repository-configuration.json
           downloadConfig: 'true'
           qualityGate: 'true'
-          snapshotLabel: $GITHUB_REF_NAME
+          snapshotLabel: 8
 
       - name: Check Quality Gate Result
         if: steps.embold-scan.outputs.qualityGateStatus == 'FAILED'
