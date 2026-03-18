@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
       
       - name: Test Embold Action
-        uses: embold/embold-github-action@v1_master
+        uses: embold/embold-github-action@v2.0
         with:
           emboldUrl: https://demo.embold.io/
           emboldToken: ${{ secrets.EMBOLD_TOKEN_DEMO_INST }}
@@ -21,6 +21,7 @@ jobs:
           repositoryConfigPath: repository-configuration.json
           downloadConfig: 'true'
           qualityGate: 'true'
+          snapshotLabel: $GITHUB_REF_NAME
 
       - name: Check Quality Gate Result
         if: steps.embold-scan.outputs.qualityGateStatus == 'FAILED'
