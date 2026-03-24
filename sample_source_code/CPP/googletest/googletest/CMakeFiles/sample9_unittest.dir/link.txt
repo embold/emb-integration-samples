@@ -1,0 +1,1 @@
+/usr/bin/c++  -g -O0 -fprofile-arcs -ftest-coverage -g  -rdynamic CMakeFiles/sample9_unittest.dir/samples/sample9_unittest.cc.o  -o sample9_unittest  ../lib/libgtestd.a -lpthread 

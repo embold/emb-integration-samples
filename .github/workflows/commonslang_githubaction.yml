@@ -1,0 +1,30 @@
+name: Test Embold Action
+
+on:
+  push:
+    branches: [ github_action_java ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Test Embold Action
+        uses: embold/github-action-docker@v2.0.0
+        with:
+          emboldUrl: https://demo.embold.io/
+          emboldToken: ${{ secrets.EMBOLD_TOKEN_DEMO_INST }}
+          emboldRepoUid: 81aba9b3940bbf35aac36dd3e4a45562
+          repositoryConfigPath: repository-configuration.json
+          downloadConfig: 'true'
+          qualityGate: 'true'
+          snapshotLabel: 8
+
+      - name: Check Quality Gate Result
+        if: steps.embold-scan.outputs.qualityGateStatus == 'FAILED'
+        run: |
+          echo "Quality gate failed!"
+          exit 1

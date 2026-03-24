@@ -1,0 +1,82 @@
+{
+    "gammaAccess": {
+        "url": "http://192.168.1.27:3000/",
+        "token": "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTYzNTUwNjg5ODk4MywiaWF0IjoxNjM1NTA2ODk4fQ.Vl2CANcE9E56GIfG5nUNjMZQIswSq-q3Qb7ASxLBSnoWSMfN52b0ScUAfjNVhTQmrmQ062MU0xLy6hFxA649lQ"
+    },
+    "repositories": [
+        {
+            "dataDir": "%WORKSPACE%/temp",
+            "repository": {
+                "uid": "829a899139e3d0f0734de848befacc8f",
+                "projectName": "googletestmock",
+                "languages": [
+                    "CPP"
+                ],
+                "sources": {
+                    "baseDir": "%WORKSPACE%",
+                    "exclusions": []
+                }
+            },
+            "settings": {
+                "additionalOptions": [],
+                "includePaths": []
+            },
+            "modules": {
+                "codeissues": [
+                    {
+                        "name": "gamma_cxx",
+                        "enabled": true,
+                        "config": {
+                            "rules": [],
+                            "options": []
+                        }
+                    }
+                ],
+                "unittest": [
+                    {
+                        "name": "gtest",
+                        "enabled": true,
+                        "config": {
+                            "rules": [],
+                            "options": [
+                                {
+                                    "name": "reportDir",
+                                    "type": "upload",
+                                    "value": "%WORKSPACE%/output",
+                                    "required": true
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "coverage": [
+                    {
+                        "name": "gcov",
+                        "enabled": true,
+                        "config": {
+                            "rules": [],
+                            "options": [
+                                {
+                                    "name": "reportDir",
+                                    "type": "upload",
+                                    "value": "%WORKSPACE%/output/gcov",
+                                    "required": true
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "relevance": [
+                    {
+                        "name": "relevance",
+                        "enabled": true,
+                        "config": {
+                            "rules": [],
+                            "options": []
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
