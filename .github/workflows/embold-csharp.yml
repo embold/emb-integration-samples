@@ -2,7 +2,7 @@ name: Embold Scan - C#
 
 on:
   push:
-    branches: [master]
+    branches: [main]
     paths:
       - 'sample_source_code/csharp/**'
   workflow_dispatch:
