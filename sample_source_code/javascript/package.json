@@ -1,0 +1,11 @@
+{
+  "name": "animal-shelter-js",
+  "version": "1.0.0",
+  "description": "Animal Shelter sample — Embold integration demo (JavaScript)",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "keywords": ["embold", "sample"],
+  "license": "MIT"
+}

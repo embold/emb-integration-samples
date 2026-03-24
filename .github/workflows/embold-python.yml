@@ -1,0 +1,34 @@
+name: Embold Scan - Python
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'sample_source_code/python/**'
+  workflow_dispatch:
+
+jobs:
+  embold-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Embold Scan
+        id: embold-scan
+        uses: embold/github-action-docker@v2.0.0
+        with:
+          emboldUrl: https://demo.embold.io/
+          emboldToken: ${{ secrets.EMBOLD_TOKEN_DEMO_INST }}
+          emboldRepoUid: <REPO_UID_PYTHON>
+          repositoryConfigPath: sample_source_code/python/repository-configuration.json
+          downloadConfig: 'true'
+          qualityGate: 'true'
+          snapshotLabel: ${{ github.run_number }}
+
+      - name: Check Quality Gate Result
+        if: steps.embold-scan.outputs.qualityGateStatus == 'FAILED'
+        run: |
+          echo "Quality gate failed!"
+          exit 1

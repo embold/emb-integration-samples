@@ -1,0 +1,15 @@
+{
+  "name": "animal-shelter-ts",
+  "version": "1.0.0",
+  "description": "Animal Shelter sample — Embold integration demo (TypeScript)",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/main.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "keywords": ["embold", "sample"],
+  "license": "MIT"
+}
