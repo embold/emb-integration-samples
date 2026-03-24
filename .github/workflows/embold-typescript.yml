@@ -2,7 +2,7 @@ name: Embold Scan - TypeScript
 
 on:
   push:
-    branches: [master]
+    branches: [main]
     paths:
       - 'sample_source_code/typescript/**'
   workflow_dispatch:
