@@ -2,7 +2,7 @@ name: Embold Scan - Python
 
 on:
   push:
-    branches: [master]
+    branches: [main]
     paths:
       - 'sample_source_code/python/**'
   workflow_dispatch:
