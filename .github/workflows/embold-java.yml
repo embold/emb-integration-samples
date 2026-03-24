@@ -21,7 +21,7 @@ jobs:
         with:
           emboldUrl: https://demo.embold.io/
           emboldToken: ${{ secrets.EMBOLD_TOKEN_DEMO_INST }}
-          emboldRepoUid: <REPO_UID_JAVA>
+          emboldRepoUid: 034560c4e627f02cc243e7d3eddc7d18
           repositoryConfigPath: sample_source_code/java/repository-configuration.json
           downloadConfig: 'true'
           qualityGate: 'true'
