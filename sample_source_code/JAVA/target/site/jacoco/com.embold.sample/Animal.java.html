@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Animal.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Animal Shelter — Embold Sample</a> &gt; <a href="index.source.html" class="el_package">com.embold.sample</a> &gt; <span class="el_source">Animal.java</span></div><h1>Animal.java</h1><pre class="source lang-java linenums">package com.embold.sample;
+
+/**
+ * Abstract base class implementing IAnimal.
+ * Provides shared state and a default implementation of {@link #describe()}.
+ * Subclasses must implement {@link #sound()} and {@link #accept(IVisitor)}.
+ */
+public abstract class Animal implements IAnimal {
+
+    protected final String name;
+    protected final int age;
+    protected final String species;
+    protected final double weight;
+
+<span class="fc" id="L15">    protected Animal(String name, int age, String species, double weight) {</span>
+<span class="fc" id="L16">        this.name = name;</span>
+<span class="fc" id="L17">        this.age = age;</span>
+<span class="fc" id="L18">        this.species = species;</span>
+<span class="fc" id="L19">        this.weight = weight;</span>
+<span class="fc" id="L20">    }</span>
+
+<span class="fc" id="L22">    @Override public String getName()    { return name; }</span>
+<span class="fc" id="L23">    @Override public int getAge()       { return age; }</span>
+<span class="fc" id="L24">    @Override public String getSpecies(){ return species; }</span>
+<span class="fc" id="L25">    @Override public double getWeight() { return weight; }</span>
+
+    @Override
+    public String describe() {
+<span class="fc" id="L29">        return String.format(&quot;%s (%s), age=%d, weight=%.1fkg, sound='%s'&quot;,</span>
+<span class="fc" id="L30">                name, species, age, weight, sound());</span>
+    }
+
+    @Override
+<span class="nc" id="L34">    public String toString() { return describe(); }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

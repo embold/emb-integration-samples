@@ -7,4 +7,10 @@
     <RootNamespace>Embold.Sample</RootNamespace>
     <AssemblyName>AnimalShelter</AssemblyName>
   </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Exclude test project sources from the main build -->
+    <Compile Remove="AnimalShelter.Tests/**/*.cs" />
+  </ItemGroup>
+
 </Project>

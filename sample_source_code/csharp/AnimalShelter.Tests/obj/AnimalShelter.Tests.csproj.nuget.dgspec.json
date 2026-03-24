@@ -1,0 +1,174 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/nilesh/nilesh/source_codes/git/emb-integration-samples/sample_source_code/csharp/AnimalShelter.Tests/AnimalShelter.Tests.csproj": {}
+  },
+  "projects": {
+    "/Users/nilesh/nilesh/source_codes/git/emb-integration-samples/sample_source_code/csharp/AnimalShelter.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/nilesh/nilesh/source_codes/git/emb-integration-samples/sample_source_code/csharp/AnimalShelter.csproj",
+        "projectName": "AnimalShelter",
+        "projectPath": "/Users/nilesh/nilesh/source_codes/git/emb-integration-samples/sample_source_code/csharp/AnimalShelter.csproj",
+        "packagesPath": "/Users/nilesh/.nuget/packages/",
+        "outputPath": "/Users/nilesh/nilesh/source_codes/git/emb-integration-samples/sample_source_code/csharp/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/nilesh/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.200"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.25, 8.0.25]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-arm64",
+              "version": "[8.0.25, 8.0.25]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.25, 8.0.25]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.201/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/nilesh/nilesh/source_codes/git/emb-integration-samples/sample_source_code/csharp/AnimalShelter.Tests/AnimalShelter.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/nilesh/nilesh/source_codes/git/emb-integration-samples/sample_source_code/csharp/AnimalShelter.Tests/AnimalShelter.Tests.csproj",
+        "projectName": "AnimalShelter.Tests",
+        "projectPath": "/Users/nilesh/nilesh/source_codes/git/emb-integration-samples/sample_source_code/csharp/AnimalShelter.Tests/AnimalShelter.Tests.csproj",
+        "packagesPath": "/Users/nilesh/.nuget/packages/",
+        "outputPath": "/Users/nilesh/nilesh/source_codes/git/emb-integration-samples/sample_source_code/csharp/AnimalShelter.Tests/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/nilesh/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/nilesh/nilesh/source_codes/git/emb-integration-samples/sample_source_code/csharp/AnimalShelter.csproj": {
+                "projectPath": "/Users/nilesh/nilesh/source_codes/git/emb-integration-samples/sample_source_code/csharp/AnimalShelter.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.200"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[3.3.1, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[3.3.1, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.10.0, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.25, 8.0.25]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.25, 8.0.25]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.201/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

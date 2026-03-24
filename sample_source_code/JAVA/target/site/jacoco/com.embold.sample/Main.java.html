@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Main.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Animal Shelter — Embold Sample</a> &gt; <a href="index.source.html" class="el_package">com.embold.sample</a> &gt; <span class="el_source">Main.java</span></div><h1>Main.java</h1><pre class="source lang-java linenums">package com.embold.sample;
+
+/**
+ * Application entry point.
+ * Wires together all classes: Shelter (composition), Dog/Cat (inheritance),
+ * Report (orchestration), and MathUtils (utilities).
+ */
+<span class="nc" id="L8">public class Main {</span>
+
+    public static void main(String[] args) {
+<span class="nc" id="L11">        Shelter shelter = new Shelter(&quot;Happy Paws&quot;, 20);</span>
+
+<span class="nc" id="L13">        shelter.intake(new Dog(&quot;Buddy&quot;,   3, &quot;Labrador&quot;,        28.5));</span>
+<span class="nc" id="L14">        shelter.intake(new Dog(&quot;Max&quot;,     7, &quot;German Shepherd&quot;, 33.0));</span>
+<span class="nc" id="L15">        shelter.intake(new Dog(&quot;Tiny&quot;,    1, &quot;Chihuahua&quot;,        2.1));</span>
+<span class="nc" id="L16">        shelter.intake(new Cat(&quot;Whiskers&quot;, 5, true,  4.2));</span>
+<span class="nc" id="L17">        shelter.intake(new Cat(&quot;Shadow&quot;,  10, false, 5.8));</span>
+<span class="nc" id="L18">        shelter.intake(new Cat(&quot;Luna&quot;,    2, true,   3.9));</span>
+
+<span class="nc" id="L20">        System.out.println(new Report(shelter).generate());</span>
+
+<span class="nc" id="L22">        System.out.println(&quot;fibonacci(10) = &quot; + MathUtils.fibonacci(10));</span>
+<span class="nc" id="L23">        System.out.println(&quot;factorial(6)  = &quot; + MathUtils.factorial(6));</span>
+
+<span class="nc" id="L25">        System.out.println(&quot;\nAdopting 'Max'...&quot;);</span>
+<span class="nc" id="L26">        shelter.adopt(&quot;Max&quot;).ifPresentOrElse(</span>
+<span class="nc" id="L27">                a -&gt; System.out.println(&quot;  Adopted: &quot; + a.getName()),</span>
+<span class="nc" id="L28">                () -&gt; System.out.println(&quot;  Not found.&quot;)</span>
+        );
+
+<span class="nc" id="L31">        System.out.println(&quot;\nPost-adoption report:&quot;);</span>
+<span class="nc" id="L32">        System.out.println(new Report(shelter).generate());</span>
+<span class="nc" id="L33">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

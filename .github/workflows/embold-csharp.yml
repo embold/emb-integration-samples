@@ -8,8 +8,62 @@ on:
   workflow_dispatch:
 
 jobs:
+  test-coverage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore dependencies
+        working-directory: sample_source_code/csharp
+        run: dotnet restore AnimalShelter.Tests/AnimalShelter.Tests.csproj
+
+      - name: Build
+        working-directory: sample_source_code/csharp
+        run: dotnet build AnimalShelter.Tests/AnimalShelter.Tests.csproj --no-restore --configuration Release
+
+      - name: Run MSTests with Coverlet (XPlat Code Coverage)
+        working-directory: sample_source_code/csharp
+        run: |
+          dotnet test AnimalShelter.Tests/AnimalShelter.Tests.csproj \
+            --no-build \
+            --configuration Release \
+            --collect:"XPlat Code Coverage" \
+            --results-directory TestResults \
+            -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=cobertura
+
+      - name: Install ReportGenerator
+        run: dotnet tool install --global dotnet-reportgenerator-globaltool
+
+      - name: Generate HTML coverage report
+        working-directory: sample_source_code/csharp
+        run: |
+          reportgenerator \
+            -reports:"TestResults/**/coverage.cobertura.xml" \
+            -targetdir:"coverage_html" \
+            -reporttypes:"Html;TextSummary" \
+            -assemblyfilters:"+AnimalShelter"
+
+      - name: Print coverage summary
+        working-directory: sample_source_code/csharp
+        run: cat coverage_html/Summary.txt
+
+      - name: Upload coverage HTML report
+        uses: actions/upload-artifact@v4
+        with:
+          name: csharp-coverage-report
+          path: sample_source_code/csharp/coverage_html/
+          retention-days: 14
+
   embold-scan:
     runs-on: ubuntu-latest
+    needs: test-coverage
 
     steps:
       - name: Checkout

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "AnimalShelter/1.0.0": {
+        "runtime": {
+          "AnimalShelter.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AnimalShelter/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

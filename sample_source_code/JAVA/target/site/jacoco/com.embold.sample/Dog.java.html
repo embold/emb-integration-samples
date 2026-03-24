@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Dog.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Animal Shelter — Embold Sample</a> &gt; <a href="index.source.html" class="el_package">com.embold.sample</a> &gt; <span class="el_source">Dog.java</span></div><h1>Dog.java</h1><pre class="source lang-java linenums">package com.embold.sample;
+
+/**
+ * Concrete Dog class – inherits from Animal.
+ * Demonstrates method overriding, breed-specific logic, and outgoing calls to MathUtils.
+ */
+public class Dog extends Animal {
+
+    private final String breed;
+
+    public Dog(String name, int age, String breed, double weight) {
+<span class="fc" id="L12">        super(name, age, &quot;Canis lupus familiaris&quot;, weight);</span>
+<span class="fc" id="L13">        this.breed = breed;</span>
+<span class="fc" id="L14">    }</span>
+
+<span class="fc" id="L16">    public String getBreed() { return breed; }</span>
+
+    @Override
+<span class="fc" id="L19">    public String sound() { return &quot;Woof&quot;; }</span>
+
+    /** Double-dispatch: calls visitor.visit(this). */
+    @Override
+<span class="fc" id="L23">    public void accept(IVisitor visitor) { visitor.visit(this); }</span>
+
+    /**
+     * Computes a health score (0–100) using age and weight heuristics.
+     * Demonstrates a method with multiple branches and outgoing calls.
+     *
+     * @return health score
+     */
+    public double computeHealthScore() {
+<span class="fc" id="L32">        double score = 100.0;</span>
+
+        // Age penalty increases non-linearly after age 7
+<span class="fc bfc" id="L35" title="All 2 branches covered.">        if (age &lt;= 2) {</span>
+<span class="fc" id="L36">            score -= MathUtils.linearDecay(age, 2, 5);</span>
+<span class="fc bfc" id="L37" title="All 2 branches covered.">        } else if (age &lt;= 7) {</span>
+<span class="fc" id="L38">            score -= MathUtils.linearDecay(age, 7, 10);</span>
+        } else {
+<span class="fc" id="L40">            score -= MathUtils.linearDecay(age, 15, 50);</span>
+        }
+
+        // Weight deviation from breed ideal
+<span class="fc" id="L44">        double idealWeight = estimateIdealWeight();</span>
+<span class="fc" id="L45">        double deviation = Math.abs(weight - idealWeight) / idealWeight;</span>
+<span class="fc" id="L46">        score -= deviation * 20;</span>
+
+<span class="fc" id="L48">        return MathUtils.clamp(MathUtils.roundToDecimalPlaces(score, 2), 0.0, 100.0);</span>
+    }
+
+    private double estimateIdealWeight() {
+<span class="pc bpc" id="L52" title="1 of 4 branches missed.">        return switch (breed.toLowerCase()) {</span>
+<span class="fc" id="L53">            case &quot;chihuahua&quot;        -&gt; 2.5;</span>
+<span class="fc" id="L54">            case &quot;labrador&quot;         -&gt; 30.0;</span>
+<span class="nc" id="L55">            case &quot;german shepherd&quot;  -&gt; 35.0;</span>
+<span class="fc" id="L56">            default                 -&gt; 15.0;</span>
+        };
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

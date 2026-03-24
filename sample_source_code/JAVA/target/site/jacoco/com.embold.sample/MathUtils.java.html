@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MathUtils.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Animal Shelter — Embold Sample</a> &gt; <a href="index.source.html" class="el_package">com.embold.sample</a> &gt; <span class="el_source">MathUtils.java</span></div><h1>MathUtils.java</h1><pre class="source lang-java linenums">package com.embold.sample;
+
+/**
+ * Utility class with standalone mathematical helpers.
+ * Demonstrates static methods, recursion (Fibonacci), and statistical computation.
+ * Called by Dog, Cat, AnimalVisitor, and Report.
+ */
+public final class MathUtils {
+
+    private MathUtils() {}
+
+    /** Clamps {@code value} to [min, max]. */
+    public static double clamp(double value, double min, double max) {
+<span class="fc" id="L14">        return Math.max(min, Math.min(max, value));</span>
+    }
+
+    /** Rounds a double to the given number of decimal places. */
+    public static double roundToDecimalPlaces(double value, int places) {
+<span class="fc bfc" id="L19" title="All 2 branches covered.">        if (places &lt; 0) throw new IllegalArgumentException(&quot;Places must be &gt;= 0&quot;);</span>
+<span class="fc" id="L20">        double scale = Math.pow(10, places);</span>
+<span class="fc" id="L21">        return Math.round(value * scale) / scale;</span>
+    }
+
+    /**
+     * Linear decay: how much to subtract given current progress toward max.
+     * Result is clamped to [0, maxPenalty].
+     */
+    public static double linearDecay(double current, double max, double maxPenalty) {
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        if (max &lt;= 0) return 0;</span>
+<span class="fc" id="L30">        return clamp((current / max) * maxPenalty, 0, maxPenalty);</span>
+    }
+
+    /**
+     * Fibonacci via memoised recursion.
+     *
+     * @param n non-negative index
+     * @return nth Fibonacci number
+     */
+    public static long fibonacci(int n) {
+<span class="fc" id="L40">        return fibHelper(n, new long[Math.max(n + 2, 2)]);</span>
+    }
+
+    private static long fibHelper(int n, long[] memo) {
+<span class="fc bfc" id="L44" title="All 2 branches covered.">        if (n &lt;= 1) return n;</span>
+<span class="fc bfc" id="L45" title="All 2 branches covered.">        if (memo[n] != 0) return memo[n];</span>
+<span class="fc" id="L46">        memo[n] = fibHelper(n - 1, memo) + fibHelper(n - 2, memo);</span>
+<span class="fc" id="L47">        return memo[n];</span>
+    }
+
+    /** Population standard deviation of the given values. */
+    public static double standardDeviation(double[] values) {
+<span class="fc bfc" id="L52" title="All 4 branches covered.">        if (values == null || values.length == 0) return 0.0;</span>
+<span class="fc" id="L53">        double mean = 0;</span>
+<span class="fc bfc" id="L54" title="All 2 branches covered.">        for (double v : values) mean += v;</span>
+<span class="fc" id="L55">        mean /= values.length;</span>
+<span class="fc" id="L56">        double variance = 0;</span>
+<span class="fc bfc" id="L57" title="All 2 branches covered.">        for (double v : values) variance += Math.pow(v - mean, 2);</span>
+<span class="fc" id="L58">        variance /= values.length;</span>
+<span class="fc" id="L59">        return Math.sqrt(variance);</span>
+    }
+
+    /** Iterative factorial. */
+    public static long factorial(int n) {
+<span class="nc bnc" id="L64" title="All 2 branches missed.">        if (n &lt; 0) throw new IllegalArgumentException(&quot;Negative input&quot;);</span>
+<span class="nc" id="L65">        long result = 1;</span>
+<span class="nc bnc" id="L66" title="All 2 branches missed.">        for (int i = 2; i &lt;= n; i++) result *= i;</span>
+<span class="nc" id="L67">        return result;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

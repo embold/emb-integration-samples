@@ -1,0 +1,2 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libanimal_lib.a CMakeFiles/animal_lib.dir/src/Animal.cpp.o CMakeFiles/animal_lib.dir/src/Dog.cpp.o CMakeFiles/animal_lib.dir/src/Cat.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libanimal_lib.a

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Shelter.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Animal Shelter — Embold Sample</a> &gt; <a href="index.source.html" class="el_package">com.embold.sample</a> &gt; <span class="el_source">Shelter.java</span></div><h1>Shelter.java</h1><pre class="source lang-java linenums">package com.embold.sample;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+/**
+ * Shelter holds a collection of animals.
+ * Demonstrates composition: has-a relationship with IAnimal.
+ * Multiple incoming calls from Report and Main.
+ */
+public class Shelter {
+
+    private final String name;
+    private final int capacity;
+    private final List&lt;IAnimal&gt; animals;
+
+<span class="fc" id="L20">    public Shelter(String name, int capacity) {</span>
+<span class="fc" id="L21">        this.name = name;</span>
+<span class="fc" id="L22">        this.capacity = capacity;</span>
+<span class="fc" id="L23">        this.animals = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L24">    }</span>
+
+<span class="fc" id="L26">    public String getName() { return name; }</span>
+
+    /** Adds an animal; returns {@code false} if at capacity. */
+    public boolean intake(IAnimal animal) {
+<span class="fc bfc" id="L30" title="All 2 branches covered.">        if (animals.size() &gt;= capacity) return false;</span>
+<span class="fc" id="L31">        animals.add(animal);</span>
+<span class="fc" id="L32">        return true;</span>
+    }
+
+    /** Removes and returns the named animal, or empty if not found. */
+    public Optional&lt;IAnimal&gt; adopt(String animalName) {
+<span class="fc" id="L37">        Optional&lt;IAnimal&gt; found = animals.stream()</span>
+<span class="fc" id="L38">                .filter(a -&gt; a.getName().equalsIgnoreCase(animalName))</span>
+<span class="fc" id="L39">                .findFirst();</span>
+<span class="fc" id="L40">        found.ifPresent(animals::remove);</span>
+<span class="fc" id="L41">        return found;</span>
+    }
+
+    public List&lt;IAnimal&gt; getAnimals() {
+<span class="fc" id="L45">        return Collections.unmodifiableList(animals);</span>
+    }
+
+    public List&lt;IAnimal&gt; findBySpecies(String species) {
+<span class="fc" id="L49">        return animals.stream()</span>
+<span class="fc" id="L50">                .filter(a -&gt; a.getSpecies().equalsIgnoreCase(species))</span>
+<span class="fc" id="L51">                .collect(Collectors.toList());</span>
+    }
+
+<span class="fc" id="L54">    public int availableCapacity() { return capacity - animals.size(); }</span>
+
+    public double averageAge() {
+<span class="fc" id="L57">        return animals.stream().mapToInt(IAnimal::getAge).average().orElse(0.0);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

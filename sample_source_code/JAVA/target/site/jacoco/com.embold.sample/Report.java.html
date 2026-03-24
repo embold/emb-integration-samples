@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Report.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Animal Shelter — Embold Sample</a> &gt; <a href="index.source.html" class="el_package">com.embold.sample</a> &gt; <span class="el_source">Report.java</span></div><h1>Report.java</h1><pre class="source lang-java linenums">package com.embold.sample;
+
+import java.util.List;
+
+/**
+ * Report generates a formatted summary of a {@link Shelter} using {@link AnimalVisitor}.
+ * Demonstrates orchestration: uses Shelter (composition) and AnimalVisitor (visitor pattern).
+ * Incoming calls from Main; outgoing calls to Shelter, AnimalVisitor, and MathUtils.
+ */
+public class Report {
+
+    private final Shelter shelter;
+
+<span class="fc" id="L14">    public Report(Shelter shelter) {</span>
+<span class="fc" id="L15">        this.shelter = shelter;</span>
+<span class="fc" id="L16">    }</span>
+
+    /** Runs the visitor over all animals and formats the result. */
+    public String generate() {
+<span class="fc" id="L20">        AnimalVisitor visitor = new AnimalVisitor();</span>
+<span class="fc" id="L21">        List&lt;IAnimal&gt; animals = shelter.getAnimals();</span>
+
+        // Drive the visitor pattern
+<span class="fc bfc" id="L24" title="All 2 branches covered.">        for (IAnimal animal : animals) {</span>
+<span class="fc" id="L25">            animal.accept(visitor);</span>
+<span class="fc" id="L26">        }</span>
+
+<span class="fc" id="L28">        double[] ages = animals.stream().mapToDouble(IAnimal::getAge).toArray();</span>
+<span class="fc" id="L29">        double ageStdDev = MathUtils.standardDeviation(ages);</span>
+
+<span class="fc" id="L31">        StringBuilder sb = new StringBuilder();</span>
+<span class="fc" id="L32">        sb.append(&quot;=== Shelter Report: &quot;).append(shelter.getName()).append(&quot; ===\n&quot;);</span>
+<span class="fc" id="L33">        sb.append(String.format(&quot;Total animals   : %d%n&quot;, visitor.getTotalCount()));</span>
+<span class="fc" id="L34">        sb.append(String.format(&quot;Dogs            : %d%n&quot;, visitor.getDogCount()));</span>
+<span class="fc" id="L35">        sb.append(String.format(&quot;Cats            : %d%n&quot;, visitor.getCatCount()));</span>
+<span class="fc" id="L36">        sb.append(String.format(&quot;Avg health score: %.2f%%%n&quot;, visitor.getAverageHealthScore()));</span>
+<span class="fc" id="L37">        sb.append(String.format(&quot;Avg age         : %.1f years%n&quot;, shelter.averageAge()));</span>
+<span class="fc" id="L38">        sb.append(String.format(&quot;Age std-dev     : %.2f%n&quot;, ageStdDev));</span>
+<span class="fc" id="L39">        sb.append(String.format(&quot;Available cap   : %d%n&quot;, shelter.availableCapacity()));</span>
+<span class="fc" id="L40">        sb.append(&quot;--- Animal Details ---\n&quot;);</span>
+<span class="fc bfc" id="L41" title="All 2 branches covered.">        for (IAnimal a : animals) {</span>
+<span class="fc" id="L42">            sb.append(&quot;  &quot;).append(a.describe()).append('\n');</span>
+<span class="fc" id="L43">        }</span>
+<span class="fc" id="L44">        return sb.toString();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

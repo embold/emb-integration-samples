@@ -1,0 +1,15 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Add src/ to sys.path so tests can import modules without a package install
+pythonpath = ["src"]
+
+[tool.coverage.run]
+source = ["src"]
+omit   = ["src/main.py", "src/__pycache__/*"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered  = false
+
+[tool.coverage.html]
+directory = "coverage_html"

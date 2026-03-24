@@ -1,0 +1,9 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Animal Shelter — Embold Sample,com.embold.sample,Animal,3,59,0,0,1,12,1,6,1,6
+Animal Shelter — Embold Sample,com.embold.sample,Report,0,170,0,4,0,24,0,4,0,2
+Animal Shelter — Embold Sample,com.embold.sample,Dog,2,98,1,7,1,20,1,10,0,6
+Animal Shelter — Embold Sample,com.embold.sample,Main,116,0,0,0,18,0,4,0,4,0
+Animal Shelter — Embold Sample,com.embold.sample,MathUtils,23,154,4,16,4,19,3,14,1,6
+Animal Shelter — Embold Sample,com.embold.sample,Cat,0,46,0,2,0,10,0,6,0,5
+Animal Shelter — Embold Sample,com.embold.sample,AnimalVisitor,0,117,0,2,0,25,0,10,0,9
+Animal Shelter — Embold Sample,com.embold.sample,Shelter,0,90,0,2,0,20,0,11,0,10

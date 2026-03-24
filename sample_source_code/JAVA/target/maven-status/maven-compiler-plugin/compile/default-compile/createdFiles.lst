@@ -1,0 +1,10 @@
+com/embold/sample/IAnimal.class
+com/embold/sample/Cat.class
+com/embold/sample/Animal.class
+com/embold/sample/Dog.class
+com/embold/sample/MathUtils.class
+com/embold/sample/AnimalVisitor.class
+com/embold/sample/Main.class
+com/embold/sample/Shelter.class
+com/embold/sample/Report.class
+com/embold/sample/IVisitor.class

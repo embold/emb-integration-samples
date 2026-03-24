@@ -4,12 +4,76 @@ on:
   push:
     branches: [main]
     paths:
-      - 'sample_source_code/cpp/**'
+      - 'sample_source_code/CPP/**'
   workflow_dispatch:
 
 jobs:
+  build-test-coverage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y cmake lcov
+
+      - name: Configure (CMake + gcov coverage flags)
+        working-directory: sample_source_code/CPP
+        run: |
+          cmake -S . -B build \
+            -DCMAKE_BUILD_TYPE=Debug \
+            -DCMAKE_CXX_FLAGS="--coverage -fprofile-arcs -ftest-coverage" \
+            -DCMAKE_EXE_LINKER_FLAGS="--coverage"
+
+      - name: Build
+        working-directory: sample_source_code/CPP
+        run: cmake --build build --parallel $(nproc)
+
+      - name: Run GTests
+        working-directory: sample_source_code/CPP/build
+        run: ctest --output-on-failure --parallel $(nproc)
+
+      - name: Generate gcov / lcov coverage report
+        working-directory: sample_source_code/CPP
+        run: |
+          # Capture coverage data from all .gcda files produced by the test run
+          lcov --capture \
+               --directory build \
+               --output-file build/coverage.info \
+               --ignore-errors mismatch \
+               --rc lcov_branch_coverage=1
+
+          # Strip noise: GoogleTest internals, system headers, and FetchContent deps
+          lcov --remove build/coverage.info \
+               '*/googletest/*' \
+               '*/usr/*' \
+               '*/build/_deps/*' \
+               --output-file build/coverage_filtered.info \
+               --rc lcov_branch_coverage=1
+
+          # Human-readable HTML report
+          genhtml build/coverage_filtered.info \
+                  --output-directory build/coverage_html \
+                  --branch-coverage \
+                  --title "AnimalShelter C++ Coverage"
+
+          # Print a quick summary to the job log
+          lcov --summary build/coverage_filtered.info \
+               --rc lcov_branch_coverage=1
+
+      - name: Upload coverage HTML report
+        uses: actions/upload-artifact@v4
+        with:
+          name: cpp-coverage-report
+          path: sample_source_code/CPP/build/coverage_html/
+          retention-days: 14
+
   embold-scan:
     runs-on: ubuntu-latest
+    needs: build-test-coverage
 
     steps:
       - name: Checkout
@@ -22,7 +86,7 @@ jobs:
           emboldUrl: https://demo.embold.io/
           emboldToken: ${{ secrets.EMBOLD_TOKEN_DEMO_INST }}
           emboldRepoUid: <REPO_UID_CPP>
-          repositoryConfigPath: sample_source_code/cpp/repository-configuration.json
+          repositoryConfigPath: sample_source_code/CPP/repository-configuration.json
           downloadConfig: 'true'
           qualityGate: 'true'
           snapshotLabel: ${{ github.run_number }}

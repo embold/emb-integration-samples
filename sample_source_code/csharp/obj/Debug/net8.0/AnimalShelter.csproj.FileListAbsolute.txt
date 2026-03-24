@@ -1,0 +1,15 @@
+/Users/nilesh/nilesh/source_codes/git/emb-integration-samples/sample_source_code/csharp/obj/Debug/net8.0/AnimalShelter.GeneratedMSBuildEditorConfig.editorconfig
+/Users/nilesh/nilesh/source_codes/git/emb-integration-samples/sample_source_code/csharp/obj/Debug/net8.0/AnimalShelter.AssemblyInfoInputs.cache
+/Users/nilesh/nilesh/source_codes/git/emb-integration-samples/sample_source_code/csharp/obj/Debug/net8.0/AnimalShelter.AssemblyInfo.cs
+/Users/nilesh/nilesh/source_codes/git/emb-integration-samples/sample_source_code/csharp/obj/Debug/net8.0/AnimalShelter.csproj.CoreCompileInputs.cache
+/Users/nilesh/nilesh/source_codes/git/emb-integration-samples/sample_source_code/csharp/obj/Debug/net8.0/AnimalShelter.sourcelink.json
+/Users/nilesh/nilesh/source_codes/git/emb-integration-samples/sample_source_code/csharp/bin/Debug/net8.0/AnimalShelter
+/Users/nilesh/nilesh/source_codes/git/emb-integration-samples/sample_source_code/csharp/bin/Debug/net8.0/AnimalShelter.deps.json
+/Users/nilesh/nilesh/source_codes/git/emb-integration-samples/sample_source_code/csharp/bin/Debug/net8.0/AnimalShelter.runtimeconfig.json
+/Users/nilesh/nilesh/source_codes/git/emb-integration-samples/sample_source_code/csharp/bin/Debug/net8.0/AnimalShelter.dll
+/Users/nilesh/nilesh/source_codes/git/emb-integration-samples/sample_source_code/csharp/bin/Debug/net8.0/AnimalShelter.pdb
+/Users/nilesh/nilesh/source_codes/git/emb-integration-samples/sample_source_code/csharp/obj/Debug/net8.0/AnimalShelter.dll
+/Users/nilesh/nilesh/source_codes/git/emb-integration-samples/sample_source_code/csharp/obj/Debug/net8.0/refint/AnimalShelter.dll
+/Users/nilesh/nilesh/source_codes/git/emb-integration-samples/sample_source_code/csharp/obj/Debug/net8.0/AnimalShelter.pdb
+/Users/nilesh/nilesh/source_codes/git/emb-integration-samples/sample_source_code/csharp/obj/Debug/net8.0/AnimalShelter.genruntimeconfig.cache
+/Users/nilesh/nilesh/source_codes/git/emb-integration-samples/sample_source_code/csharp/obj/Debug/net8.0/ref/AnimalShelter.dll

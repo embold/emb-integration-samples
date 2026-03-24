@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Cat.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Animal Shelter — Embold Sample</a> &gt; <a href="index.source.html" class="el_package">com.embold.sample</a> &gt; <span class="el_source">Cat.java</span></div><h1>Cat.java</h1><pre class="source lang-java linenums">package com.embold.sample;
+
+/**
+ * Concrete Cat class – inherits from Animal.
+ * Demonstrates environment-based lifespan calculation.
+ */
+public class Cat extends Animal {
+
+    private final boolean indoor;
+
+    public Cat(String name, int age, boolean indoor, double weight) {
+<span class="fc" id="L12">        super(name, age, &quot;Felis catus&quot;, weight);</span>
+<span class="fc" id="L13">        this.indoor = indoor;</span>
+<span class="fc" id="L14">    }</span>
+
+<span class="fc" id="L16">    public boolean isIndoor() { return indoor; }</span>
+
+    @Override
+<span class="fc" id="L19">    public String sound() { return &quot;Meow&quot;; }</span>
+
+    @Override
+<span class="fc" id="L22">    public void accept(IVisitor visitor) { visitor.visit(this); }</span>
+
+    /**
+     * Returns expected lifespan based on environment and weight.
+     * Outgoing call to {@link MathUtils#linearDecay}.
+     */
+    public int expectedLifespan() {
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        int base = indoor ? 15 : 10;</span>
+<span class="fc" id="L30">        double deviation = Math.abs(weight - 4.5) / 4.5;</span>
+<span class="fc" id="L31">        int adjustment = (int) MathUtils.linearDecay(deviation, 1.0, 5);</span>
+<span class="fc" id="L32">        return Math.max(5, base - adjustment);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

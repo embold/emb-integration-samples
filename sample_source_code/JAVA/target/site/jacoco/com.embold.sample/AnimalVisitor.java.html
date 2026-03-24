@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AnimalVisitor.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Animal Shelter — Embold Sample</a> &gt; <a href="index.source.html" class="el_package">com.embold.sample</a> &gt; <span class="el_source">AnimalVisitor.java</span></div><h1>AnimalVisitor.java</h1><pre class="source lang-java linenums">package com.embold.sample;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Concrete Visitor: accumulates health stats while traversing animals.
+ * Demonstrates double-dispatch — each animal type calls a different overload.
+ * Incoming calls from Dog.accept() and Cat.accept().
+ */
+<span class="fc" id="L11">public class AnimalVisitor implements IVisitor {</span>
+
+<span class="fc" id="L13">    private int dogCount = 0;</span>
+<span class="fc" id="L14">    private int catCount = 0;</span>
+<span class="fc" id="L15">    private double totalHealthScore = 0.0;</span>
+<span class="fc" id="L16">    private final Map&lt;String, Integer&gt; speciesCount = new HashMap&lt;&gt;();</span>
+
+    @Override
+    public void visit(Dog dog) {
+<span class="fc" id="L20">        dogCount++;</span>
+<span class="fc" id="L21">        totalHealthScore += dog.computeHealthScore();</span>
+<span class="fc" id="L22">        speciesCount.merge(&quot;Dog&quot;, 1, Integer::sum);</span>
+<span class="fc" id="L23">    }</span>
+
+    @Override
+    public void visit(Cat cat) {
+<span class="fc" id="L27">        catCount++;</span>
+        // Proxy health score for cats via weight deviation
+<span class="fc" id="L29">        double proxy = MathUtils.clamp(100 - Math.abs(cat.getWeight() - 4.5) * 10, 0, 100);</span>
+<span class="fc" id="L30">        totalHealthScore += proxy;</span>
+<span class="fc" id="L31">        speciesCount.merge(&quot;Cat&quot;, 1, Integer::sum);</span>
+<span class="fc" id="L32">    }</span>
+
+<span class="fc" id="L34">    public int getDogCount()  { return dogCount; }</span>
+<span class="fc" id="L35">    public int getCatCount()  { return catCount; }</span>
+<span class="fc" id="L36">    public int getTotalCount(){ return dogCount + catCount; }</span>
+
+    public double getAverageHealthScore() {
+<span class="fc" id="L39">        int total = getTotalCount();</span>
+<span class="fc bfc" id="L40" title="All 2 branches covered.">        return total == 0 ? 0.0 : MathUtils.roundToDecimalPlaces(totalHealthScore / total, 2);</span>
+    }
+
+<span class="fc" id="L43">    public Map&lt;String, Integer&gt; getSpeciesCount() { return Map.copyOf(speciesCount); }</span>
+
+    public void reset() {
+<span class="fc" id="L46">        dogCount = 0;</span>
+<span class="fc" id="L47">        catCount = 0;</span>
+<span class="fc" id="L48">        totalHealthScore = 0.0;</span>
+<span class="fc" id="L49">        speciesCount.clear();</span>
+<span class="fc" id="L50">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

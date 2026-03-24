@@ -4,7 +4,12 @@
   "description": "Animal Shelter sample — Embold integration demo (JavaScript)",
   "main": "src/main.js",
   "scripts": {
-    "start": "node src/main.js"
+    "start": "node src/main.js",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   },
   "keywords": ["embold", "sample"],
   "license": "MIT"
