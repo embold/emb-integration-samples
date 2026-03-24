@@ -2,7 +2,7 @@ name: Embold Scan - Java
 
 on:
   push:
-    branches: [master]
+    branches: [main]
     paths:
       - 'sample_source_code/java/**'
   workflow_dispatch:
