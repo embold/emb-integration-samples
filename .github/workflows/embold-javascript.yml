@@ -2,7 +2,7 @@ name: Embold Scan - JavaScript
 
 on:
   push:
-    branches: [master]
+    branches: [main]
     paths:
       - 'sample_source_code/javascript/**'
   workflow_dispatch:
