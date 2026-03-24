@@ -7,7 +7,7 @@
         {
             "dataDir": "",
             "repository": {
-                "uid": "<REPO_UID_JAVA>",
+                "uid": "",
                 "projectName": "animal-shelter-java",
                 "languages": [
                     "JAVA"
