@@ -2,7 +2,7 @@ name: Embold Scan - C/C++
 
 on:
   push:
-    branches: [master]
+    branches: [main]
     paths:
       - 'sample_source_code/cpp/**'
   workflow_dispatch:
